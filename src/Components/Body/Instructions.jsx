@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Instructions = () => {
   return (
@@ -14,7 +15,7 @@ const Instructions = () => {
             </div>
             <div className="col-lg-4">
               <div className="main-button">
-                <a href="create.html">See Shop</a>
+                <Link to='/ShopMain'>See Shop</Link>
               </div>
             </div>
             <div className="col-lg-4">
@@ -25,8 +26,8 @@ const Instructions = () => {
                 <div className="icon">
                   <img src="./source/assets/images/icon-02.png" alt />
                 </div>
-                <h4>Set Up Your Wallet</h4>
-                <p>NFT means Non-Fungible Token that are used in digital cryptocurrency markets. There are many different kinds of NFTs in the industry.</p>
+                <h4>Buy The Product</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae in eligendi dolorem illum, necessitatibus odit. Maxime.</p>
               </div>
             </div>
             <div className="col-lg-4">
@@ -37,8 +38,8 @@ const Instructions = () => {
                 <div className="icon">
                   <img src="./source/assets/images/icon-04.png" alt />
                 </div>
-                <h4>Add Your Digital NFT</h4>
-                <p>There are 5 different HTML pages included in this NFT <a href="https://templatemo.com/page/1" target="_blank" rel="nofollow">website template</a>. You can edit or modify any section on any page as you required.</p>
+                <h4>Add Your Digital Profile</h4>
+                <p>Lorem ipsum dolor sit amet consectetur sit amet <a href="https://templatemo.com/page/1" target="_blank" rel="nofollow">Beateae Elingigi</a>. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore!</p>
               </div>
             </div>
             <div className="col-lg-4">
@@ -46,8 +47,8 @@ const Instructions = () => {
                 <div className="icon">
                   <img src="./source/assets/images/icon-06.png" alt />
                 </div>
-                <h4>Sell Your NFT &amp; Make Profit</h4>
-                <p>If you would like to support our TemplateMo website, please visit <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">our contact page</a> to make a PayPal contribution. Thank you.</p>
+                <h4>Premium Quality &amp; Handmade</h4>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">Lorem, ipsum dolor.</a>Lorem ipsum dolor sit amet consectetur.</p>
               </div>
             </div>
           </div>

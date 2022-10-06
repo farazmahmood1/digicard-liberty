@@ -13,46 +13,31 @@ import Discover from './Components/Explore/Discover';
 import PageIntro from './Components/Form.jsx/PageIntro';
 import UserForm from './Components/Form.jsx/UserForm';
 import HomePage from './Components/Main/HomePage';
+import ShopMain from './Components/Main/ShopMain';
+import ProfileMain from './Components/Main/ProfileMain';
+import ItemModal from './Components/Modal/ItemModal';
+import SignIn from './Components/Auth/SignIn';
+import SignUp from './Components/Auth/SignUp';
 
 function App() {
   return (
     <div>
 
-      {/* <PreLoader />
-      <Navbar />
-      <Banner />
-      <Categories />
-      <Instructions />
-      <Footer /> */}
-      {/* <Shop /> */}
+      {/* <PageIntro /> */}
+      {/* <UserForm /> */}
 
-      {/* <PreLoader />
-      <Navbar />
-      <PageHeading />
-      <Discover />
-      <TopSeller />
-      <Footer /> */}
-{/* 
-      <PreLoader />
-      <Navbar />
-      <PageIntro />
-      <UserForm />
-      <Footer /> */}
+      {/* <ItemModal /> */}
 
-      {/* <PreLoader />
-      <Navbar />
-      <PageIntro />
-      <Shop />
-      <Footer /> */}
+      {/* <SignIn /> */}
+      {/* <SignUp /> */}
 
       <Router>
         <PreLoader />
         <Navbar />
         <Routes>
           <Route path='/' element={<HomePage />} />
-          {/* <Route path='/Categories' element={<Categories />} />
-          <Route path='/Instructions' element={<Instructions />} />
-          <Route path='/Shop' element={<Shop />} /> */}
+          <Route path='/ShopMain' element={<ShopMain />} />
+          <Route path='/ProfileMain' element={<ProfileMain />} />
         </Routes>
         <Footer />
       </Router>

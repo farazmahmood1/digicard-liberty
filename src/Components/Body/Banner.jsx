@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const Banner = () => {
   return (
@@ -9,11 +11,11 @@ const Banner = () => {
             <div className="col-lg-6 align-self-center">
               <div className="header-text">
                 <h6>Liberty DigiCard Market</h6>
-                <h2>Create, Sell &amp; Collect Top NFT’s.</h2>
+                <h2>Create, Sell &amp; Collect Top NFT`s.</h2>
                 <p>Liberty NFT Market is a really cool and professional design for your NFT websites. This HTML CSS template is based on Bootstrap v5 and it is designed for NFT related web portals. Liberty can be freely downloaded from TemplateMo's free css templates.</p>
                 <div className="buttons">
                   <div className="border-button">
-                    <a href="explore.html">Explore Shop</a>
+                    <Link to='/ShopMain' >Explore Shop</Link>
                   </div>
                   <div className="main-button">
                     <a href="#" target="_blank">How to buy</a>
