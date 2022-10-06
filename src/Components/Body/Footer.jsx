@@ -7,9 +7,9 @@ const Footer = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
-                            <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
+                            <p>Copyright © 2022 <a href="#">Alphanites</a>  All rights reserved.
                                 &nbsp;&nbsp;
-                                Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                                Designed by <a title="HTML CSS Templates" rel="sponsored" href="#" target="_blank">Faraz</a></p>
                         </div>
                     </div>
                 </div>

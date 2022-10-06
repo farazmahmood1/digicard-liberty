@@ -4,5 +4,16 @@
     /* transition: all 0.2s ease 0s; */
     background-color: #7453fc;
     border-radius: 18px;
-    padding: 8px 15px;
+    padding: 5px 10px 5px 10px;
+}
+
+.imageBanner {
+    margin-left: 70px;
+}
+
+@media screen and (max-width: 880px) {
+    .imageBanner {
+        margin-top: 40px;
+        margin-left: 0px;
+    }
 }
