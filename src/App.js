@@ -18,18 +18,16 @@ import ProfileMain from './Components/Main/ProfileMain';
 import ItemModal from './Components/Modal/ItemModal';
 import SignIn from './Components/Auth/SignIn';
 import SignUp from './Components/Auth/SignUp';
+import Form from './Components/Main/Form';
 
 function App() {
   return (
     <div>
 
-      {/* <PageIntro /> */}
-      {/* <UserForm /> */}
+     
 
       {/* <ItemModal /> */}
 
-      {/* <SignIn /> */}
-      {/* <SignUp /> */}
 
       <Router>
         <PreLoader />
@@ -38,9 +36,10 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/ShopMain' element={<ShopMain />} />
           <Route path='/ProfileMain' element={<ProfileMain />} />
+          <Route path='/Form' element={<Form />} />
         </Routes>
         <Footer />
-      </Router>
+      </Router> 
     </div>
   );
 }

@@ -18,51 +18,123 @@
     }
 }
 
-.mainModal{
+.mainModal {
     z-index: 500;
     position: absolute;
-    
+
 }
 
 @media screen and (max-width: 880px) {
     .mainModal {
-  margin-left: 30px;
+        margin-left: 30px;
     }
 }
 
 /* button on sign sign up modal */
 
-.btnAnimate:hover{
-animation: none;
+.btnAnimate:hover {
+    animation: none;
 }
 
-.btnAnimate{
+.btnAnimate {
     animation: wiggle 2s linear infinite;
 }
 
 /* Keyframes */
 @keyframes wiggle {
     0%, 7% {
-      transform: rotateZ(0);
+        transform: rotateZ(0);
     }
-    15% {
-      transform: rotateZ(-15deg);
-    }
-    20% {
-      transform: rotateZ(10deg);
-    }
-    25% {
-      transform: rotateZ(-10deg);
-    }
-    30% {
-      transform: rotateZ(6deg);
-    }
-    35% {
-      transform: rotateZ(-14deg);
-    }
-    40%, 100% {
-      transform: rotateZ(0);
-    }
-  }
 
-  /* button on sign sign up modal */
+    15% {
+        transform: rotateZ(-15deg);
+    }
+
+    20% {
+        transform: rotateZ(10deg);
+    }
+
+    25% {
+        transform: rotateZ(-10deg);
+    }
+
+    30% {
+        transform: rotateZ(6deg);
+    }
+
+    35% {
+        transform: rotateZ(-14deg);
+    }
+
+    40%, 100% {
+        transform: rotateZ(0);
+    }
+}
+
+
+/* button on sign sign up modal */
+
+/* button in shop cards */
+
+.btnShop {
+    border: none;
+    padding: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.priceText {
+    color: #7453fc;
+}
+
+@media screen and (max-width: 880px) {
+    .form-text {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .lineBreaker {
+        max-width: 100px;
+    }
+}
+
+
+/* button in shop cards */
+
+
+/* main buttons */
+
+.buttonx {
+    font-size: 12px;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #7453fc;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-transform: capitalize;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.buttonx:after {
+    width: 78%;
+    height: 2px;
+    background-color: #fff;
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+
+.buttonx:hover {
+    background-color: #7453fc;
+    color: #fff;
+}
+
+/* buttons */
