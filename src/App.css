@@ -17,3 +17,52 @@
         margin-left: 0px;
     }
 }
+
+.mainModal{
+    z-index: 500;
+    position: absolute;
+    
+}
+
+@media screen and (max-width: 880px) {
+    .mainModal {
+  margin-left: 30px;
+    }
+}
+
+/* button on sign sign up modal */
+
+.btnAnimate:hover{
+animation: none;
+}
+
+.btnAnimate{
+    animation: wiggle 2s linear infinite;
+}
+
+/* Keyframes */
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-14deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+
+  /* button on sign sign up modal */

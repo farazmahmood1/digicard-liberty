@@ -1,14 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const SignUp = () => {
+const SignUp = ({ setOpenSignUp }) => {
     return (
         <div>
             <div className='row'>
-                <div className='col-lg-4'>
-                    <div className='card' style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)", borderRadius: "15px" }}>
+                <div className='col-lg-5 animate ms-auto'>
+                    <div className='card mainModal mt-5' style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)", borderRadius: "15px" }}>
                         <div className='card-body'>
-                            <div className='col-lg-12 d-flex justify-content-center mt-3'>
-                                <img src="./source/assets/images/logo.png" style={{ width: "115px" }} alt="" />
+                            <div className='d-flex'>
+                                <div className=' mt-3'>
+                                    <img src="./source/assets/images/logo.png" style={{ width: "115px" }} alt="" />
+                                </div>
+                                <button onClick={() => setOpenSignUp(false)} className='btn btn-outline-danger btn-sm ms-auto mt-2'>X</button>
                             </div>
 
                             <div className='d-flex mt-5 mb-3'>
@@ -39,9 +43,9 @@ const SignUp = () => {
                             </div>
 
                             <div className='d-flex  me-3'>
-                                <a id="emailHelp" className="form-text mt-3">Already have Account, Sign In?</a>
+                                <Link to='/SignIn' id="emailHelp" className="form-text mt-3"></Link>
 
-                                <div className="border-button ms-auto">
+                                <div className="border-button ms-auto btnAnimate">
                                     <a href="#" target="_blank">Sign Up</a>
                                 </div>
 

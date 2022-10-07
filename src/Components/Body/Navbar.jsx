@@ -1,9 +1,19 @@
 import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import SignIn from '../Auth/SignIn';
+import SignUp from '../Auth/SignUp'
+
 
 const Navbar = () => {
+
+  const [openModal, setOpenModal] = useState(false);
+  const [openSignUp, setOpenSignUp] = useState(false)
+
+
   return (
     <div>
+
       <header className="header-area header-sticky" >
         <div className='container'>
           <div className='container-fluid' >
@@ -33,20 +43,19 @@ const Navbar = () => {
                       </a>
                       <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                        <Link to='/SignIn' className='d-flex'><i className="fa-solid fa-user mt-2 ms-2" />
+                        <button onClick={() => setOpenModal(true)} className='d-flex'><i className="fa-solid fa-user mt-2 ms-2" />
                           <a className="dropdown-item">Sign In</a>
-                        </Link>
+                        </button>
 
-                        <li className='d-flex'><i className="fa-solid fa-user-plus mt-2 ms-2" />
-                          <Link to='/SignUp' className="dropdown-item" href="#">Sign Up</Link></li>
+                        <button onClick={() => setOpenSignUp(true)} className='d-flex'><i className="fa-solid fa-user-plus mt-2 ms-2" />
+                          <a className="dropdown-item" >Sign Up</a>
+                        </button>
                         <hr />
                         <li className='d-flex'><i className="fa-solid fa-pen mt-2 ms-2" />
                           <a className="dropdown-item" href="#">Update Profile</a></li>
                         <li className='d-flex'><i class="fa-solid fa-newspaper mt-2 ms-2"></i><a className="dropdown-item" href="#">What`s New</a></li>
                       </ul>
                     </li>
-
-
                   </ul>
                 </div>
               </div>
@@ -54,7 +63,8 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-
+      {openModal && < SignIn setOpenModal={setOpenModal} />}
+      {openSignUp && <SignUp setOpenSignUp={setOpenSignUp} />}
 
     </div>
   )
