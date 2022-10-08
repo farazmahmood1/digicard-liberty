@@ -19,6 +19,7 @@ import ItemModal from './Components/Modal/ItemModal';
 import SignIn from './Components/Auth/SignIn';
 import SignUp from './Components/Auth/SignUp';
 import Form from './Components/Main/Form';
+import WorkingVideo from './Components/Main/WorkingVideo';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path='/ShopMain' element={<ShopMain />} />
           <Route path='/ProfileMain' element={<ProfileMain />} />
           <Route path='/Form' element={<Form />} />
+          <Route path='/WorkingVideo' element={<WorkingVideo />} />
         </Routes>
         <Footer />
       </Router> 

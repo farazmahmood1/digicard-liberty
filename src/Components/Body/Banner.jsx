@@ -18,7 +18,7 @@ const Banner = () => {
                     <Link to='/ShopMain' >Explore Shop</Link>
                   </div>
                   <div className="main-button">
-                    <a href="#" target="_blank">How to buy</a>
+                    <Link  to='/WorkingVideo' >How to buy</Link>
                   </div>
                 </div>
               </div>
