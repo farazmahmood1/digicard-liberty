@@ -89,17 +89,7 @@ const Categories = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    {/* <div className="col-lg-2 col-sm-6">
-                                        <div className="item">
-                                            <div className="icon">
-                                                <img src="./source/assets/images/icon-04.png" alt />
-                                            </div>
-                                            <h4>Virtual World</h4>
-                                            <div className="icon-button">
-                                                <a href="#"><i className="fa fa-angle-right" /></a>
-                                            </div>
-                                        </div>
-                                    </div> */}
+                               
                                     <div className="col-lg-2 col-sm-6">
                                         <div className="item">
                                             <div className="icon">

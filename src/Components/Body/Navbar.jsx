@@ -43,17 +43,26 @@ const Navbar = () => {
                       </a>
                       <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                        <button onClick={() => setOpenModal(true)} className='d-flex'><i className="fa-solid fa-user mt-2 ms-2" />
-                          <a className="dropdown-item">Sign In</a>
+                        <button onClick={() => setOpenModal(true)} className='buttonx d-flex'><i className="fa-solid fa-user mt-2 ms-2 text-dark" />
+                          &nbsp;&nbsp;<p className="text-dark">Sign In</p>
                         </button>
 
-                        <button onClick={() => setOpenSignUp(true)} className='d-flex'><i className="fa-solid fa-user-plus mt-2 ms-2" />
-                          <a className="dropdown-item" >Sign Up</a>
+                        <button onClick={() => setOpenSignUp(true)} className='buttonx d-flex mt-1'><i className="fa-solid fa-user-plus mt-2 ms-2 text-dark" />
+                          &nbsp;&nbsp;<p className='text-dark'>Sign Up</p>
                         </button>
                         <hr />
                         <li className='d-flex'><i className="fa-solid fa-pen mt-2 ms-2" />
-                          <a className="dropdown-item" href="#">Update Profile</a></li>
-                        <li className='d-flex'><i class="fa-solid fa-newspaper mt-2 ms-2"></i><a className="dropdown-item" href="#">What`s New</a></li>
+                          <a className="dropdown-item" href="#">Update Profile</a>
+                        </li>
+                        <li className='d-flex'>
+                          <i className="fa-solid fa-newspaper mt-2 ms-2" />
+
+                          <a className="dropdown-item" href="#">What`s New</a>
+                        </li>
+                        <li className='d-flex'>
+                          <i className="fa-solid fa-question mt-2 ms-2" />
+                          <Link className="dropdown-item" to='/WorkingVideo'>Need Help</Link>
+                        </li>
                       </ul>
                     </li>
                   </ul>

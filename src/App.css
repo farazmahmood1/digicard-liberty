@@ -128,7 +128,7 @@
     position: absolute;
     left: 50%;
     bottom: 0;
-    transform: translateX(-50%);   
+    transform: translateX(-50%);
 }
 
 
@@ -138,3 +138,117 @@
 }
 
 /* buttons */
+
+/* sign in modal */
+
+.mainModal {
+    animation-duration: 0.5s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+@-webkit-keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        -webkit-transform: translatex(10px);
+        -moz-transform: translatex(10px);
+        -o-transform: translatex(10px);
+        transform: translatex(10px);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translatex(0);
+        -moz-transform: translatex(0);
+        -o-transform: translatex(0);
+        transform: translatex(0);
+    }
+}
+
+@-moz-keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        -webkit-transform: translatex(10px);
+        -moz-transform: translatex(10px);
+        -o-transform: translatex(10px);
+        transform: translatex(10px);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translatex(0);
+        -moz-transform: translatex(0);
+        -o-transform: translatex(0);
+        transform: translatex(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        -webkit-transform: translatex(100px);
+        -moz-transform: translatex(100px);
+        -o-transform: translatex(100px);
+        transform: translatex(100px);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translatex(0);
+        -moz-transform: translatex(0);
+        -o-transform: translatex(0);
+        transform: translatex(0);
+    }
+}
+
+.in-left {
+    -webkit-animation-name: fadeInLeft;
+    -moz-animation-name: fadeInLeft;
+    -o-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -o-animation-duration: 1s;
+    animation-delay: 0.2s;
+}
+
+
+/* sign in modal */
+
+
+/* items in the chop component */
+.shopItemImg {
+    border-radius: 20px 20px 0px 0px;
+}
+
+.shopItemBody {
+    border: 1px solid rgba(218, 209, 209, 0.2);
+        border-radius: 0px 0px 20px 20px;
+}
+
+.itemBtn {
+    margin-top: 20px;
+    margin-bottom: -43px;
+    padding: -3px;
+}
