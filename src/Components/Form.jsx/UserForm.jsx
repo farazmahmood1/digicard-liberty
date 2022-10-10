@@ -94,10 +94,8 @@ const UserForm = () => {
                     console.log(error)
 
                 })
-
         }
     }
-
 
     return (
         <div>
@@ -361,7 +359,7 @@ const UserForm = () => {
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
                                         </fieldset>
                                     </div>
-                                  
+
 
                                     <div class="col-lg-6 mx-auto">
                                         <fieldset>

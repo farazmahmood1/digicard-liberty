@@ -19,7 +19,7 @@
 }
 
 .mainModal {
-    z-index: 500;
+    z-index: 9920;
     position: fixed;
 
 }
@@ -244,11 +244,48 @@
 
 .shopItemBody {
     border: 1px solid rgba(218, 209, 209, 0.2);
-        border-radius: 0px 0px 20px 20px;
+    border-radius: 0px 0px 20px 20px;
 }
 
 .itemBtn {
     margin-top: 20px;
     margin-bottom: -43px;
     padding: -3px;
+
 }
+
+
+/* transition */
+
+power::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+power:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+power::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: #00171f;
+
+    z-index: 9910;
+    transition: transform .3s ease;
+}
+
+/* tranistion */
+
+/* signInMOdal */
+
+
+
+

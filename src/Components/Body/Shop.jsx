@@ -2,14 +2,14 @@ import React from 'react'
 import { useState } from 'react';
 import ItemModal from '../Modal/ItemModal';
 import { Link } from 'react-router-dom';
+import PageIntro from '../Form.jsx/PageIntro';
+import UserLogin from '../Modal/UserLogin';
 
 
 const Shop = () => {
 
   const [openModal, setOpenModal] = useState(false);
-
-
-
+  const [loginModal,setLoginModal] = useState(false)
 
   return (
     <div>
@@ -56,7 +56,7 @@ const Shop = () => {
                       </div>
                       <div className=''>
                         <button onClick={() => setOpenModal(true)} className='buttonx m-1 ms-auto'>View</button>
-                        <Link to='/Form' className='buttonx m-1 me-auto'>Buy</Link>
+                        <Link onClick={() => setLoginModal(true)} to='/Form' className='buttonx m-1 me-auto'>Buy</Link>
                         <button className='buttonx m-1 mx-auto'>Add to cart</button>
                       </div>
                     </div>
@@ -70,26 +70,25 @@ const Shop = () => {
                     <div className='card-body shopItemBody'  >
                       <h4 className='mt-2 ms-2' >Bored Ape</h4>
                       <hr className='bg-secondary' />
-                      <div className='d-flex'>
-                        <div className="col-6 ">
+                      <div className='d-flex justify-content-between'>
+                        <div>
                           <p>Items in collection</p>
                           <h5>2000</h5>
                         </div>
-                        <div className="col-6 ">
-                          <p>Category</p>
+
+                        <div>
+                          <p className='ms-3'>Category</p>
                           <h5>DigiCard</h5>
                         </div>
                       </div>
                       <div className='d-flex justify-content-center '>
                         <div className="main-button itemBtn">
-                          <Link to='/Form' className='text-white'>Buy</Link>
+                          <Link  to='/Form' className='text-white'>Buy</Link>
                         </div>
-                        <div className="main-button ms-1 itemBtn">
+                        <div className="main-button ms-2 itemBtn">
                           <a className='text-white'>View</a>
                         </div>
-                        <div className="main-button ms-1 itemBtn">
-                          <a className='text-white'>Cart</a>
-                        </div>
+
                       </div>
                     </div>
                   </div>
@@ -101,6 +100,7 @@ const Shop = () => {
       </div>
 
       {openModal && < ItemModal setOpenModal={setOpenModal} />}
+      {loginModal && <UserLogin setLoginModal={setLoginModal} />}
     </div>
   )
 }
