@@ -89,7 +89,7 @@ const Categories = () => {
                                             </div>
                                         </div>
                                     </div>
-                               
+
                                     <div className="col-lg-2 col-sm-6">
                                         <div className="item">
                                             <div className="icon">

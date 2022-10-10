@@ -10,7 +10,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PageHeading from './Components/Explore/PageHeading';
 import TopSeller from './Components/Explore/TopSeller';
 import Discover from './Components/Explore/Discover';
-import PageIntro from './Components/Form.jsx/PageIntro';
 import UserForm from './Components/Form.jsx/UserForm';
 import HomePage from './Components/Main/HomePage';
 import ShopMain from './Components/Main/ShopMain';

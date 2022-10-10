@@ -2,14 +2,12 @@ import React from 'react'
 import { useState } from 'react';
 import ItemModal from '../Modal/ItemModal';
 import { Link } from 'react-router-dom';
-import PageIntro from '../Form.jsx/PageIntro';
-import UserLogin from '../Modal/UserLogin';
 
 
 const Shop = () => {
 
   const [openModal, setOpenModal] = useState(false);
-  const [loginModal,setLoginModal] = useState(false)
+  const [loginModal, setLoginModal] = useState(false)
 
   return (
     <div>
@@ -56,7 +54,7 @@ const Shop = () => {
                       </div>
                       <div className=''>
                         <button onClick={() => setOpenModal(true)} className='buttonx m-1 ms-auto'>View</button>
-                        <Link onClick={() => setLoginModal(true)} to='/Form' className='buttonx m-1 me-auto'>Buy</Link>
+                        <Link to='/Form' className='buttonx m-1 me-auto'>Buy</Link>
                         <button className='buttonx m-1 mx-auto'>Add to cart</button>
                       </div>
                     </div>
@@ -83,12 +81,11 @@ const Shop = () => {
                       </div>
                       <div className='d-flex justify-content-center '>
                         <div className="main-button itemBtn">
-                          <Link  to='/Form' className='text-white'>Buy</Link>
+                          <Link to='/Form' className='text-white'>Buy</Link>
                         </div>
                         <div className="main-button ms-2 itemBtn">
                           <a className='text-white'>View</a>
                         </div>
-
                       </div>
                     </div>
                   </div>
@@ -100,7 +97,6 @@ const Shop = () => {
       </div>
 
       {openModal && < ItemModal setOpenModal={setOpenModal} />}
-      {loginModal && <UserLogin setLoginModal={setLoginModal} />}
     </div>
   )
 }

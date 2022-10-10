@@ -1,3 +1,7 @@
+:root {
+    --pretty-modal-modal-container-background-color: #23222D;  }
+
+
 .navbar-nav li a :hover {
     color: white;
     transition: all 0.2s ease 0s;
@@ -285,7 +289,5 @@ power::before {
 /* tranistion */
 
 /* signInMOdal */
-
-
 
 
