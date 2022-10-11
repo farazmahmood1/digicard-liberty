@@ -1,16 +1,71 @@
 import React from 'react'
 import { useState } from 'react';
-import ItemModal from '../Modal/ItemModal';
 import { Link } from 'react-router-dom';
+import { Modal } from 'pretty-modal';
 
 
 const Shop = () => {
 
   const [openModal, setOpenModal] = useState(false);
   const [loginModal, setLoginModal] = useState(false)
+  const [shouldShow, setShouldShow] = useState(false)
+  const [addCount, setAddCount] = useState(1);
 
+  const incrementCount = () => {
+    setAddCount(addCount + 1);
+
+  }
+  const decrementCount = () => {
+    setAddCount(addCount - 1)
+  }
+
+  function oncloseModal() {
+    setShouldShow((prev) => !prev)
+  }
   return (
     <div>
+      <Modal
+        open={shouldShow}  >
+        <div className='card-body'>
+          <button className='btn btn-outline-danger btn-sm float-end' onClick={() => {
+            oncloseModal(false)
+          }}>X</button>
+          <div className="row">
+
+            <div className="col-lg-7">
+              <div className="left-image">
+                <img src="./source/assets/images/item-details-01.jpg" alt style={{ borderRadius: 20 }} />
+              </div>
+            </div>
+            <div className="col-lg-5 ">
+              <div className='d-flex mt-3'>
+                <h4 className='mt-2'>Necklace for Men</h4>
+
+              </div>
+              <p className='mt-2' style={{ color: "#7453fc" }}>Describtion</p>
+              <h6 style={{ fontWeight: "normal", fontSize: "17px" }}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti minus earum iure ad quos fugit libero ipsum non sequi ipsam Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, repudiandae.</h6>
+              <p className='mt-2' style={{ color: "#7453fc" }}>Color Available:</p>
+              <button className='btnShop bg-danger' ></button>
+              <button className='btnShop bg-secondary'></button>
+              <p className='mt-2' style={{ color: "#7453fc" }}>Quantity:</p>
+              <div>
+                {
+                  addCount > 1 ?
+                    <button className='btn btn-secondary me-2 btn-sm' style={{ backgroundColor: "#7453fc" }} onClick={decrementCount}><i className="fa-solid fa-angle-left" /></button> : console.log(".-.")
+                }
+                <label className='text-white' htmlFor="exampleInputPassword1">{addCount}</label>
+                <button className='btn btn-secondary ms-2 btn-sm' style={{ backgroundColor: "#7453fc" }} onClick={incrementCount}><i className="fa-solid fa-angle-right" /></button>
+              </div>
+              <div className='mt-3'>
+                <Link to='/Form' className='buttonx me-2'>Buy</Link>
+                <button className='buttonx '>Add to cart</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </Modal>
       <div className="currently-market">
         <div className="container">
           <div className="row">
@@ -53,7 +108,7 @@ const Shop = () => {
                         <p>Price:</p><p className='ms-2 text-decoration-line-through form-text'>1599</p><h6 className='ms-1 mt-1 priceText'>999/-</h6>
                       </div>
                       <div className=''>
-                        <button onClick={() => setOpenModal(true)} className='buttonx m-1 ms-auto'>View</button>
+                        <button onClick={() => oncloseModal} className='buttonx m-1 ms-auto'>View</button>
                         <Link to='/Form' className='buttonx m-1 me-auto'>Buy</Link>
                         <button className='buttonx m-1 mx-auto'>Add to cart</button>
                       </div>
@@ -84,7 +139,7 @@ const Shop = () => {
                           <Link to='/Form' className='text-white'>Buy</Link>
                         </div>
                         <div className="main-button ms-2 itemBtn">
-                          <a className='text-white'>View</a>
+                          <a onClick={() => oncloseModal()} className='text-white'>View</a>
                         </div>
                       </div>
                     </div>
@@ -95,8 +150,6 @@ const Shop = () => {
           </div>
         </div>
       </div>
-
-      {openModal && < ItemModal setOpenModal={setOpenModal} />}
     </div>
   )
 }

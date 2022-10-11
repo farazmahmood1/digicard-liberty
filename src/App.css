@@ -1,5 +1,7 @@
 :root {
-    --pretty-modal-modal-container-background-color: #23222D;  }
+    --pretty-modal-modal-container-background-color: #23222D;
+    --pretty-modal-modal-container-border-radius: 10px;
+}
 
 
 .navbar-nav li a :hover {
@@ -288,6 +290,11 @@ power::before {
 
 /* tranistion */
 
-/* signInMOdal */
+/* workingvide */
 
-
+@media only screen and (max-width: 880px) {
+    iframe {
+        width: 350px;
+        height: 300px;
+    }
+}
