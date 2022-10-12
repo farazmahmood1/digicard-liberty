@@ -19,16 +19,14 @@ import SignIn from './Components/Auth/SignIn';
 import SignUp from './Components/Auth/SignUp';
 import Form from './Components/Main/Form';
 import WorkingVideo from './Components/Main/WorkingVideo';
+import UserProfile from './Components/Profile/UserProfile';
+import About from './Components/Profile/About';
+import Social from './Components/Profile/Social';
+import Portfolio from './Components/Profile/Portfolio';
 
 function App() {
   return (
     <div>
-
-     
-
-      {/* <ItemModal /> */}
-
-
       <Router>
         <PreLoader />
         <Navbar />
@@ -38,9 +36,14 @@ function App() {
           <Route path='/ProfileMain' element={<ProfileMain />} />
           <Route path='/Form' element={<Form />} />
           <Route path='/WorkingVideo' element={<WorkingVideo />} />
+          <Route path='/UserProfile' element={<UserProfile />} />
+          <Route path='/About' element={<About />} />
+          <Route path='/Social' element={<Social />} />
+          <Route path='/Portfolio' element={<Portfolio />} />
+
         </Routes>
         <Footer />
-      </Router> 
+      </Router>
     </div>
   );
 }

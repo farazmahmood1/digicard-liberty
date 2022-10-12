@@ -298,3 +298,49 @@ power::before {
         height: 300px;
     }
 }
+
+input {
+    caret-color: #7453fc;
+}
+
+/* profile section */
+
+.profileImage {
+    margin-top: -220px;
+    border-radius: 20px;
+    max-width: 500px;
+    height: 650px;
+}
+
+.CoverImage {
+    /* background-image: url(../images/heading-bg.jpg); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding-top: 240px;
+    text-align: center;
+    background-color: #2a2a2a;
+}
+
+/* @media only screen and (max-width: 880px) {
+    .profileImage {
+        width: 370px;
+        height: 400px;
+    }
+}
+
+.buttonProfile {
+    position: fixed;
+} */
+
+/* @media only screen and (max-width: 880px) {
+    .buttonProfile {
+        position: fixed;
+        width: 100%;
+        bottom: 0px;
+        background-color: #23222D;
+        z-index: 999;
+        border-radius: 7px 7px 0px 0px;
+        text-align: center;
+    }
+} */

@@ -70,7 +70,7 @@ const PageHeading = () => {
                             <h4>Crypto Aurora Guy</h4>
                             <span className="author">
                               <img src="./source/assets/images/author.jpg" alt style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
-                              <h6>Liberty Artist<br /><a href="#">@libertyart</a></h6>
+                              <h6 className='mt-2'>Liberty Artist</h6>
                             </span>
                           </div>
                         </div>

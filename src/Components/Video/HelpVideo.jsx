@@ -24,62 +24,51 @@ const HelpVideo = () => {
 
                         <div className="col-lg-7">
                             <div>
-                                <h4>Get in Touch</h4>
+                                <h4 className='mt-4'>Get in Touch</h4>
                                 <div className='d-flex'>
-                                    <div className="">
-                                        <label htmlFor="exampleInputEmail1" className="form-label text-white">Name</label>
-                                        <input type="email" className="form-control text-white" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                    <div className='w-100'>
+                                        <label htmlFor="exampleInputEmail1" className="form-label text-white mt-2">Name</label>
+                                        <input type="text" className="form-control text-white" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
                                     </div>
-                                    <div className="">
-                                        <label htmlFor="exampleInputPassword1" className="form-label text-white">Email</label>
-                                        <input type="password" className="form-control text-white" id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                    <div className="w-100">
+                                        <label htmlFor="exampleInputPassword1" className="form-label text-white mt-2">Email</label>
+                                        <input type="email" className="form-control text-white ms-1" id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
                                     </div>
                                 </div>
                                 <div className="">
-                                    <label htmlFor="exampleInputPassword1" className="form-label text-white">Subject</label>
-                                    <input type="password" className="form-control text-white" id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                    <label htmlFor="exampleInputPassword1" className="form-label text-white mt-3">Subject</label>
+                                    <input type="text" className="form-control text-white" id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
                                 </div>
                                 <div className="">
-                                    <label htmlFor="exampleInputPassword1" className="form-label text-white">Message</label>
-                                    <input type="password" className="form-control text-white" id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                    <label className="form-label text-white mt-3">Message</label>
+                                    <textarea type="text" className="form-control text-white" rows={4} style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
                                 </div>
-                                <button className='buttonx'>Submit</button>
-
+                                <button className='buttonx mt-3'>Submit</button>
                             </div>
                         </div>
-                        <div className="col-lg-5 ">
+                        <div className="col-lg-5">
                             <div className='d-flex mt-3'>
                                 <h4 className='mt-2'>Contact Us</h4>
-
                             </div>
                             <p className='mt-2' style={{ color: "#7453fc" }}>We are open for any suggestions</p>
-                            <div className='d-flex'>
-                                <i class="fa-solid fa-location-dot text-white fa-2x mt-3"></i>
-                                &nbsp;&nbsp;<p><strong> Address:</strong> Office#28-29, Heaven Mall Zarrar Shaheed Road, Al-Faisal Town, Lahore Punjab Pakistan</p>
+                            <div className='d-flex mt-3 '>
+                                <i class="fa-solid fa-location-dot text-white fa-2x mt-4"></i>
+                                &nbsp;&nbsp;<p><strong> Address:</strong>  Office#28-29, Heaven Mall Zarrar Shaheed Road, Al-Faisal Town, Lahore Punjab Pakistan</p>
                             </div>
-                            <div className='d-flex'>
-                                <i class="fa-solid fa-phone  text-white fa-2x mt-3"></i>
-                                &nbsp;&nbsp;<p><strong> Contact:</strong>+92 343 453 3851</p>
+                            <div className='d-flex mt-3'>
+                                <i class="fa-solid fa-phone  text-white fa-2x mt-1"></i>
+                                &nbsp;&nbsp;<p><strong> Contact:</strong> +92 343 453 3851</p>
                             </div>
-                            <div className='d-flex'>
-                                <i class="fa-solid fa-envelope text-white fa-2x mt-3"></i>
-                                &nbsp;&nbsp;<p><strong> Mail:</strong>contact@ussoftprovider.com</p>
+                            <div className='d-flex mt-4'>
+                                <i class="fa-solid fa-envelope text-white fa-2x mt-1"></i>
+                                &nbsp;&nbsp;<p className='mt-1'><strong> Mail:</strong> contact@ussoftprovider.com</p>
                             </div>
-                            <div className='d-flex'>
-                                <i class="fa-brands fa-chrome text-white fa-2x mt-3"></i>
-                                &nbsp;&nbsp;<p><strong> Website:</strong>https://www.alphanites.ussoftprovider.com/</p>
-                            </div>
-                            <p className='mt-2' style={{ color: "#7453fc" }}>Quantity:</p>
-                            <div>
-
-                            </div>
-                            <div className='mt-3'>
-                                <Link to='/Form' className='buttonx me-2'>Buy</Link>
-                                <button className='buttonx '>Add to cart</button>
+                            <div className='d-flex mt-4'>
+                                <i class="fa-brands fa-chrome text-white fa-2x mt-1"></i>
+                                &nbsp;&nbsp;<a className='text-white mt-2' target="_blank" href='https://www.alphanites.ussoftprovider.com/'><strong> Website:</strong> alphanites.ussoftprovider.com</a>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </Modal>
             <div className="categories-collections">
@@ -111,11 +100,11 @@ const HelpVideo = () => {
                                     <div className="col-lg-2 col-sm-6">
                                         <div className="item">
                                             <div className="icon">
-                                                <i onClick={() => oncloseModal()} className="fa-solid fa-phone" />
+                                                <i className="fa-solid fa-phone" />
                                             </div>
                                             <h4>Call us</h4>
                                             <div className="icon-button">
-                                                <a onClick={() => oncloseModal()}><i className="fa fa-angle-right" /></a>
+                                                <a onClick={() => oncloseModal()} ><i className="fa fa-angle-right" /></a>
                                             </div>
                                         </div>
                                     </div>
@@ -126,7 +115,7 @@ const HelpVideo = () => {
                                             </div>
                                             <h4>Email</h4>
                                             <div className="icon-button">
-                                                <a href="#"><i className="fa fa-angle-right" /></a>
+                                                <a onClick={() => oncloseModal()}><i className="fa fa-angle-right" /></a>
                                             </div>
                                         </div>
                                     </div>
@@ -137,7 +126,7 @@ const HelpVideo = () => {
                                             </div>
                                             <h4>Whatsapp</h4>
                                             <div className="icon-button">
-                                                <a href="#"><i className="fa fa-angle-right" /></a>
+                                                <a onClick={() => oncloseModal()}><i className="fa fa-angle-right" /></a>
                                             </div>
                                         </div>
                                     </div>
@@ -149,7 +138,7 @@ const HelpVideo = () => {
                                             </div>
                                             <h4>Address</h4>
                                             <div className="icon-button">
-                                                <a href="#"><i className="fa fa-angle-right" /></a>
+                                                <a onClick={() => oncloseModal()}><i className="fa fa-angle-right" /></a>
                                             </div>
                                         </div>
                                     </div>
