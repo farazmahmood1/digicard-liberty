@@ -3,7 +3,6 @@
     --pretty-modal-modal-container-border-radius: 10px;
 }
 
-
 .navbar-nav li a :hover {
     color: white;
     transition: all 0.2s ease 0s;
@@ -27,7 +26,6 @@
 .mainModal {
     z-index: 9920;
     position: fixed;
-
 }
 
 @media screen and (max-width: 880px) {
@@ -238,8 +236,6 @@
     -o-animation-duration: 1s;
     animation-delay: 0.2s;
 }
-
-
 /* sign in modal */
 
 
@@ -303,10 +299,12 @@ input {
 /* profile section */
 
 .profileImage {
-    margin-top: -160px;
+    margin-top: -100px;
     border-radius: 10px;
     max-width: 450px;
-    height: 440px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .CoverImage {
@@ -339,8 +337,6 @@ input {
 
 .hoverBtn:hover {
     animation: MoveUpDown 0.8s linear infinite;
-
-
 }
 
 @keyframes MoveUpDown {
@@ -353,7 +349,7 @@ input {
     }
 }
 
-@media only screen and (max-width: 880px) {
+@media only screen and (max-width: 995px) {
     .buttonProfile {
         position: fixed;
         width: 100%;
@@ -367,5 +363,46 @@ input {
     }
 }
 
+/* profile cards to show social and professional link */
 
+.profileCard {
+    background-color: #23222D;
+    border: 1px solid #7453fc;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 6px 7px 17px -1px rgba(0, 0, 0, 0.59);
+    -webkit-box-shadow: 6px 7px 17px -1px rgba(0, 0, 0, 0.59);
+    -moz-box-shadow: 6px 7px 17px -1px rgba(0, 0, 0, 0.59);
+    cursor: pointer;
+}
+
+.profileCard:hover {
+    animation: shake 1s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, -1px) rotate(-0.5deg);
+    }
+
+    50% {
+        transform: translate(4px, -4px) rotate(0.0deg);
+    }
+
+    100% {
+        transform: translate(5px, -5px) rotate(+0.5deg);
+    }
+}
+
+/* dark Background */
+
+.darkbg {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 40px 0px;
+    position: relative;
+}
 

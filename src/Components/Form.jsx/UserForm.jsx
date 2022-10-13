@@ -421,7 +421,7 @@ const UserForm = () => {
 
                                     <div className="col-lg-12 mb-3">
                                         <fieldset>
-                                            <label htmlFor="title">Describe Yourself</label>
+                                            <label htmlFor="title">Professional Describtion</label>
                                             <textarea className="form-control text-white" onChange={(e) => setBio(e.target.value)} style={{ backgroundColor: '#282b2f', borderColor: '#404245', borderRadius: "20px" }} id="exampleFormControlTextarea1" rows={7} placeholder="Describe yourself ..." defaultValue={""} />
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
                                         </fieldset>

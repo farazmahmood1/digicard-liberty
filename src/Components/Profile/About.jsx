@@ -56,14 +56,7 @@ const About = () => {
                                     </div>
 
                                 </div>
-                                <div className="section-heading">
-                                    <div className="line-dec" />
-                                    <h1 className='mt-2'>My Social Accounts</h1>
-                                    <div className='d-flex'>
-                                        <button className='btn btn-light mt-3'><i className="fa-brands fa-facebook text-dark fa-2x" /> </button>
-                                    </div>
-
-                                </div>
+                             
                             </div>
 
                             <div className='col-lg-1 ms-auto buttonProfile'>
