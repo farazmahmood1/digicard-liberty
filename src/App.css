@@ -257,9 +257,7 @@
     margin-top: 20px;
     margin-bottom: -43px;
     padding: -3px;
-
 }
-
 
 /* transition */
 
@@ -283,7 +281,6 @@ power::before {
     left: 0;
     inset: 0 0 0 0;
     background: #00171f;
-
     z-index: 9910;
     transition: transform .3s ease;
 }
@@ -306,23 +303,22 @@ input {
 /* profile section */
 
 .profileImage {
-    margin-top: -220px;
-    border-radius: 20px;
-    max-width: 500px;
-    height: 650px;
+    margin-top: -160px;
+    border-radius: 10px;
+    max-width: 450px;
+    height: 440px;
 }
 
 .CoverImage {
-    /* background-image: url(../images/heading-bg.jpg); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    padding-top: 240px;
+    padding-top: 160px;
     text-align: center;
     background-color: #2a2a2a;
 }
 
-/* @media only screen and (max-width: 880px) {
+@media only screen and (max-width: 880px) {
     .profileImage {
         width: 370px;
         height: 400px;
@@ -331,9 +327,33 @@ input {
 
 .buttonProfile {
     position: fixed;
-} */
+    right: 0;
+    z-index: 9999;
+}
 
-/* @media only screen and (max-width: 880px) {
+.hoverBtn {
+    box-shadow: 8px 5px 12px -2px rgba(0, 0, 0, 0.55);
+    -webkit-box-shadow: 8px 5px 12px -2px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 8px 5px 12px -2px rgba(0, 0, 0, 0.55);
+}
+
+.hoverBtn:hover {
+    animation: MoveUpDown 0.8s linear infinite;
+
+
+}
+
+@keyframes MoveUpDown {
+    0%, 100% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 5px;
+    }
+}
+
+@media only screen and (max-width: 880px) {
     .buttonProfile {
         position: fixed;
         width: 100%;
@@ -342,5 +362,10 @@ input {
         z-index: 999;
         border-radius: 7px 7px 0px 0px;
         text-align: center;
+        padding-top: 10px;
+        animation: none;
     }
-} */
+}
+
+
+

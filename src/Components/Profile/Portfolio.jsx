@@ -37,6 +37,12 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className='col-lg-1 ms-auto buttonProfile'>
+                            <Link to='/UserProfile' className='btn hoverBtn buttonx rounded-pill me-2 mb-2' style={{ color: "white", borderColor: " #7453fc" }}><i className="fa-solid fa-house p-2" /></Link>
+                            <Link to='/Portfolio' className='btn hoverBtn buttonx rounded-pill me-2 mb-2' style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-newspaper p-2" /></Link>
+                            <Link to='/About' className=' btn hoverBtn buttonx rounded-pill me-2 mb-2' style={{ color: "white", borderColor: " #7453fc" }} ><i className="fa-solid fa-user p-2" /></Link>
+                            <Link to='/Social' className='btn hoverBtn buttonx rounded-pill me-2 mb-2' style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-envelope p-2" /></Link>
+                        </div>
                     </div>
                 </div>
             </div>
