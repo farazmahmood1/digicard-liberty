@@ -236,6 +236,7 @@
     -o-animation-duration: 1s;
     animation-delay: 0.2s;
 }
+
 /* sign in modal */
 
 
@@ -379,7 +380,6 @@ input {
 .profileCard:hover {
     animation: shake 1s;
     animation-iteration-count: infinite;
-
 }
 
 @keyframes shake {
@@ -405,4 +405,3 @@ input {
     padding: 40px 0px;
     position: relative;
 }
-
