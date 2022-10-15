@@ -24,48 +24,6 @@ const Shop = () => {
   }
   return (
     <div>
-      <Modal
-        open={shouldShow}  >
-        <div className='card-body'>
-          <button className='btn btn-outline-danger btn-sm float-end' onClick={() => {
-            oncloseModal(false)
-          }}>X</button>
-          <div className="row">
-
-            <div className="col-lg-7">
-              <div className="left-image">
-                <img src="./source/assets/images/item-details-01.jpg" alt style={{ borderRadius: 20 }} />
-              </div>
-            </div>
-            <div className="col-lg-5 ">
-              <div className='d-flex mt-3'>
-                <h4 className='mt-2'>Necklace for Men</h4>
-
-              </div>
-              <p className='mt-2' style={{ color: "#7453fc" }}>Describtion</p>
-              <h6 style={{ fontWeight: "normal", fontSize: "17px" }}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti minus earum iure ad quos fugit libero ipsum non sequi ipsam Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, repudiandae.</h6>
-              <p className='mt-2' style={{ color: "#7453fc" }}>Color Available:</p>
-              <button className='btnShop bg-danger' ></button>
-              <button className='btnShop bg-secondary'></button>
-              <p className='mt-2' style={{ color: "#7453fc" }}>Quantity:</p>
-              <div>
-                {
-                  addCount > 1 ?
-                    <button className='btn btn-secondary me-2 btn-sm' style={{ backgroundColor: "#7453fc" }} onClick={decrementCount}><i className="fa-solid fa-angle-left" /></button> : console.log(".-.")
-                }
-                <label className='text-white' htmlFor="exampleInputPassword1">{addCount}</label>
-                <button className='btn btn-secondary ms-2 btn-sm' style={{ backgroundColor: "#7453fc" }} onClick={incrementCount}><i className="fa-solid fa-angle-right" /></button>
-              </div>
-              <div className='mt-3'>
-                <Link to='/Form' className='buttonx me-2'>Buy</Link>
-                <button className='buttonx '>Add to cart</button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </Modal>
       <div className="currently-market">
         <div className="container">
           <div className="row">
@@ -139,7 +97,7 @@ const Shop = () => {
                           <Link to='/Form' className='text-white'>Buy</Link>
                         </div>
                         <div className="main-button ms-2 itemBtn">
-                          <a onClick={() => oncloseModal()} className='text-white'>View</a>
+                          <Link to='/ShopScreem' className='text-white'>View</ Link>
                         </div>
                       </div>
                     </div>

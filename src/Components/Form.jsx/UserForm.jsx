@@ -213,9 +213,9 @@ const UserForm = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 mb-4">
-                            <h6>DigiCard Market</h6>
-                            <h2>Buy Your DigiCard Now.</h2>
-                            <span className=''>Home &gt; <a href="#">Shop</a></span>
+                            <h6>DigiCard Portfolio</h6>
+                            <h2>Create your Digital Profile.</h2>
+                            <span className=''>Home &gt; <a href="#">Portfolio</a></span>
                         </div>
                     </div>
                 </div>
@@ -226,7 +226,7 @@ const UserForm = () => {
                         <div className="col-lg-12">
                             <div className="section-heading">
                                 <div className="line-dec" />
-                                <h2>Apply For <em>Your Item</em> Here.</h2>
+                                <h2>Apply For <em>Digital Profile</em> Here.</h2>
                             </div>
                         </div>
                         <div className="col-lg-12">

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 const UserProfile = () => {
+
   return (
     <div>
       <div className="CoverImage" style={{ backgroundImage: "url(./source/assets/images/heading-bg.jpg)" }}>
@@ -8,11 +9,11 @@ const UserProfile = () => {
 
       <div className="darkbg" style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)" }}>
         <div className="container">
-          <div className='col-lg-1 mt-5 ms-auto buttonProfile'>
-            <Link to='/UserProfile' className='btn hoverBtn buttonx rounded-pill me-2 mb-2' style={{ color: "white", borderColor: " #7453fc" }}><i className="fa-solid fa-house p-2" /></Link>
-            <Link to='/Portfolio' className='btn hoverBtn buttonx rounded-pill me-2 mb-2' style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-newspaper p-2" /></Link>
-            <Link to='/About' className=' btn hoverBtn buttonx rounded-pill me-2 mb-2' style={{ color: "white", borderColor: " #7453fc" }} ><i className="fa-solid fa-user p-2" /></Link>
-            <Link to='/Social' className='btn hoverBtn buttonx rounded-pill me-2 mb-2' style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-envelope p-2" /></Link>
+          <div className='col-lg-1 ms-auto mt-5 buttonProfile'>
+            <Link to='/UserProfile' className='btn  buttonx actives rounded-pill me-2 mb-2' style={{ color: "white", borderColor: " #7453fc" }}><i className="fa-solid fa-house p-2" /></Link>
+            <Link to='/Portfolio' className='btn hoverBtn buttonx  rounded-pill me-2 mb-2' style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-newspaper p-2" /></Link>
+            <Link to='/About' className=' btn hoverBtn buttonx  rounded-pill me-2 mb-2' style={{ color: "white", borderColor: " #7453fc" }} ><i className="fa-solid fa-user p-2" /></Link>
+            <Link to='/Social' className='btn hoverBtn buttonx  rounded-pill me-2 mb-2' style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-envelope p-2" /></Link>
           </div>
           <div className="row">
             <div className='col-lg-4 ms-auto' >
@@ -26,7 +27,6 @@ const UserProfile = () => {
               {/* <button className='buttonx w-25 mt-4 p-3' >View CV</button> */}
             </div>
           </div>
-
 
           <hr className='mx-auto mt-4' style={{ width: "320px", height: "3px", color: "#7453fc" }} />
           <h2 className='mt-2 text-center'>My Social Accounts</h2>

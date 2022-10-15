@@ -7,7 +7,7 @@ const SignUp = ({ setOpenSignUp }) => {
 
             <div className='row'>
                 <div className='col-lg-5  ms-auto'>
-                    <div className='card  in-left   mainModal mt-5' style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)", borderRadius: "15px" }}>
+                    <div className='card  in-left   mainModal mt-5' style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)", borderRadius: "15px", width: "350px" }}>
                         <div className='card-body'>
                             <div className='d-flex'>
                                 <div className=' mt-3'>

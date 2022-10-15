@@ -10,10 +10,8 @@ const Navbar = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false)
 
-
   return (
     <div>
-
       <header className="header-area header-sticky" >
         <div className='container'>
           <div className='container-fluid' >
@@ -28,7 +26,7 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse " id="navbarNav">
                   <ul className="navbar-nav  ms-auto">
                     <li className="nav-item ">
-                      <Link to='/' className="nav-link active me-4" aria-current="page"><b> Home</b></Link>
+                      <Link to='/' className="nav-link me-4" aria-current="page"><b> Home</b></Link>
                     </li>
                     <li className="nav-item ">
                       <Link to='/ShopMain' className="nav-link active me-4" aria-current="page"><b> Shop</b></Link>

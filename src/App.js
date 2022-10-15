@@ -23,6 +23,8 @@ import UserProfile from './Components/Profile/UserProfile';
 import About from './Components/Profile/About';
 import Social from './Components/Profile/Social';
 import Portfolio from './Components/Profile/Portfolio';
+import ShopScreem from './Components/Main/ShopScreem';
+import ItemForm from './Components/Form.jsx/ItemForm';
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
           <Route path='/About' element={<About />} />
           <Route path='/Social' element={<Social />} />
           <Route path='/Portfolio' element={<Portfolio />} />
+          <Route path='/ShopScreem' element={<ShopScreem />} />
+          <Route path='/ItemForm' element={<ItemForm />} />
 
         </Routes>
         <Footer />
