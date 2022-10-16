@@ -13,7 +13,7 @@ toast.configure()
 
 const ItemForm = () => {
 
-    const [shouldShow, setShouldShow] = useState(true)
+    const [openModal, setOpenModal] = useState(false)
 
 
     const [name, Setname] = useState("");
@@ -106,8 +106,12 @@ const ItemForm = () => {
     }
 
 
+
     return (
         <div>
+            <Modal open={openModal} >
+
+            </Modal>
             <div className="page-heading normal-space">
                 <div className="container">
                     <div className="row">
@@ -128,36 +132,48 @@ const ItemForm = () => {
                                 <h2>Apply For <em>Your Item</em> Here.</h2>
                             </div>
                         </div>
+
+
+
+                        {/* <div className='me-5 buttonProfile'>
+                            <Link to='/UserProfile' className='btn hoverBtn buttonx me-2' style={{ color: "white", borderColor: " #7453fc" }}>
+                                <div className='d-flex'>
+                                    <p>Buy Thorugh whatsapp</p>
+                                    <i className="fa-solid fa-house p-2" />
+                                </div>
+                            </Link>
+                        </div> */}
                         <div className="col-lg-12">
-                            <form id="contact" action method="post">
+                            <div id="contact" >
                                 <div className="row">
-                                    <hr style={{ width: "320px", height: "3px", color: "#7453fc" }} />
-                                    <h3 className='mb-4' style={{ color: "#7453fc" }}>Digi Card:</h3>
+                                    <hr style={{ width: "320px", height: "3px", color: "#7453fc", borderRadius: "10px" }} />
+                                    <h3 className='mb-4' style={{ color: "#7453fc" }}>Digi Card:  <a target={'_blank'} href="tel:0123456789" >Whatsapp Chat</a>
+                                    </h3>
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Name*</label>
-                                            <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Ali Ahmed" autoComplete="on" type='text' />
+                                            <input onChange={(e) => Setname(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Ali Ahmed" autoComplete="on" type='text' />
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Phone Number*</label>
-                                            <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your current phone no." autoComplete="on" type='number' />
+                                            <input onChange={(e) => Setname(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your current phone no." autoComplete="on" type='number' />
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Contact Number*</label>
-                                            <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your whatsapp number" autoComplete="on" type='number' />
+                                            <input onChange={(e) => Setname(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your whatsapp number" autoComplete="on" type='number' />
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="title">CNIC Number*</label>
-                                            <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your cnic without dashes" autoComplete="on" type='number' />
+                                            <label htmlFor="title">Email*</label>
+                                            <input onChange={(e) => Setname(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder='Ex. user@mail.com' autoComplete="on" type='number' />
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
                                         </fieldset>
                                     </div>
@@ -165,28 +181,28 @@ const ItemForm = () => {
                                     <div className="col-lg-12 mb-3">
                                         <fieldset>
                                             <label htmlFor="title">Address</label>
-                                            <textarea className="form-control text-white" onChange={(e) => setBio(e.target.value)} style={{ backgroundColor: '#282b2f', borderColor: '#404245', borderRadius: "20px" }} id="exampleFormControlTextarea1" rows={7} placeholder="Describe yourself ..." defaultValue={""} />
+                                            <textarea className="form-control text-white" onChange={(e) => setBio(e.target.value)} style={{ borderRadius: "16px", backgroundColor: '#282b2f', borderColor: '#404245', borderRadius: "20px" }} id="exampleFormControlTextarea1" rows={7} placeholder="Enter your shipping method ..." defaultValue={""} />
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Country, Region</label>
-                                            <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your cnic without dashes" autoComplete="on" type='text' />
+                                            <input onChange={(e) => Setname(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your region" autoComplete="on" type='text' />
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">City*</label>
-                                            <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your cnic without dashes" autoComplete="on" type='text' />
+                                            <input onChange={(e) => Setname(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Your current city" autoComplete="on" type='text' />
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Postal Code*</label>
-                                            <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your cnic without dashes" autoComplete="on" type='number' />
+                                            <input onChange={(e) => Setname(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Your city Postal code" autoComplete="on" type='number' />
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
                                         </fieldset>
                                     </div>
@@ -200,12 +216,12 @@ const ItemForm = () => {
 
                                     <div class="col-lg-6 mx-auto">
                                         <fieldset>
-                                            <button type="submit" id="form-submit" class="orange-button">Submit Your Applying</button>
+                                            <button onClick={() => setOpenModal(true)} type="submit" id="form-submit" class="orange-button">Submit Your Applying</button>
                                         </fieldset>
                                     </div>
 
                                 </div>
-                            </form>
+                            </div>
                         </div>
 
                     </div>

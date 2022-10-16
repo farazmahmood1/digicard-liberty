@@ -1,25 +1,14 @@
 import './App.css';
-import Banner from './Components/Body/Banner';
-import Categories from './Components/Body/Categories';
-import Footer from './Components/Body/Footer';
-import Instructions from './Components/Body/Instructions';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Body/Navbar';
 import PreLoader from './Components/Body/PreLoader';
-import Shop from './Components/Body/Shop';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PageHeading from './Components/Explore/PageHeading';
-import TopSeller from './Components/Explore/TopSeller';
-import Discover from './Components/Explore/Discover';
-import UserForm from './Components/Form.jsx/UserForm';
 import HomePage from './Components/Main/HomePage';
 import ShopMain from './Components/Main/ShopMain';
 import ProfileMain from './Components/Main/ProfileMain';
-import ItemModal from './Components/Modal/ItemModal';
-import SignIn from './Components/Auth/SignIn';
-import SignUp from './Components/Auth/SignUp';
 import Form from './Components/Main/Form';
-import WorkingVideo from './Components/Main/WorkingVideo';
+import Footer from './Components/Body/Footer';
 import UserProfile from './Components/Profile/UserProfile';
+import WorkingVideo from './Components/Main/WorkingVideo';
 import About from './Components/Profile/About';
 import Social from './Components/Profile/Social';
 import Portfolio from './Components/Profile/Portfolio';
@@ -32,6 +21,7 @@ function App() {
       <Router>
         <PreLoader />
         <Navbar />
+
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/ShopMain' element={<ShopMain />} />
@@ -44,8 +34,8 @@ function App() {
           <Route path='/Portfolio' element={<Portfolio />} />
           <Route path='/ShopScreem' element={<ShopScreem />} />
           <Route path='/ItemForm' element={<ItemForm />} />
-
         </Routes>
+
         <Footer />
       </Router>
     </div>
