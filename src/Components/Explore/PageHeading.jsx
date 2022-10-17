@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Slider from "react-slick";
 
 
@@ -42,6 +42,22 @@ const PageHeading = () => {
     ]
   };
 
+  var mybutton = document.getElementById("myBtn");
+  window.onscroll = function () { scrollFunction() };
+  function scrollFunction() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  useEffect(() => { topFunction() }, [])
+
   return (
     <div>
       <div className="page-heading">
@@ -60,7 +76,6 @@ const PageHeading = () => {
               <div className="col-lg-12">
 
                 <Slider className=' owl-carousel' {...settings}>
-
                   <div >
                     <div className="item p-3">
                       <div className="thumb">

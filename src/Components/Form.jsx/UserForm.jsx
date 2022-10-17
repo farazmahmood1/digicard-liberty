@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Modal } from 'pretty-modal'
@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom'
 toast.configure()
 
 const UserForm = () => {
-
 
     const [name, Setname] = useState("");
     const [phone, Setphone] = useState("");
@@ -102,7 +101,23 @@ const UserForm = () => {
         }
     }
 
-    
+
+    var mybutton = document.getElementById("myBtn");
+    window.onscroll = function () { scrollFunction() };
+    function scrollFunction() {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+    useEffect(() => { topFunction() }, [])
+
 
     return (
         <div>

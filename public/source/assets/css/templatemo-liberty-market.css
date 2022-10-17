@@ -1284,7 +1284,8 @@ Page Heading Style
 */
 
 .normal-space {
-  padding: 250px 0px 120px 0px !important;
+  padding: 150px 0px 110px 0px !important;
+  margin-top: 20px;
 }
 
 .page-heading {
@@ -1292,7 +1293,7 @@ Page Heading Style
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  padding-top: 250px;
+  padding-top: 150px;
   text-align: center;
   background-color: #2a2a2a;
 }

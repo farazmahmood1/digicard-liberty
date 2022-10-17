@@ -28,7 +28,7 @@ const Shop = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12 mb-4">
-                            <h6>DigiCard Market</h6>
+                            <h6 className=''>DigiCard Market</h6>
                             <h2>Buy Your DigiCard Now.</h2>
                             <span className=''>Home &gt; <a href="#">Shop</a></span>
                         </div>
@@ -58,32 +58,9 @@ const Shop = () => {
             </div>
             <div className="col-lg-12">
               <div className="row">
-                <div className="col-lg-6 currently-market-item all msc">
-                  <div className="item">
-                    <div className="left-image">
+                {/* <div className="col-lg-6 currently-market-item all msc">
                       <img src="./source/assets/images/market-01.jpg" alt style={{ borderRadius: 20, minWidth: 195 }} />
-                    </div>
-
-                    <div className="right-content">
-                      <h4>DigiCard</h4>
-                      <hr className='bg-white lineBreaker' />
-                      <div className='d-flex'>
-                        <p>Color:</p>&nbsp;<button className='btn btnShop btn-primary'></button>
-                      </div>
-                      <h6 className='mt-2'>Describtion:</h6>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, aliquam!</p>
-                      <hr className='bg-white lineBreaker' />
-                      <div className='d-flex'>
-                        <p>Price:</p><p className='ms-2 text-decoration-line-through form-text'>1599</p><h6 className='ms-1 mt-1 priceText'>999/-</h6>
-                      </div>
-                      <div className=''>
-                        <button onClick={() => oncloseModal} className='buttonx m-1 ms-auto'>View</button>
-                        <Link to='/Form' className='buttonx m-1 me-auto'>Buy</Link>
-                        <button className='buttonx m-1 mx-auto'>Add to cart</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                </div> */}
                 <div className="col-lg-4">
                   <div className='card bg-dark' style={{ borderRadius: "20px" }} >
                     <div>

@@ -1,4 +1,5 @@
 import './App.css';
+import { useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Body/Navbar';
 import PreLoader from './Components/Body/PreLoader';
@@ -14,12 +15,28 @@ import Social from './Components/Profile/Social';
 import Portfolio from './Components/Profile/Portfolio';
 import ShopScreem from './Components/Main/ShopScreem';
 import ItemForm from './Components/Form.jsx/ItemForm';
-import PortfolioForm from './Components/Main/PortfolioForm';
 import UserForm from './Components/Form.jsx/UserForm';
 
 function App() {
+
+  var mybutton = document.getElementById("myBtn");
+  window.onscroll = function () { scrollFunction() };
+  function scrollFunction() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  useEffect(() => { topFunction() }, [])
+
   return (
-    <div>
+    <div >
       <Router>
         <PreLoader />
         <Navbar />
