@@ -14,6 +14,8 @@ import Social from './Components/Profile/Social';
 import Portfolio from './Components/Profile/Portfolio';
 import ShopScreem from './Components/Main/ShopScreem';
 import ItemForm from './Components/Form.jsx/ItemForm';
+import PortfolioForm from './Components/Main/PortfolioForm';
+import UserForm from './Components/Form.jsx/UserForm';
 
 function App() {
   return (
@@ -26,13 +28,15 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/ShopMain' element={<ShopMain />} />
           <Route path='/ProfileMain' element={<ProfileMain />} />
-          <Route path='/Form' element={<Form />} />
           <Route path='/WorkingVideo' element={<WorkingVideo />} />
           <Route path='/UserProfile' element={<UserProfile />} />
           <Route path='/About' element={<About />} />
           <Route path='/Social' element={<Social />} />
           <Route path='/Portfolio' element={<Portfolio />} />
           <Route path='/ShopScreem' element={<ShopScreem />} />
+
+          <Route path='/PortfolioForm' element={<UserForm />} />
+          <Route path='/Form' element={<Form />} />
           <Route path='/ItemForm' element={<ItemForm />} />
         </Routes>
 

@@ -408,3 +408,53 @@ input {
 }
 
 
+/* contact rhiugh whatsapp button */
+
+.contactWhatsapp {
+    position: fixed;
+    right: 0;
+    border: 3px solid green;
+    background-color: #23222D;
+    color: green;
+    border-radius: 10px 10px 0px 10px;
+    margin-top: -100px;
+    margin-right: 20px;
+    box-shadow: 11px 10px 20px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 11px 10px 20px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 11px 10px 20px -3px rgba(0, 0, 0, 0.75);
+    animation: whatsappBar 0.7s linear infinite;
+    cursor: pointer;
+    z-index: 0;
+}
+
+@media only screen and (max-width: 995px) {
+    .contactWhatsapp {
+        position: fixed;
+        right: 0;
+        border: 3px solid green;
+        background-color: #23222D;
+        color: green;
+        border-radius: 10px 10px 0px 10px;
+        margin-top: -100px;
+        margin-right: 20px;
+        box-shadow: 11px 10px 20px -3px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 11px 10px 20px -3px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 11px 10px 20px -3px rgba(0, 0, 0, 0.75);
+        /* animation: whatsappBar 0.7s linear infinite; */
+        cursor: pointer;
+        z-index: 1;
+        width: 190px;
+        height: 85px;
+    }
+}
+
+
+@keyframes whatsappBar {
+    0%, 100% {
+        bottom: 50px;
+    }
+
+    50% {
+        bottom: 52px;
+    }
+}

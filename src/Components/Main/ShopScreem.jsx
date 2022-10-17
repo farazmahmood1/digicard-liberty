@@ -48,7 +48,7 @@ const ShopScreem = () => {
         ]
     };
 
- 
+
     const [addCount, setAddCount] = useState(1);
 
     const incrementCount = () => {
@@ -158,7 +158,7 @@ const ShopScreem = () => {
                                 <div className="main-button ">
                                     <Link to='/ShopMain' className='p-3 mt-1 me-2'>Explore Our Products</Link>
                                 </div>
-                                <Link to='/ProfileMain'  className='buttonx p-4 ms-2'>View Profiles</Link>
+                                <Link to='/ProfileMain' className='buttonx p-4 ms-2'>View Profiles</Link>
                             </div>
 
                         </div>
