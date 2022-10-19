@@ -7,7 +7,6 @@ import { Modal } from 'pretty-modal'
 import { Link } from 'react-router-dom'
 
 
-
 toast.configure()
 
 const UserForm = () => {
@@ -149,9 +148,20 @@ const UserForm = () => {
                                     <h3 className='mb-4' style={{ color: "#7453fc" }}>User Info:</h3>
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="title">Name*</label>
-                                            <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Ali Ahmed" autoComplete="on" type='text' />
+                                            <label htmlFor="title">Full Name*</label>
+                                            <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Ali" autoComplete="on" type='text' />
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
+                                        </fieldset>
+                                    </div>
+                                    <div className="col-lg-6">
+                                        <fieldset>
+                                            <label htmlFor="Religion" className="form-label text-white" required ><b>Gender</b></label>
+                                            <select className="form-select  text-white" onChange={(e) => setReligion(e.target.value)} style={{ backgroundColor: '#282b2f', borderColor: "#404245", borderRadius: "20px", height: "43px" }} id="validationCustom04" >
+                                                <option >Male</option>
+                                                <option>Female</option>
+                                                <option>Try not to say</option>
+
+                                            </select>
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
@@ -182,10 +192,25 @@ const UserForm = () => {
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
                                         </fieldset>
                                     </div>
+
+                                    <div className="col-lg-12 mb-3">
+                                        <fieldset>
+                                            <label htmlFor="title">Address</label>
+                                            <textarea className="form-control text-white" onChange={(e) => setBio(e.target.value)} style={{ backgroundColor: '#282b2f', borderColor: '#404245', borderRadius: "20px" }} id="exampleFormControlTextarea1" rows={5} placeholder="Enter your current Address ..." defaultValue={""} />
+                                            {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
+                                        </fieldset>
+                                    </div>
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="title">Address*</label>
-                                            <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your delievery address" autoComplete="on" type='text' />
+                                            <label htmlFor="title">Proffession</label>
+                                            <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Designer, Painter" autoComplete="on" type='text' />
+                                            {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
+                                        </fieldset>
+                                    </div>
+                                    <div className="col-lg-6">
+                                        <fieldset>
+                                            <label htmlFor="title">Designation</label>
+                                            <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Senior Marketer" autoComplete="on" type='text' />
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
                                         </fieldset>
                                     </div>
@@ -327,7 +352,7 @@ const UserForm = () => {
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Region</label>
-                                            <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your region area" autoComplete="on" type='text' />
+                                            <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Lahore / Karachi" autoComplete="on" type='text' />
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
                                         </fieldset>
                                     </div>
@@ -386,6 +411,12 @@ const UserForm = () => {
                                                 <input type="text" className="form-control ms-2 py-3 text-white" onChange={(e) => setFacebook(e.target.value)} id="inputEmail5" style={{ backgroundColor: "#282b2f", borderColor: '#404245' }} placeholder="Upwork profile link or username" />
                                             </div>
                                             {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
+                                        </fieldset>
+                                    </div>
+                                    <div className="col-lg-7 mx-auto">
+                                        <fieldset>
+                                            <label htmlFor="file">Upload Cover Picture</label>
+                                            <input type="file" id="file" name="myfiles[]" multiple />
                                         </fieldset>
                                     </div>
 
