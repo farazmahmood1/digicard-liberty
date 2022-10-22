@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import axios from 'axios';
+import axios, { Axios } from 'axios';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,6 +7,7 @@ import { Modal } from 'pretty-modal'
 import { Link } from 'react-router-dom'
 import Slider from "react-slick";
 import CursorZoom from 'react-cursor-zoom';
+import Baseurl from '../SourceFiles/url';
 
 
 const ShopScreem = () => {
@@ -48,8 +49,20 @@ const ShopScreem = () => {
         ]
     };
 
-
+    const [cardData, setCardData] =([])
     const [addCount, setAddCount] = useState(1);
+    const [getColor, setColor] = useState('black')
+
+    const getData = () => {
+        axios.get(`${Baseurl}showitems`)
+        .then(res=> {
+            setCardData(res.data)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+    
 
     const incrementCount = () => {
         setAddCount(addCount + 1);
@@ -73,7 +86,7 @@ const ShopScreem = () => {
         document.documentElement.scrollTop = 0;
     }
 
-    useEffect(() => { topFunction() }, [])
+    useEffect(() => { topFunction(); getData()  }, [])
 
     return (
         <div>
@@ -99,6 +112,9 @@ const ShopScreem = () => {
                         </div>
 
                         <div className="col-lg-12">
+                            {
+                                
+                            }
                             <div className="row">
                                 <div className="col-lg-7">
                                     <div className='col-lg-12 mb-4'>
@@ -160,6 +176,8 @@ const ShopScreem = () => {
                                     <h6 style={{ color: "#7453fc" }} className='mt-2 mb-2'>Color Avaiblable;</h6>
                                     <button className='btnShop bg-danger' ></button>
                                     <button className='btnShop bg-secondary'></button>
+                                    <button className={getColor === "black" ? "btnShop border border-info" : "btnShop"} onClick={() => setColor('black')} style={{ backgroundColor: 'black' }}></button>
+                                    <button className={getColor === "black" ? "btnShop border border-info" : "btnShop"} onClick={() => setColor('black')} style={{ backgroundColor: 'black' }}></button>
 
                                     <h6 className='mt-3' style={{ color: "#7459fc" }}>Describtion:</h6>
                                     <p className='p-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus sunt ipsa corrupti sed corporis aspernatur voluptatem deserunt, temporibus aperiam assumenda similique praesentium dolores nobis! Rerum voluptate odit minus. Amet possimus deserunt voluptate nulla porro!</p>

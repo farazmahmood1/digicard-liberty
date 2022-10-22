@@ -35,35 +35,35 @@ const HelpVideo = () => {
             <Modal
                 open={shouldShow}
             >
-                <form ref={form} onSubmit={sendEmail} className='card-body'>
+                <div className='card-body'>
                     <button className='btn btn-outline-danger btn-sm float-end' onClick={() => {
                         oncloseModal()
                     }}>X</button>
                     <div className="row">
 
                         <div className="col-lg-7">
-                            <div>
+                            <form ref={form} onSubmit={sendEmail}>
                                 <h4 className='mt-4'>Get in Touch</h4>
                                 <div className='d-flex'>
                                     <div className='w-100'>
                                         <label htmlFor="exampleInputEmail1" className="form-label text-white mt-2">Name</label>
-                                        <input type="text" className="form-control text-white" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                        <input type="text" className="form-control text-white" name='name' id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
                                     </div>
                                     <div className="w-100">
                                         <label htmlFor="exampleInputPassword1" className="form-label text-white mt-2">Email</label>
-                                        <input type="email" className="form-control text-white ms-1" id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                        <input type="email" className="form-control text-white ms-1" name='email' id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
                                     </div>
                                 </div>
                                 <div className="">
                                     <label htmlFor="exampleInputPassword1" className="form-label text-white mt-3">Subject</label>
-                                    <input type="text" className="form-control text-white" id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                    <input type="text" className="form-control text-white" name='subject' id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
                                 </div>
                                 <div className="">
                                     <label className="form-label text-white mt-3">Message</label>
-                                    <textarea type="text" className="form-control text-white" rows={4} style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                    <textarea type="text" className="form-control text-white" name='message' rows={4} style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
                                 </div>
                                 <button type="submit" className='buttonx mt-3'>Submit</button>
-                            </div>
+                            </form>
                         </div>
                         <div className="col-lg-5">
                             <div className='d-flex mt-3'>
@@ -88,7 +88,7 @@ const HelpVideo = () => {
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </Modal>
             <div className="categories-collections">
                 <div className="container">
