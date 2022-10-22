@@ -1,6 +1,5 @@
 import { Modal } from 'pretty-modal'
 import React from 'react'
-import { useState } from 'react'
 
 
 const ItemModal = ({ setOpenModal }) => {

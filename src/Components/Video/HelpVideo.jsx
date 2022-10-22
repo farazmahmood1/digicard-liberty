@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Modal } from 'pretty-modal';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
+toast.configure()
 const HelpVideo = () => {
 
     const [shouldShow, setShouldShow] = useState(false)
@@ -11,12 +14,28 @@ const HelpVideo = () => {
         setShouldShow((prev) => !prev)
     }
 
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_en9r2z2', 'template_mmlwrlk', form.current, 'j9CQiMuXPMuGbRF1T')
+            .then((result) => {
+                console.log(result.text);
+                toast.info('Response Submitted')
+            }, (error) => {
+                console.log(error.text);
+                toast.warn('Error while submitting respone')
+            });
+        e.target.reset()
+    }
+
     return (
         <div>
             <Modal
                 open={shouldShow}
             >
-                <div className='card-body'>
+                <form ref={form} onSubmit={sendEmail} className='card-body'>
                     <button className='btn btn-outline-danger btn-sm float-end' onClick={() => {
                         oncloseModal()
                     }}>X</button>
@@ -43,7 +62,7 @@ const HelpVideo = () => {
                                     <label className="form-label text-white mt-3">Message</label>
                                     <textarea type="text" className="form-control text-white" rows={4} style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
                                 </div>
-                                <button className='buttonx mt-3'>Submit</button>
+                                <button type="submit" className='buttonx mt-3'>Submit</button>
                             </div>
                         </div>
                         <div className="col-lg-5">
@@ -69,7 +88,7 @@ const HelpVideo = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </Modal>
             <div className="categories-collections">
                 <div className="container">
