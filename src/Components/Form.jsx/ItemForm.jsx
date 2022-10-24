@@ -160,11 +160,10 @@ const ItemForm = () => {
     }
 
     function RenderFunction() {
-        return (
+        return ( 
             <SignUp />
         )
     }
-
 
     var mybutton = document.getElementById("myBtn");
     window.onscroll = function () { scrollFunction() };
