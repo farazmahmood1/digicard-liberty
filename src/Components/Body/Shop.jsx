@@ -1,21 +1,28 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Modal } from 'pretty-modal';
+import axios from 'axios';
+import Baseurl from '../SourceFiles/url';
+import Imagesurl from '../SourceFiles/Imageurl';
+import ShopScreem from '../Main/ShopScreem';
 
 const Shop = () => {
 
-  const [openModal, setOpenModal] = useState(false);
-  const [loginModal, setLoginModal] = useState(false)
-  const [addCount, setAddCount] = useState(1);
+  const [card, setCard] = useState([])
+  const [type, setType] = useState("Card");
 
-  const incrementCount = () => {
-    setAddCount(addCount + 1);
+  const dataRender = () => {
+    axios.get(`${Baseurl}getallitems`)
+      .then((res) => {
+        setCard(res.data.items)
+        console.log(res.data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
 
-  }
-  const decrementCount = () => {
-    setAddCount(addCount - 1)
-  }
+  const filtered =   card.filter((item) => item.item_type === type)
 
   var mybutton = document.getElementById("myBtn");
   window.onscroll = function () { scrollFunction() };
@@ -26,13 +33,12 @@ const Shop = () => {
       mybutton.style.display = "none";
     }
   }
-
   function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
 
-  useEffect(() => { topFunction() }, [])
+  useEffect(() => { topFunction(); dataRender() }, [])
 
   return (
     <div>
@@ -42,7 +48,7 @@ const Shop = () => {
             <div className="col-lg-12 mb-4">
               <h6 className=''>DigiCard Market</h6>
               <h2>Buy Your DigiCard Now.</h2>
-              <span className=''>Home &gt; <a href="#">Shop</a></span>
+              <span className=''> Home &gt; <a href="#">Shop</a></span>
             </div>
           </div>
         </div>
@@ -59,50 +65,51 @@ const Shop = () => {
             <div className="col-lg-6">
               <div className="filters">
                 <ul>
-                  <li data-filter="*" className="active">All Items</li>
-                  <li data-filter=".msc">Digi Cards</li>
-                  <li data-filter=".dig">Tattoos</li>
-                  <li data-filter=".blc">Key Chains</li>
-                  <li data-filter=".vtr">Jewelerry
+                  {/* <li onClick={() => setType("All")} data-filter="*" className="active">All Items</li> */}
+                  <li onClick={() => setType("Card")} className={type === "Card" ? "active" : "kuchNai"} data-filter=".msc" >Digi Cards</li>
+                  <li onClick={() => setType("Tattos")} className={type === "Tattos" ? "active" : "kuchNai"} data-filter=".dig">Tattoos</li>
+                  <li onClick={() => setType("Jewellery")} className={type === "Jewellery" ? "active" : "kuchNai"} data-filter=".vtr">Jewelerry
                   </li>
                 </ul>
               </div>
             </div>
             <div className="col-lg-12">
               <div className="row">
-                {/* <div className="col-lg-6 currently-market-item all msc">
-                      <img src="./source/assets/images/market-01.jpg" alt style={{ borderRadius: 20, minWidth: 195 }} />
-                </div> */}
-                <div className="col-lg-4">
-                  <div className='card bg-dark' style={{ borderRadius: "20px" }} >
-                    <div>
-                      <img className='shopItemImg' src="./source/assets/images/collection-01.jpg" alt="item image" />
-                    </div>
-                    <div className='card-body shopItemBody'  >
-                      <h4 className='mt-2 ms-2' >Bored Ape</h4>
-                      <hr className='bg-secondary' />
-                      <div className='d-flex justify-content-between'>
-                        <div>
-                          <p>Items in collection</p>
-                          <h5>2000</h5>
+                {
+                  filtered.map((items) => {
+                    return (
+                      <>
+                        <div className="col-lg-4">
+                          <div className='card mb-5 bg-dark' style={{ borderRadius: "20px" }} >
+                            <div>
+                              <img className='shopItemImg' src={`${Imagesurl}${items.item_pic}`} style={{ height: '360px', width: '413px' }} alt="item image" />
+                            </div>
+                            <div className='card-body shopItemBody'  >
+                              <h4 className='mt-2 ms-2' >{items.item_name}</h4>
+                              <hr className='bg-secondary' />
+                              <div className='d-flex justify-content-between'>
+                                <div>
+                                  <p>Price</p>
+                                  <h5>{items.item_price}</h5>
+                                </div>
+                                <div>
+                                  <p className='ms-3'>Item type</p>
+                                  <h5>{items.category}</h5>
+                                </div>
+                              </div>
+                              <div className='d-flex justify-content-center '>
+                                <div className="main-button ms-2 itemBtn">
+                                  <Link state={{items: items}} to='/ShopScreem' className='text-white'>View</ Link>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
+                      </>
+                    )
+                  })
+                }
 
-                        <div>
-                          <p className='ms-3'>Category</p>
-                          <h5>DigiCard</h5>
-                        </div>
-                      </div>
-                      <div className='d-flex justify-content-center '>
-                        <div className="main-button itemBtn">
-                          <Link to='/Form' className='text-white'>Buy</Link>
-                        </div>
-                        <div className="main-button ms-2 itemBtn">
-                          <Link to='/ShopScreem' className='text-white'>View</ Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

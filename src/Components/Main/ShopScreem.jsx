@@ -1,16 +1,21 @@
 import React, { useEffect } from 'react'
 import axios, { Axios } from 'axios';
 import { useState } from 'react';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Modal } from 'pretty-modal'
 import { Link } from 'react-router-dom'
 import Slider from "react-slick";
 import CursorZoom from 'react-cursor-zoom';
-import Baseurl from '../SourceFiles/url';
-
+import { useLocation } from 'react-router-dom';
+import Imagesurl from '../SourceFiles/Imageurl';
 
 const ShopScreem = () => {
+
+    const [addCount, setAddCount] = useState(1);
+    const [getColor, setColor] = useState('black')
+
+    const location = useLocation();
+    const { items } = location.state
 
     var settings = {
         infinite: true,
@@ -49,20 +54,6 @@ const ShopScreem = () => {
         ]
     };
 
-    const [cardData, setCardData] =([])
-    const [addCount, setAddCount] = useState(1);
-    const [getColor, setColor] = useState('black')
-
-    const getData = () => {
-        axios.get(`${Baseurl}showitems`)
-        .then(res=> {
-            setCardData(res.data)
-        })
-        .catch(error => {
-            console.log(error)
-        })
-    }
-    
 
     const incrementCount = () => {
         setAddCount(addCount + 1);
@@ -86,7 +77,7 @@ const ShopScreem = () => {
         document.documentElement.scrollTop = 0;
     }
 
-    useEffect(() => { topFunction(); getData()  }, [])
+    useEffect(() => { topFunction() }, [])
 
     return (
         <div>
@@ -113,19 +104,19 @@ const ShopScreem = () => {
 
                         <div className="col-lg-12">
                             {
-                                
+
                             }
                             <div className="row">
                                 <div className="col-lg-7">
                                     <div className='col-lg-12 mb-4'>
                                         <CursorZoom
                                             image={{
-                                                src: "./source/assets/images/zoomImg.jpg",
+                                                src: `${Imagesurl}${items.item_pic}`,
                                                 width: 650,
                                                 height: 250
                                             }}
                                             zoomImage={{
-                                                src: "./source/assets/images/zoomImg.jpg",
+                                                src: `${Imagesurl}${items.item_pic}`,
                                                 width: 1800,
                                                 height: 1000
                                             }}
@@ -159,8 +150,8 @@ const ShopScreem = () => {
                                 </div>
                                 <div className="col-lg-5 ps-4 pe-4">
 
-                                    <h3>Men Silver Rings</h3>
-                                    <h5 className='mt-2'>Rs. <span style={{ fontSize: "12px" }} className='text-secondary text-decoration-line-through'>1800.00</span>1999.00</h5>
+                                    <h3>{items.item_name}</h3>
+                                    <h5 className='mt-2'>Rs. <span style={{ fontSize: "12px" }} className='text-secondary text-decoration-line-through'><span>{items.previous_price}</span></span>{items.item_price}</h5>
                                     <hr style={{ width: "320px", height: "1px", color: "#7453fc" }} />
                                     <h6 style={{ color: "#7453fc" }}>Quantity:</h6>
                                     <div className='mt-2'>
@@ -174,13 +165,10 @@ const ShopScreem = () => {
 
                                     <hr style={{ width: "320px", height: "1px", color: "#7453fc" }} />
                                     <h6 style={{ color: "#7453fc" }} className='mt-2 mb-2'>Color Avaiblable;</h6>
-                                    <button className='btnShop bg-danger' ></button>
-                                    <button className='btnShop bg-secondary'></button>
-                                    <button className={getColor === "black" ? "btnShop border border-info" : "btnShop"} onClick={() => setColor('black')} style={{ backgroundColor: 'black' }}></button>
-                                    <button className={getColor === "black" ? "btnShop border border-info" : "btnShop"} onClick={() => setColor('black')} style={{ backgroundColor: 'black' }}></button>
+                                    <button className='btnShop' style={{ backgroundColor: `${items.color_avaliable}` }} ></button>
 
                                     <h6 className='mt-3' style={{ color: "#7459fc" }}>Describtion:</h6>
-                                    <p className='p-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus sunt ipsa corrupti sed corporis aspernatur voluptatem deserunt, temporibus aperiam assumenda similique praesentium dolores nobis! Rerum voluptate odit minus. Amet possimus deserunt voluptate nulla porro!</p>
+                                    <p className='p-2'>{items.describtion}</p>
 
                                     <div className='mt-2 d-flex'><Link to='/ItemForm' className='text-center buttonx col-11'>BUY NOW</Link> <i className="fa-2x ms-2 mt-1 fa-solid fa-heart text-danger" />
                                     </div>

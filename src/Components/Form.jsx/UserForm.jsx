@@ -33,6 +33,7 @@ const UserForm = () => {
     const [religion, setReligion] = useState("Islam");
     const [region, setRegion] = useState("");
     const [bio, setBio] = useState("");
+
     const [github, setGithub] = useState("");
     const [linkedind, setLinkedin] = useState("");
     const [Stackoverflow, setStackoverflow] = useState("");

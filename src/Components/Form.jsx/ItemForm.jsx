@@ -8,10 +8,7 @@ import { Link } from 'react-router-dom'
 import Baseurl from '../SourceFiles/url';
 
 
-
 toast.configure()
-
-
 const ItemForm = () => {
 
     const [openModal, setOpenModal] = useState(false)
@@ -160,7 +157,7 @@ const ItemForm = () => {
     }
 
     function RenderFunction() {
-        return ( 
+        return (
             <SignUp />
         )
     }
