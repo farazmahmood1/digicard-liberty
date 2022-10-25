@@ -46,7 +46,9 @@
 
 /* Keyframes */
 @keyframes wiggle {
-    0%, 7% {
+
+    0%,
+    7% {
         transform: rotateZ(0);
     }
 
@@ -70,7 +72,8 @@
         transform: rotateZ(-14deg);
     }
 
-    40%, 100% {
+    40%,
+    100% {
         transform: rotateZ(0);
     }
 }
@@ -136,7 +139,8 @@
 }
 
 
-.actives, .buttonx:hover {
+.actives,
+.buttonx:hover {
     background-color: #7453fc;
     color: #fff;
 }
@@ -243,7 +247,18 @@
 /* items in the chop component */
 .shopItemImg {
     border-radius: 20px 20px 0px 0px;
+    height: 360px;
+    max-width: 413px;
 }
+
+@media only screen and (max-width: 850px) {
+    .shopItemImg {
+        max-width: 364px;
+        height: 355px;
+    }
+}
+
+/* height: '360px', width: '364px'  */
 
 .shopItemBody {
     border: 1px solid rgba(218, 209, 209, 0.2);
@@ -300,12 +315,11 @@ input {
 /* profile section */
 
 .profileImage {
-    margin-top: -100px;
+    margin-top: -70px;
     border-radius: 10px;
-    max-width: 450px;
-    height: 400px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 300px;
+    max-height: 350px;
+    margin-left: 15px;
 }
 
 .CoverImage {
@@ -319,8 +333,13 @@ input {
 
 @media only screen and (max-width: 880px) {
     .profileImage {
-        width: 370px;
-        height: 400px;
+        margin-top: -100px;
+        border-radius: 10px;
+        max-width: 250px;
+        max-height: 250px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -342,7 +361,9 @@ input {
 }
 
 @keyframes MoveUpDown {
-    0%, 100% {
+
+    0%,
+    100% {
         bottom: 0;
     }
 
@@ -450,9 +471,12 @@ input {
 
 
 @keyframes whatsappBar {
-    0%, 100% {
+
+    0%,
+    100% {
         bottom: 50px;
     }
+
     50% {
         bottom: 52px;
     }

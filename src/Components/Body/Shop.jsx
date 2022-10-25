@@ -82,7 +82,7 @@ const Shop = () => {
                         <div className="col-lg-4">
                           <div className='card mb-5 bg-dark' style={{ borderRadius: "20px" }} >
                             <div>
-                              <img className='shopItemImg' src={`${Imagesurl}${items.item_pic}`} style={{ height: '360px', width: '413px' }} alt="item image" />
+                              <img className='shopItemImg' src={`${Imagesurl}${items.item_pic}`} alt="item image" />
                             </div>
                             <div className='card-body shopItemBody'  >
                               <h4 className='mt-2 ms-2' >{items.item_name}</h4>

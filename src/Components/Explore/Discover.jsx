@@ -42,14 +42,14 @@ const Discover = () => {
                           <div className="col-lg-12">
                             <span className="author">
                             </span>
-                            <img src={`${Imagesurl}${items.profile_photo}`} alt='userphoto' style={{ borderRadius: 20 , height:'228px'}} />
+                            <img src={`${Imagesurl}${items.profile_photo}`} alt='userphoto' style={{ borderRadius: 20, height: '228px' }} />
                             <h4>Saqib Hussain</h4>
                           </div>
                           <div className="col-lg-12">
                             <div className="line-dec" />
                             <div className="row">
                               <div className="col-6">
-                                <span>Profession: <br /> <strong>Designer</strong></span>
+                                <span>Profession: <br /> <strong>{items.profession}</strong></span>
                               </div>
                               <div className="col-6">
                                 <span>From: <br /> <strong>{items.region}</strong></span>
@@ -58,7 +58,7 @@ const Discover = () => {
                           </div>
                           <div className="col-lg-12">
                             <div className="main-button">
-                              <Link to='/UserProfile'>View</Link>
+                              <Link to='/UserProfile' state={{ ID: items.id }}>View</Link>
                             </div>
                           </div>
                         </div>
