@@ -137,9 +137,7 @@ const Categories = () => {
                                                                 <span className="collection">Items In Collection:<br /><strong>{items.price}</strong></span>
                                                                 <span className="category">Category:<br /><strong>{items.category}</strong></span>
                                                                 <div className='d-flex justify-content-center'>
-                                                                    <div className="main-button me-3">
-                                                                        <a href="explore.html">Buy</a>
-                                                                    </div>
+
                                                                     <div className="main-button">
                                                                         <a href="explore.html">View</a>
                                                                     </div>

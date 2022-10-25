@@ -99,7 +99,7 @@ const Shop = () => {
                               </div>
                               <div className='d-flex justify-content-center '>
                                 <div className="main-button ms-2 itemBtn">
-                                  <Link state={{items: items}} to='/ShopScreem' className='text-white'>View</ Link>
+                                  <Link state={{items: items}} to='/ShopScreem'>View</ Link>
                                 </div>
                               </div>
                             </div>
