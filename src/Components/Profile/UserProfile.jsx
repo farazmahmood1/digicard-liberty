@@ -105,62 +105,81 @@ const UserProfile = () => {
             <h2 className='mt-2 text-center'>My Social Accounts</h2>
             <div className='row mt-2'>
               <div className='col-lg-5 ms-auto'>
-                <a href={`${facebook}`} target="_blank">
+
+                <a href={`${whatsapp}`} target="_blank">
                   <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-facebook" /></p>
-                    <p className='text-white ms-auto mt-1'>My facebook Page</p>
+                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-whatsapp" /></p>
+                    <p className='text-white ms-auto mt-1'>My Whatsapp no.</p>
                   </div>
                 </a>
+
+                {
+                  facebook !== '' ?
+                    <>
+                      <a href={`${facebook}`} target="_blank">
+                        <div className='card-body d-flex mt-2 profileCard'>
+                          <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-facebook" /></p>
+                          <p className='text-white ms-auto mt-1'>My Facebook Account</p>
+                        </div>
+                      </a>
+                    </> :
+                    console.log('no facebook link available')
+
+                }
+
                 <a href={`${instagram}`} target="_blank" >
                   <div className='card-body d-flex mt-2 profileCard'>
                     <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-instagram" /></p>
-                    <p className='text-white ms-auto mt-1'>faraz.mahmood.1</p>
+                    <p className='text-white ms-auto mt-1'>My Instagram Account</p>
                   </div>
                 </a>
                 <a href={`${twitter}`} target="_blank">
                   <div className='card-body d-flex mt-2 profileCard'>
                     <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-twitter" /></p>
-                    <p className='text-white ms-auto mt-1'>faraz.mahmood@twitter.com</p>
+                    <p className='text-white ms-auto mt-1'>My Twitter Account</p>
                   </div>
                 </a>
-                <a href={`${snapchat}`} target="_blank">
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-snapchat" /></p>
-                    <p className='text-white ms-auto mt-1'>username.user</p>
-                  </div>
-                </a>
+
                 <a href={`${telegram}`} target="_blank">
                   <div className='card-body d-flex mt-2 profileCard'>
                     <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-telegram" /></p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
+                    <p className='text-white ms-auto mt-1'>My telegram Link</p>
                   </div>
                 </a>
               </div>
 
               <div className='col-lg-5 me-auto'>
+
+                <a href={`${snapchat}`} target="_blank">
+                  <div className='card-body d-flex mt-2 profileCard'>
+                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-snapchat" /></p>
+                    <p className='text-white ms-auto mt-1'>My Snapchat Account</p>
+                  </div>
+                </a>
+
                 <a href={`${tiktok}`} target="_blank">
                   <div className='card-body d-flex mt-2 profileCard'>
                     <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-tiktok" /></p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
+                    <p className='text-white ms-auto mt-1'>My tiktok Account</p>
                   </div>
                 </a>
 
                 <a href={`${skype}`} target="_blank">
                   <div className='card-body d-flex mt-2 profileCard'>
                     <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-skype" /></p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
+                    <p className='text-white ms-auto mt-1'>My Skype Account</p>
                   </div>
                 </a>
                 <a href={`${pintrest}`} target="_blank">
                   <div className='card-body d-flex mt-2 profileCard'>
                     <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-pinterest" /></p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
+                    <p className='text-white ms-auto mt-1'>My Pinterest Account</p>
                   </div>
                 </a>
                 <a href={`${mail}`} target="_blank">
                   <div className='card-body d-flex mt-2 profileCard'>
                     <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-solid fa-envelope" /></p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
+                    <p className='text-white ms-auto mt-1'>My Email Account</p>
                   </div>
                 </a>
               </div>
@@ -201,6 +220,9 @@ const UserProfile = () => {
                 <div className="section-heading">
                   <div className="line-dec" />
                   <h1 className='mt-2'>Information about me</h1>
+                  <h3 className='mt-3' style={{ color: "#7453fc" }}>Designation:</h3>
+                  <p className='mt-3'>Senior Marketer Enterprise</p>
+
                   <h3 className='mt-3' style={{ color: "#7453fc" }}>Bio:</h3>
                   <p className='mt-3'>I'm a Web Developer, I love to create beautiful and functional websitesit Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit. amet consectetur adipisicing.</p>
                   <h3 className='mt-3' style={{ color: "#7453fc" }}>Description:</h3>
@@ -212,6 +234,12 @@ const UserProfile = () => {
                 <div className="section-heading">
                   <div className="line-dec" />
                   <h1 className='mt-2'>Contact me</h1>
+
+                  <div className='d-flex mt-3'>
+                    <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-location-dot" /></h2>
+                    <p className='mt-3 ms-auto'>+923034450790</p>
+                  </div>
+
                   <div className='d-flex mt-3'>
                     <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-phone" /></h2>
                     <p className='mt-3 ms-auto'>+923034450790</p>
@@ -240,86 +268,40 @@ const UserProfile = () => {
         <>
           <div>
             <div className="row">
-              <div className="col-lg-5">
-                <div className="section-heading">
-                  <div className="line-dec" />
-                  <h1 className='mt-2'>My Social Accounts</h1>
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-facebook" /></p>
-                    <p className='text-white ms-auto mt-1'>My facebook Page</p>
-                  </div>
 
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-instagram" /></p>
-                    <p className='text-white ms-auto mt-1'>faraz.mahmood.1</p>
-                  </div>
-
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-twitter" /></p>
-                    <p className='text-white ms-auto mt-1'>faraz.mahmood@twitter.com</p>
-                  </div>
-
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-snapchat" /></p>
-                    <p className='text-white ms-auto mt-1'>username.user</p>
-                  </div>
-
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-telegram" /></p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
-                  </div>
-
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-tiktok" /></p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
-                  </div>
-
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-skype" /></p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
-                  </div>
-
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-pinterest" /></p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
-                  </div>
-
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-solid fa-envelope" /></p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
-                  </div>
-
-                  <button className='buttonx w-25 mt-4 p-3' >View CV</button>
-                </div>
-              </div>
-              <div className="col-lg-6">
+              <div className="col-lg-6 mx-auto mt-4">
                 <div className="section-heading">
                   <div className="line-dec" />
                   <h1 className='mt-2'>My Professional Accounts</h1>
 
                   <div className='card-body d-flex mt-2 profileCard'>
+                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-whatsapp" /></p>
+                    <p className='text-white ms-auto mt-1'>My Business Whatsapp</p>
+                  </div>
+
+                  <div className='card-body d-flex mt-2 profileCard'>
                     <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-linkedin" /></p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
+                    <p className='text-white ms-auto mt-1'>My LinkedIn Account</p>
                   </div>
 
                   <div className='card-body d-flex mt-2 profileCard'>
                     <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-github" /></p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
+                    <p className='text-white ms-auto mt-1'>My Github Account</p>
                   </div>
 
                   <div className='card-body d-flex mt-2 profileCard'>
                     <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-stack-overflow" /></p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
+                    <p className='text-white ms-auto mt-1'>My StackOverflow Account</p>
                   </div>
 
                   <div className='card-body d-flex mt-2 profileCard' style={{ height: "63px" }}>
                     <p style={{ color: "#7453fc" }}><img src="./source/assets/images/upwork.png" className='mt-1' style={{ height: "29px", width: "29px" }} alt="" /> </p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
+                    <p className='text-white ms-auto mt-1'>My Upwork Account</p>
                   </div>
 
                   <div className='card-body d-flex mt-2  profileCard' style={{ height: "63px" }}>
                     <p style={{ color: "#7453fc" }}> <img src="./source/assets/images/fiverr.png" className='mt-1' style={{ height: "29px", width: "29px" }} alt="" /> </p>
-                    <p className='text-white ms-auto mt-1'>user.user@xyz</p>
+                    <p className='text-white ms-auto mt-1'>My Fiver Account</p>
                   </div>
 
                 </div>
@@ -352,16 +334,16 @@ const UserProfile = () => {
 
   return (
     <div>
-      <div className="CoverImage" style={{ backgroundImage: "url(./source/assets/images/heading-bg.jpg)" }}>
+      <div className="CoverImage" style={{ backgroundImage: `url(${Imagesurl}${cover})` }}>
       </div>
 
       <div className="darkbg" style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)" }}>
         <div className="container">
           <div className='col-lg-1 ms-auto mt-5 buttonProfile'>
-            <button onClick={() => setProfile("userProfile")} className='btn  buttonx actives rounded-pill me-2 mb-2' style={{ color: "white", borderColor: " #7453fc" }}><i className="fa-solid fa-house p-2" /></button>
-            <button onClick={() => setProfile("Portfolio")} className='btn hoverBtn buttonx  rounded-pill me-2 mb-2' style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-newspaper p-2" /></button>
-            <button onClick={() => setProfile("About")} className=' btn hoverBtn buttonx  rounded-pill me-2 mb-2' style={{ color: "white", borderColor: " #7453fc" }} ><i className="fa-solid fa-user p-2" /></button>
-            <button onClick={() => setProfile("Social")} className='btn hoverBtn buttonx  rounded-pill me-2 mb-2' style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-envelope p-2" /></button>
+            <button onClick={() => setProfile("userProfile")} className={profile === 'userProfile' ? 'btn  buttonx actives rounded-pill me-2 mb-2' : 'btn hoverBtn buttonx rounded-pill me-2 mb-2'} style={{ color: "white", borderColor: " #7453fc" }}><i className="fa-solid fa-house p-2" /></button>
+            <button onClick={() => setProfile("Portfolio")} className={profile === 'Portfolio' ? 'btn  buttonx actives rounded-pill me-2 mb-2' : 'btn hoverBtn buttonx rounded-pill me-2 mb-2'} style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-newspaper p-2" /></button>
+            <button onClick={() => setProfile("About")} className={profile === 'About' ? 'btn  buttonx actives rounded-pill me-2 mb-2' : 'btn hoverBtn buttonx rounded-pill me-2 mb-2'} style={{ color: "white", borderColor: " #7453fc" }} ><i className="fa-solid fa-user p-2" /></button>
+            <button onClick={() => setProfile("Social")} className={profile === 'Social' ? 'btn  buttonx actives rounded-pill me-2 mb-2' : 'btn hoverBtn buttonx rounded-pill me-2 mb-2'} style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-envelope p-2" /></button>
           </div>
 
           <div className="row">
@@ -373,6 +355,7 @@ const UserProfile = () => {
             <div className="col-lg-6 me-auto">
               <hr className='mx-auto' style={{ width: "320px", height: "3px", color: "#7453fc" }} />
               <h1 className='mt-2 text-center'>{name}</h1>
+              <p className='text-center' style={{ fontSize: '12px' }}>{phone}</p>
               <h2 className='mt-3 text-center'>{profession}</h2>
               <p className='mt-3 text-center'>{bio}</p>
               {/* <button className='buttonx w-25 mt-4 p-3' >View CV</button> */}

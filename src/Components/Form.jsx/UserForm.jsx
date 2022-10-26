@@ -416,7 +416,7 @@ const UserForm = () => {
                                     </div>
                                     <div className="col-lg-7 mx-auto">
                                         <fieldset>
-                                            <label htmlFor="file">Upload Cover Picture</label>
+                                            <label htmlFor="file">Upload your resume</label>
                                             <input type="file" id="file" name="myfiles[]" multiple />
                                         </fieldset>
                                     </div>
