@@ -96,51 +96,10 @@ const UserProfile = () => {
       .catch(error => console.log('error', error));
   }
 
-  var mybutton = document.getElementById("myBtn");
-  window.onscroll = function () { scrollFunction() };
-  function scrollFunction() {
-    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-
-  useEffect(() => { topFunction(); profileData() }, [])
-
-  return (
-    <div>
-      <div className="CoverImage" style={{ backgroundImage: "url(./source/assets/images/heading-bg.jpg)" }}>
-      </div>
-
-      <div className="darkbg" style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)" }}>
-        <div className="container">
-          <div className='col-lg-1 ms-auto mt-5 buttonProfile'>
-            <button onClick={() => setProfile("userProfile")} className='btn  buttonx actives rounded-pill me-2 mb-2' style={{ color: "white", borderColor: " #7453fc" }}><i className="fa-solid fa-house p-2" /></button>
-            <button onClick={() => setProfile("Portfolio")} className='btn hoverBtn buttonx  rounded-pill me-2 mb-2' style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-newspaper p-2" /></button>
-            <button onClick={() => setProfile("About")} className=' btn hoverBtn buttonx  rounded-pill me-2 mb-2' style={{ color: "white", borderColor: " #7453fc" }} ><i className="fa-solid fa-user p-2" /></button>
-            <button onClick={() => setProfile("Social")} className='btn hoverBtn buttonx  rounded-pill me-2 mb-2' style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-envelope p-2" /></button>
-          </div>
-
-          <div className="row">
-
-            <div className='col-lg-4' >
-              <img src={`${Imagesurl}${pic}`} className='profileImage' alt="profile image" />
-            </div>
-
-            <div className="col-lg-6 me-auto">
-              <hr className='mx-auto' style={{ width: "320px", height: "3px", color: "#7453fc" }} />
-              <h1 className='mt-2 text-center'>{name}</h1>
-              <h2 className='mt-3 text-center'>{profession}</h2>
-              <p className='mt-3 text-center'>{bio}</p>
-              {/* <button className='buttonx w-25 mt-4 p-3' >View CV</button> */}
-            </div>
-          </div>
-
+  const ReturnData = () => {
+    if (profile === 'userProfile') {
+      return (
+        <>
           <div>
             <hr className='mx-auto mt-4' style={{ width: "320px", height: "3px", color: "#7453fc" }} />
             <h2 className='mt-2 text-center'>My Social Accounts</h2>
@@ -207,7 +166,12 @@ const UserProfile = () => {
               </div>
             </div>
           </div>
-
+        </>
+      )
+    }
+    else if (profile === 'Portfolio') {
+      return (
+        <>
           <div>
             <hr className='mx-auto mt-4' style={{ width: "320px", height: "3px", color: "#7453fc" }} />
             <h2 className='mt-2 text-center'>My Portfolio</h2>
@@ -225,7 +189,12 @@ const UserProfile = () => {
               </div>
             </div>
           </div>
-
+        </>
+      )
+    }
+    else if (profile === 'About') {
+      return (
+        <>
           <div>
             <div className="row">
               <div className="col-lg-5">
@@ -263,7 +232,12 @@ const UserProfile = () => {
               </div>
             </div>
           </div>
-
+        </>
+      )
+    }
+    else if (profile === 'Social') {
+      return (
+        <>
           <div>
             <div className="row">
               <div className="col-lg-5">
@@ -352,7 +326,60 @@ const UserProfile = () => {
               </div>
             </div>
           </div>
+        </>
+      )
+    }
+    else {
+      console.log('returnFunction')
+    }
+  }
 
+  var mybutton = document.getElementById("myBtn");
+  window.onscroll = function () { scrollFunction() };
+  function scrollFunction() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  useEffect(() => { topFunction(); profileData() }, [])
+
+  return (
+    <div>
+      <div className="CoverImage" style={{ backgroundImage: "url(./source/assets/images/heading-bg.jpg)" }}>
+      </div>
+
+      <div className="darkbg" style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)" }}>
+        <div className="container">
+          <div className='col-lg-1 ms-auto mt-5 buttonProfile'>
+            <button onClick={() => setProfile("userProfile")} className='btn  buttonx actives rounded-pill me-2 mb-2' style={{ color: "white", borderColor: " #7453fc" }}><i className="fa-solid fa-house p-2" /></button>
+            <button onClick={() => setProfile("Portfolio")} className='btn hoverBtn buttonx  rounded-pill me-2 mb-2' style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-newspaper p-2" /></button>
+            <button onClick={() => setProfile("About")} className=' btn hoverBtn buttonx  rounded-pill me-2 mb-2' style={{ color: "white", borderColor: " #7453fc" }} ><i className="fa-solid fa-user p-2" /></button>
+            <button onClick={() => setProfile("Social")} className='btn hoverBtn buttonx  rounded-pill me-2 mb-2' style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-envelope p-2" /></button>
+          </div>
+
+          <div className="row">
+
+            <div className='col-lg-4' >
+              <img src={`${Imagesurl}${pic}`} className='profileImage' alt="profile image" />
+            </div>
+
+            <div className="col-lg-6 me-auto">
+              <hr className='mx-auto' style={{ width: "320px", height: "3px", color: "#7453fc" }} />
+              <h1 className='mt-2 text-center'>{name}</h1>
+              <h2 className='mt-3 text-center'>{profession}</h2>
+              <p className='mt-3 text-center'>{bio}</p>
+              {/* <button className='buttonx w-25 mt-4 p-3' >View CV</button> */}
+            </div>
+          </div>
+
+          <ReturnData />
 
         </div>
       </div>
