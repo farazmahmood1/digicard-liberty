@@ -34,24 +34,7 @@ const Portfolio = () => {
                             </div>
                         </div>
 
-                        <div className="col-lg-12">
-
-                            <div className="row">
-
-                                <div className='col-lg-4 p-3'>
-                                    <img src="./source/assets/images/market-01.jpg" style={{ height: "350px", borderRadius: "10px" }} alt="" />
-                                </div>
-                                <div className='col-lg-4 p-3'>
-                                    <img src="./source/assets/images/market-01.jpg" style={{ height: "350px", borderRadius: "10px" }} alt="" />
-                                </div>
-                                <div className='col-lg-4 p-3'>
-                                    <img src="./source/assets/images/market-01.jpg" style={{ height: "350px", borderRadius: "10px" }} alt="" />
-                                </div>
-
-
-
-                            </div>
-                        </div>
+                        
 
                     </div>
                 </div>
