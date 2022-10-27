@@ -1,9 +1,46 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Baseurl from '../SourceFiles/url'
+import { toast } from 'react-toastify'
+
 
 const SignUp = ({ setOpenSignUp }) => {
+
+    const [name, setName] = useState('')
+    const [lastn, setLastn] = useState('')
+    const [email, setEmail] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
+    const [password, setPassword] = useState('')
+    const [fieldStatus, setFieldStatus] = useState(false)
+
+    const loginFunction = () => {
+        if (!name || !lastn || !email || !password || !confirmPassword) {
+            toast.warn('please fill all fields')
+            setFieldStatus(true)
+        }
+        else {
+            const userObj = {
+                firstname: name,
+                lastname: lastn,
+                email: email,
+                password: password,
+                password_confirmation: confirmPassword
+            }
+            axios.post(`${Baseurl}createcustomer`, userObj)
+                .then(res => {
+                    console.log(res)
+                    toast.info('Data added successfully')
+                })
+                .catch(err => {
+                    console.log(err)
+                    toast.warn('Error while registering')
+                })
+        }
+    }
+
     return (
-        <div className=''>
+        <div>
 
             <div className='row'>
                 <div className='col-lg-5  ms-auto'>
@@ -19,24 +56,24 @@ const SignUp = ({ setOpenSignUp }) => {
                             <div className='d-flex mt-5 mb-3'>
                                 <div className="">
                                     <label htmlFor="exampleInputEmail1" className="form-label text-white">First Name</label>
-                                    <input type="text" className="form-control text-white me-1" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                    <input type="text" onChange={(e) => setName(e.target.value)} className="form-control text-white me-1" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: name === '' && fieldStatus === true ? 'red' : "#9254F3" }} />
                                 </div>
                                 <div className="">
                                     <label htmlFor="exampleInputEmail1" className="form-label text-white ">Last Name</label>
-                                    <input type="text" className="form-control text-white ms-1" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                    <input type="text" onChange={(e) => setLastn(e.target.value)} className="form-control text-white ms-1" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: lastn === '' && fieldStatus === true ? 'red' : "#9254F3" }} />
                                 </div>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInputEmail1" className="form-label text-white">Email</label>
-                                <input type="email" className="form-control text-white" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                <input type="email" onChange={(e) => setEmail(e.target.value)} className="form-control text-white" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: email === '' && fieldStatus === true ? 'red' : "#9254F3" }} />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInputEmail1" className="form-label text-white">Password</label>
-                                <input type="password" className="form-control text-white" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                <input type="password" onChange={(e) => setPassword(e.target.value)} className="form-control text-white" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: password === '' && fieldStatus === true ? 'red' : "#9254F3" }} />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInputPassword1" className="form-label text-white">Confirm Password</label>
-                                <input type="password" className="form-control text-white" id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                <input type="password" onChange={(e) => setConfirmPassword(e.target.value)} className="form-control text-white" id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: confirmPassword === '' && fieldStatus === true ? 'red' : "#9254F3" }} />
                             </div>
                             <div className="mb-3 form-check">
                                 <input type="checkbox" className="form-check-input text-white" id="exampleCheck1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
@@ -44,10 +81,10 @@ const SignUp = ({ setOpenSignUp }) => {
                             </div>
 
                             <div className='d-flex  me-3'>
-                                <Link to='/SignIn' id="emailHelp" className="form-text mt-3"></Link>
+                                <a id="emailHelp" className="form-text mt-3"></a>
 
                                 <div className="border-button ms-auto btnAnimate">
-                                    <a href="#" target="_blank">Sign Up</a>
+                                    <a className='text-white' onClick={loginFunction}>Sign Up</a>
                                 </div>
 
                             </div>

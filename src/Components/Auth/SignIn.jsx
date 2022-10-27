@@ -1,7 +1,37 @@
+import axios from 'axios'
 import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import Baseurl from '../SourceFiles/url'
 
 const SignIn = ({ setOpenModal }) => {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [fieldStatus, setFieldStatus] = useState(false)
+
+    const loginFunction = () => {
+        if (!email || !password) {
+            toast.warn('please fill all fields')
+            setFieldStatus(true)
+        }
+        else {
+            const userObj = {
+                email: email,
+                password: password
+            }
+            axios.post(`${Baseurl}customerlogin`, userObj)
+                .then(res => {
+                    console.log(res)
+                    toast.info('Logged in successfully')
+                })
+                .catch(err => {
+                    console.log(err)
+                    toast.warn('Error while logging in')
+                })
+        }
+    }
 
     return (
         <div>
@@ -18,11 +48,11 @@ const SignIn = ({ setOpenModal }) => {
                                 </div>
                                 <div className="mb-3 mt-5">
                                     <label htmlFor="exampleInputEmail1" className="form-label text-white">Email address</label>
-                                    <input type="email" className="form-control text-white" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                    <input type="email" onChange={(e) => setEmail(e.target.value)} className="form-control text-white" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: email === '' && fieldStatus === true ? 'red' : "#9254F3" }} />
                                 </div>
                                 <div className="mb-3 mt-4">
                                     <label htmlFor="exampleInputPassword1" className="form-label text-white">Password</label>
-                                    <input type="password" className="form-control text-white" id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
+                                    <input type="password" onChange={(e) => setPassword(e.target.value)} className="form-control text-white" id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: password === '' && fieldStatus === true ? 'red' : "#9254F3" }} />
                                 </div>
                                 <div className="mb-3 form-check">
                                     <input type="checkbox" className="form-check-input text-white" id="exampleCheck1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
@@ -30,10 +60,10 @@ const SignIn = ({ setOpenModal }) => {
                                 </div>
 
                                 <div className='d-flex '>
-                                    <Link to='/SignUp' id="emailHelp" className="form-text mt-3 me-2">Welcome Back To our site</Link>
+                                    <a id="emailHelp" className="form-text mt-3 me-2">Welcome Back To our site</a>
 
                                     &nbsp;&nbsp;<div className="me-4 border-button ms-auto btnAnimate">
-                                        <a href="#" target="_blank">Login</a>
+                                        <a onClick={loginFunction} className='text-white'>Login</a>
                                     </div>
 
                                 </div>
