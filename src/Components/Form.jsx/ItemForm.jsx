@@ -25,17 +25,21 @@ const ItemForm = () => {
     const [color, setColor] = useState("");
     const [profile, setProfile] = useState("");
 
+    const [emailLogin, setEmailLogin] = useState('')
+    const [emailPassword, setEmailPassword] = useState('')
+
+
     const [submit, setSubmit] = useState(false);
 
     const [shouldShow, setShouldShow] = useState(true)
 
     const submitData = () => {
 
-        if (!name || !contact || !phone || !address || !email || !region || !color || !profile) {
+        if (!name || !phone || !email || !address || !region || !city || !postal) {
+            toast.warn('Please fill all fields')
             setSubmit(true)
         }
         else {
-
             const userObj = {
                 name: name,
                 phone_number: phone,
@@ -49,20 +53,50 @@ const ItemForm = () => {
                 color: color,
                 profile_pic: profile
             }
-
             axios.post(`${Baseurl}buy_item`, userObj)
-                .then((res) => {
+                .then(res => {
                     toast.info("Order Confirmed!")
-                    setInterval(() => {
-                        window.location.reload(true)
-                    }, 2000)
+                    setSubmit(true)
+                    setOpenModal(true)
+                    // setInterval(() => {
+                    //     window.location.reload(true)
+                    // }, 2000)
                     console.log(res)
                 })
-                .catch((err) => {
+                .catch(err => {
                     toast.warn("Error while submitting response");
                     console.log(err)
                 })
         }
+    }
+
+    const loginData = () => {
+if( !emailLogin || !emailPassword ){
+toast.warn('Please fill all fields')
+}
+else if(!emailLogin && emailPassword=='' ){
+    toast.warn('Please enter your email')
+}
+else if(emailLogin=='' && !emailPassword){
+    toast.warn('Please enter your password')
+}
+else{
+    const loginData = () => {
+        const userobj = {
+            email : emailLogin,
+            password : emailPassword
+        }
+        axios.post(`${Baseurl}/login` , userobj)
+        .then(res => {
+            toast.info('Email login successfully')
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err)
+            toast.warn('Error while loging in')
+        })
+    }
+}
     }
 
     function oncloseModal() {
@@ -73,12 +107,12 @@ const ItemForm = () => {
         return (
             <div className='card-body'>
                 <div className='d-flex'>
-                    <div className=' mt-3'>
+                    <div className=' mt-1'>
                         <img src="./source/assets/images/logo.png" style={{ width: "115px" }} alt="" />
                     </div>
                     <button onClick={() => {
                         oncloseModal(false)
-                    }} className='btn btn-outline-danger btn-sm ms-auto mt-2'>X</button>
+                    }} className='btn btn-outline-danger btn-sm ms-auto mt-1'>X</button>
                 </div>
 
                 <div className='d-flex mt-5 mb-3'>
@@ -148,7 +182,7 @@ const ItemForm = () => {
                     <a id="emailHelp" className="form-text mt-3 me-2">Welcome Back To our site</a>
 
                     &nbsp;&nbsp;<div className="me-4 border-button ms-auto btnAnimate">
-                        <a href="#" target="_blank">Login</a>
+                        <a onClick={loginData} className='text-white'>Login</a>
                     </div>
                 </div>
 
@@ -158,7 +192,7 @@ const ItemForm = () => {
 
     function RenderFunction() {
         return (
-            <SignUp />
+            <SingIn />
         )
     }
 
@@ -199,11 +233,10 @@ const ItemForm = () => {
                 </div>
             </Modal>
 
-            <Modal
-                open={shouldShow}
-            >
+            <Modal open={shouldShow} >
                 <RenderFunction />
             </Modal>
+
             <div className="page-heading normal-space">
                 <div className="container">
                     <div className="row">
@@ -242,73 +275,75 @@ const ItemForm = () => {
                                         <fieldset>
                                             <label htmlFor="title">Name*</label>
                                             <input onChange={(e) => setName(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Ali Ahmed" autoComplete="on" type='text' />
-                                            {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
+                                            {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
+
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Phone Number*</label>
-                                            <input onChange={(e) => setPhone(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your current phone no." autoComplete="on" type='number' />
-                                            {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
+                                            <input onChange={(e) => setPhone(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: phone === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your current phone no." autoComplete="on" type='number' />
+                                            {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
+
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="title">Contact Number*</label>
-                                            <input onChange={(e) => setContact(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your whatsapp number" autoComplete="on" type='number' />
-                                            {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
+                                            <label htmlFor="title">Secondary Number</label>
+                                            <input onChange={(e) => setContact(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: '#404245' }} id="inputName5" placeholder="Enter your whatsapp number" autoComplete="on" type='number' />
+                                            {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Email*</label>
-                                            <input onChange={(e) => setEmail(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder='Ex. user@mail.com' autoComplete="on" type='number' />
-                                            {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
+                                            <input onChange={(e) => setEmail(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: email === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder='Ex. user@mail.com' autoComplete="on" type='email' />
+                                            {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
 
                                     <div className="col-lg-12 mb-3">
                                         <fieldset>
                                             <label htmlFor="title">Address</label>
-                                            <textarea className="form-control text-white" onChange={(e) => setAddress(e.target.value)} style={{ borderRadius: "16px", backgroundColor: '#282b2f', borderColor: '#404245', borderRadius: "20px" }} id="exampleFormControlTextarea1" rows={7} placeholder="Enter your shipping method ..." defaultValue={""} />
-                                            {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
+                                            <textarea className="form-control text-white" onChange={(e) => setAddress(e.target.value)} style={{ borderRadius: "16px", backgroundColor: '#282b2f', borderColor: address === '' && submit === true ? 'red' : '#404245', borderRadius: "20px" }} id="exampleFormControlTextarea1" rows={7} placeholder="Enter your shipping method ..." defaultValue={""} />
+                                            {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Country, Region</label>
-                                            <input onChange={(e) => setRegion(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your region" autoComplete="on" type='text' />
-                                            {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
+                                            <input onChange={(e) => setRegion(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: region === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your region" autoComplete="on" type='text' />
+                                            {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">City*</label>
-                                            <input onChange={(e) => setCity(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Your current city" autoComplete="on" type='text' />
-                                            {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
+                                            <input onChange={(e) => setCity(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: city === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Your current city" autoComplete="on" type='text' />
+                                            {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Postal Code*</label>
-                                            <input onChange={(e) => setPostal(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Your city Postal code" autoComplete="on" type='number' />
-                                            {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""}
+                                            <input onChange={(e) => setPostal(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: postal === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Your city Postal code" autoComplete="on" type='number' />
+                                            {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
 
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="file">Upload Profile Picture*</label>
+                                            <label htmlFor="file"  >Upload Profile Picture*</label>
                                             <input onChange={(e) => setProfile(e.target.files[0])} type="file" id="file" name="myfiles[]" multiple />
                                         </fieldset>
                                     </div>
 
                                     <div class="col-lg-6 mx-auto">
                                         <fieldset>
-                                            <button onClick={() => { setOpenModal(true); submitData(); }} type="submit" id="form-submit" class="orange-button">Submit Your Applying</button>
+                                            <button onClick={() => { submitData() }} type="submit" id="form-submit" class="orange-button" >Submit Your Applying</button>
                                         </fieldset>
                                     </div>
-
+                                    {/* setOpenModal(true); */}
 
 
                                 </div>

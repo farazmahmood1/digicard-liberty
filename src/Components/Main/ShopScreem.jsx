@@ -103,9 +103,7 @@ const ShopScreem = () => {
                         </div>
 
                         <div className="col-lg-12">
-                            {
 
-                            }
                             <div className="row">
                                 <div className="col-lg-7">
                                     <div className='col-lg-12 mb-4'>

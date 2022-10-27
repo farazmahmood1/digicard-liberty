@@ -46,7 +46,7 @@ const UserProfile = () => {
   const [pic, setPic] = useState('')
   const [profile, setProfile] = useState('userProfile')
 
-
+  console.log(github)
   const profileData = () => {
     var requestOptions = {
       method: 'GET',
@@ -124,64 +124,110 @@ const UserProfile = () => {
                       </a>
                     </> :
                     console.log('no facebook link available')
-
                 }
 
-                <a href={`${instagram}`} target="_blank" >
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-instagram" /></p>
-                    <p className='text-white ms-auto mt-1'>My Instagram Account</p>
-                  </div>
-                </a>
-                <a href={`${twitter}`} target="_blank">
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-twitter" /></p>
-                    <p className='text-white ms-auto mt-1'>My Twitter Account</p>
-                  </div>
-                </a>
+                {
+                  instagram !== '' ?
+                    <>
+                      <a href={`${instagram}`} target="_blank" >
+                        <div className='card-body d-flex mt-2 profileCard'>
+                          <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-instagram" /></p>
+                          <p className='text-white ms-auto mt-1'>My Instagram Account</p>
+                        </div>
+                      </a>
+                    </> : console.log('no instagram link avaible')
+                }
 
-                <a href={`${telegram}`} target="_blank">
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-telegram" /></p>
-                    <p className='text-white ms-auto mt-1'>My telegram Link</p>
-                  </div>
-                </a>
+                {
+                  twitter !== '' ?
+                    <>
+                      <a href={`${twitter}`} target="_blank">
+                        <div className='card-body d-flex mt-2 profileCard'>
+                          <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-twitter" /></p>
+                          <p className='text-white ms-auto mt-1'>My Twitter Account</p>
+                        </div>
+                      </a>
+                    </> : console.log('twitter link not avaible')
+                }
+
+                {
+                  telegram !== '' ?
+                    <>
+                      <a href={`${telegram}`} target="_blank">
+                        <div className='card-body d-flex mt-2 profileCard'>
+                          <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-telegram" /></p>
+                          <p className='text-white ms-auto mt-1'>My telegram Link</p>
+                        </div>
+                      </a>
+                    </> : console.log('no telegram avaible')
+                }
+
               </div>
 
               <div className='col-lg-5 me-auto'>
 
-                <a href={`${snapchat}`} target="_blank">
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-snapchat" /></p>
-                    <p className='text-white ms-auto mt-1'>My Snapchat Account</p>
-                  </div>
-                </a>
+                {
+                  snapchat !== '' ?
+                    <>
+                      <a href={`${snapchat}`} target="_blank">
+                        <div className='card-body d-flex mt-2 profileCard'>
+                          <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-snapchat" /></p>
+                          <p className='text-white ms-auto mt-1'>My Snapchat Account</p>
+                        </div>
+                      </a>
+                    </> : console.log('no snapchat avaiable')
+                }
 
-                <a href={`${tiktok}`} target="_blank">
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-tiktok" /></p>
-                    <p className='text-white ms-auto mt-1'>My tiktok Account</p>
-                  </div>
-                </a>
+                {
+                  tiktok !== '' ?
+                    <>
+                      <a href={`${tiktok}`} target="_blank">
+                        <div className='card-body d-flex mt-2 profileCard'>
+                          <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-tiktok" /></p>
+                          <p className='text-white ms-auto mt-1'>My tiktok Account</p>
+                        </div>
+                      </a>
+                    </> : console.log('no tiktok avaible')
+                }
 
-                <a href={`${skype}`} target="_blank">
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-skype" /></p>
-                    <p className='text-white ms-auto mt-1'>My Skype Account</p>
-                  </div>
-                </a>
-                <a href={`${pintrest}`} target="_blank">
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-pinterest" /></p>
-                    <p className='text-white ms-auto mt-1'>My Pinterest Account</p>
-                  </div>
-                </a>
-                <a href={`${mail}`} target="_blank">
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-solid fa-envelope" /></p>
-                    <p className='text-white ms-auto mt-1'>My Email Account</p>
-                  </div>
-                </a>
+
+                {
+                  skype !== '' ?
+                    <>
+                      <a href={`${skype}`} target="_blank">
+                        <div className='card-body d-flex mt-2 profileCard'>
+                          <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-skype" /></p>
+                          <p className='text-white ms-auto mt-1'>My Skype Account</p>
+                        </div>
+                      </a>
+                    </> : console.log('no skype avaible')
+                }
+
+                {
+                  pintrest !== '' ?
+                    <>
+                      <a href={`${pintrest}`} target="_blank">
+                        <div className='card-body d-flex mt-2 profileCard'>
+                          <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-pinterest" /></p>
+                          <p className='text-white ms-auto mt-1'>My Pinterest Account</p>
+                        </div>
+                      </a>
+                    </> : console.log('no pinterest avaible')
+                }
+
+                {
+                  mail !== '' ?
+                    <>
+                      <a href={`${mail}`} target="_blank">
+                        <div className='card-body d-flex mt-2 profileCard'>
+                          <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-solid fa-envelope" /></p>
+                          <p className='text-white ms-auto mt-1'>My Email Account</p>
+                        </div>
+                      </a>
+                    </> : console.log('mail is not avaiable')
+                }
+
+
               </div>
             </div>
           </div>
@@ -215,19 +261,46 @@ const UserProfile = () => {
       return (
         <>
           <div>
-            <div className="row">
+            <div className="row mt-3">
               <div className="col-lg-5">
                 <div className="section-heading">
                   <div className="line-dec" />
-                  <h1 className='mt-2'>Information about me</h1>
-                  <h3 className='mt-3' style={{ color: "#7453fc" }}>Designation:</h3>
-                  <p className='mt-3'>Senior Marketer Enterprise</p>
 
-                  <h3 className='mt-3' style={{ color: "#7453fc" }}>Bio:</h3>
-                  <p className='mt-3'>I'm a Web Developer, I love to create beautiful and functional websitesit Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit. amet consectetur adipisicing.</p>
-                  <h3 className='mt-3' style={{ color: "#7453fc" }}>Description:</h3>
-                  <p className='mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit est quae vel architecto magni odit eligendi, temporibus accusantium qui maiores maxime. Quo repellat numquam, maxime ullam quidem soluta fugit fugiat dolorem voluptatem impedit provident officia facere accusamus earum repellendus culpa optio porro consequuntur harum cumque. Culpa deserunt reiciendis quasi labore.</p>
-                  <button className='buttonx w-25 mt-4 p-3' >View CV</button>
+                  {designation !== '' || bio !== '' || longBio !== '' ?
+                    <>
+                      <h1 className='mt-2'>Information about me</h1>
+                    </>
+                    : console.log('bio, designation , longbio')
+                  }
+
+                  {
+                    designation !== '' ?
+                      <>
+                        <h3 className='mt-3' style={{ color: "#7453fc" }}>Designation:</h3>
+                        <p className='mt-3'>{designation}</p>
+                      </>
+                      :
+                      console.log('no designation avaiable')
+                  }
+
+                  {
+                    bio !== '' ?
+                      <>
+                        <h3 className='mt-3' style={{ color: "#7453fc" }}>Bio:</h3>
+                        <p className='mt-3'>{bio}</p>
+                      </> :
+                      console.log('no bio avaiable')
+                  }
+
+                  {
+                    shortBio !== '' ?
+                      <>
+                        <h3 className='mt-3' style={{ color: "#7453fc" }}>Description:</h3>
+                        <p className='mt-3'>{shortBio}</p>
+                      </> :
+                      console.log('No describtion avaiable')
+                  }
+
                 </div>
               </div>
               <div className="col-lg-5">
@@ -235,28 +308,48 @@ const UserProfile = () => {
                   <div className="line-dec" />
                   <h1 className='mt-2'>Contact me</h1>
 
-                  <div className='d-flex mt-3'>
-                    <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-location-dot" /></h2>
-                    <p className='mt-3 ms-auto'>+923034450790</p>
-                  </div>
+                  {
+                    phone !== '' ?
+                      <>
+                        <div className='d-flex mt-3'>
+                          <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-phone" /></h2>
+                          <p className='mt-3 ms-auto'>{phone}</p>
+                        </div>
+                      </> : console.log('no phone avaiable')
+                  }
 
-                  <div className='d-flex mt-3'>
-                    <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-phone" /></h2>
-                    <p className='mt-3 ms-auto'>+923034450790</p>
-                  </div>
-                  <div className='d-flex mt-3'>
-                    <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-address-book" /></h2>
-                    <p className='mt-3 ms-auto'>335-C Guldasht Town, Lahore</p>
-                  </div>
-                  <div className='d-flex mt-3'>
-                    <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-address-card" /></h2>
-                    <p className='mt-2 ms-auto'>36402-8953372-1</p>
-                  </div>
-                  <div className='d-flex mt-3'>
-                    <h2 className='' style={{ color: "#7453fc" }}><i className="fa-solid fa-location-dot" /></h2>
-                    <p className='mt-2 ms-auto'>Lahore, Pakistan</p>
-                  </div>
+                  {
+                    cnic !== '' ?
+                      <>
+                        <div className='d-flex mt-3'>
+                          <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-address-card" /></h2>
+                          <p className='mt-2 ms-auto'>{cnic}</p>
+                        </div>
+                      </> : console.log('no cnic avaiable')
+                  }
+
+                  {
+                    location !== '' ?
+                      <>
+                        <div className='d-flex mt-3'>
+                          <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-address-book" /></h2>
+                          <p className='mt-3 ms-auto'>sa</p>
+                        </div>
+                      </> : console.log('no address avaiable')
+                  }
+
+                  {
+                    region !== '' ?
+                      <>
+                        <div className='d-flex mt-3'>
+                          <h2 className='' style={{ color: "#7453fc" }}><i className="fa-solid fa-location-dot" /></h2>
+                          <p className='mt-2 ms-auto'>{region}</p>
+                        </div>
+                      </> : console.log('no region avaiable')
+                  }
+
                 </div>
+                <button className='buttonx w-25 mt-4 p-3' >View CV</button>
               </div>
             </div>
           </div>
@@ -274,35 +367,77 @@ const UserProfile = () => {
                   <div className="line-dec" />
                   <h1 className='mt-2'>My Professional Accounts</h1>
 
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-whatsapp" /></p>
-                    <p className='text-white ms-auto mt-1'>My Business Whatsapp</p>
-                  </div>
+                  {
+                    whatsappBusiness !== '' ?
+                      <>
+                        <a href={`${whatsappBusiness}`} target="_blank">
+                          <div className='card-body d-flex mt-2 profileCard'>
+                            <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-whatsapp" /></p>
+                            <p className='text-white ms-auto mt-1'>My Business Whatsapp</p>
+                          </div>
+                        </a>
+                      </> : console.log('whatsappBusiines is not avaiable')
+                  }
 
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-linkedin" /></p>
-                    <p className='text-white ms-auto mt-1'>My LinkedIn Account</p>
-                  </div>
+                  {
+                    linkedin !== '' ?
+                      <>
+                        <a href={`${linkedin}`} target="_blank">
+                          <div className='card-body d-flex mt-2 profileCard'>
+                            <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-linkedin" /></p>
+                            <p className='text-white ms-auto mt-1'>My LinkedIn Account</p>
+                          </div>
+                        </a>
+                      </> : console.log('no linkdein avaiable')
+                  }
 
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-github" /></p>
-                    <p className='text-white ms-auto mt-1'>My Github Account</p>
-                  </div>
+                  {
+                    github !== '' ?
+                      <>
+                        <a href={`${github}`} target="_blank">
+                          <div className='card-body d-flex mt-2 profileCard'>
+                            <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-github" /></p>
+                            <p className='text-white ms-auto mt-1'>My Github Account</p>
+                          </div>
+                        </a>
+                      </> : console.log('no github available')
+                  }
 
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-stack-overflow" /></p>
-                    <p className='text-white ms-auto mt-1'>My StackOverflow Account</p>
-                  </div>
+                  {
+                    stackoverflow !== '' ?
+                      <>
+                        <a href={`${stackoverflow}`} target="_blank">
+                          <div className='card-body d-flex mt-2 profileCard'>
+                            <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-stack-overflow" /></p>
+                            <p className='text-white ms-auto mt-1'>My StackOverflow Account</p>
+                          </div>
+                        </a>
+                      </> : console.log('stackoverflow is not avaible')
+                  }
 
-                  <div className='card-body d-flex mt-2 profileCard' style={{ height: "63px" }}>
-                    <p style={{ color: "#7453fc" }}><img src="./source/assets/images/upwork.png" className='mt-1' style={{ height: "29px", width: "29px" }} alt="" /> </p>
-                    <p className='text-white ms-auto mt-1'>My Upwork Account</p>
-                  </div>
+                  {
+                    upwork !== '' ?
+                      <>
+                        <a href={`${upwork}`} target="_blank">
+                          <div className='card-body d-flex mt-2 profileCard' style={{ height: "63px" }}>
+                            <p style={{ color: "#7453fc" }}><img src="./source/assets/images/upwork.png" className='mt-1' style={{ height: "29px", width: "29px" }} alt="" /> </p>
+                            <p className='text-white ms-auto mt-1'>My Upwork Account</p>
+                          </div>
+                        </a>
+                      </> : console.log('no upwork avaiable')
+                  }
 
-                  <div className='card-body d-flex mt-2  profileCard' style={{ height: "63px" }}>
-                    <p style={{ color: "#7453fc" }}> <img src="./source/assets/images/fiverr.png" className='mt-1' style={{ height: "29px", width: "29px" }} alt="" /> </p>
-                    <p className='text-white ms-auto mt-1'>My Fiver Account</p>
-                  </div>
+                  {fiver !== '' ?
+                    <>
+                      <a href={`${fiver}`} target="_blank">
+                        <div className='card-body d-flex mt-2  profileCard' style={{ height: "63px" }}>
+                          <p style={{ color: "#7453fc" }}> <img src="./source/assets/images/fiverr.png" className='mt-1' style={{ height: "29px", width: "29px" }} alt="" /> </p>
+                          <p className='text-white ms-auto mt-1'>My Fiver Account</p>
+                        </div>
+                      </a>
+                    </> : console.log('no fiver avaiablle')
+                  }
+
 
                 </div>
               </div>
