@@ -70,6 +70,7 @@ const Navbar = () => {
           </div>
         </div>
       </header>
+      
       {openModal && < SignIn setOpenModal={setOpenModal} />}
       {openSignUp && <SignUp setOpenSignUp={setOpenSignUp} />}
 

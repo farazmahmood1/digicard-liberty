@@ -6,12 +6,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Modal } from 'pretty-modal'
 import { Link } from 'react-router-dom'
 import Baseurl from '../SourceFiles/url';
+import '../Modal/SignInUser'
+import SignInUser from '../Modal/SignInUser';
+import SignUpUser from '../Modal/SignUpUser'
 
 
 toast.configure()
 const ItemForm = () => {
-
-    const [openModal, setOpenModal] = useState(false)
 
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
@@ -25,12 +26,12 @@ const ItemForm = () => {
     const [color, setColor] = useState("");
     const [profile, setProfile] = useState("");
 
-
-
-
     const [submit, setSubmit] = useState(false);
 
-    const [shouldShow, setShouldShow] = useState(true)
+    const [openModal, setOpenModal] = useState(false)
+    const [signInModal, setSignInModal] = useState(true)
+    const [signUpModal, setSignUpModal] = useState(true)
+
 
     const submitData = () => {
 
@@ -68,24 +69,6 @@ const ItemForm = () => {
                 })
         }
     }
-
-
-
-
-
-    function oncloseModal() {
-        setShouldShow((prev) => !prev)
-    }
-
-
-
-    // function SingIn() {
-    //     return (
-
-    //     )
-    // }
-
-
 
     // function RenderFunction() {
     //     return (
@@ -246,7 +229,7 @@ const ItemForm = () => {
                                 </div>
                             </div>
                         </div>
-
+                        <SignInUser />
                     </div>
                 </div>
             </div>
