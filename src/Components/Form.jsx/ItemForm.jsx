@@ -29,8 +29,11 @@ const ItemForm = () => {
     const [submit, setSubmit] = useState(false);
 
     const [openModal, setOpenModal] = useState(false)
+
     const [signInModal, setSignInModal] = useState(true)
     const [signUpModal, setSignUpModal] = useState(true)
+
+    const [login, setLogin] = useState(false)
 
 
     const submitData = () => {
@@ -70,12 +73,6 @@ const ItemForm = () => {
         }
     }
 
-    // function RenderFunction() {
-    //     return (
-    //         // <SignUp />
-    //     )
-    // }
-
     var mybutton = document.getElementById("myBtn");
     window.onscroll = function () { scrollFunction() };
     function scrollFunction() {
@@ -112,10 +109,6 @@ const ItemForm = () => {
 
                 </div>
             </Modal>
-
-            {/* <Modal open={shouldShow} >
-                <RenderFunction />
-            </Modal> */}
 
             <div className="page-heading normal-space">
                 <div className="container">
@@ -229,7 +222,18 @@ const ItemForm = () => {
                                 </div>
                             </div>
                         </div>
-                        <SignInUser />
+                        {/* <SignInUser />
+                        <SignUpUser /> */}
+                        {
+                            login === true ?
+                                <>
+                                    <SignInUser />
+                                </>
+                                :
+                                <>
+                                    <SignUpUser />
+                                </>
+                        }
                     </div>
                 </div>
             </div>
