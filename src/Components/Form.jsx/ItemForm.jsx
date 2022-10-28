@@ -25,10 +25,9 @@ const ItemForm = () => {
     const [color, setColor] = useState("");
     const [profile, setProfile] = useState("");
 
-    const [emailLogin, setEmailLogin] = useState('')
-    const [emailPassword, setEmailPassword] = useState('')
 
-    const [emailvalidate, setEmailValidate] = useState(false)
+
+
     const [submit, setSubmit] = useState(false);
 
     const [shouldShow, setShouldShow] = useState(true)
@@ -70,121 +69,29 @@ const ItemForm = () => {
         }
     }
 
-    const loginData = () => {
-        // if (!emailLogin || !emailPassword) {
-        //     setEmailValidate(true)
-        //     toast.warn('Please fill all fields')
-        // }
-        // else {
-            const userobj = {
-                email: emailLogin,
-                password: emailPassword
-            }
-            axios.post(`${Baseurl}/login`, userobj)
-                .then(res => {
-                    toast.info('Email login successfully')
-                    console.log(res)
-                })
-                .catch(err => {
-                    console.log(err)
-                    toast.warn('Error while loging in')
-                })
-        // }
-    }
+
+
+
 
     function oncloseModal() {
         setShouldShow((prev) => !prev)
     }
 
-    function SignUp() {
-        return (
-            <div className='card-body'>
-                <div className='d-flex'>
-                    <div className=' mt-1'>
-                        <img src="./source/assets/images/logo.png" style={{ width: "115px" }} alt="" />
-                    </div>
-                    <button onClick={() => {
-                        oncloseModal(false)
-                    }} className='btn btn-outline-danger btn-sm ms-auto mt-1'>X</button>
-                </div>
 
-                <div className='d-flex mt-5 mb-3'>
-                    <div className="">
-                        <label htmlFor="exampleInputEmail1" className="form-label text-white">First Name</label>
-                        <input type="text" className="form-control text-white me-1" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
-                    </div>
-                    <div className="">
-                        <label htmlFor="exampleInputEmail1" className="form-label text-white ">Last Name</label>
-                        <input type="text" className="form-control text-white ms-1" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
-                    </div>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="exampleInputEmail1" className="form-label text-white">Email</label>
-                    <input type="email" className="form-control text-white" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="exampleInputEmail1" className="form-label text-white">Password</label>
-                    <input type="password" className="form-control text-white" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="exampleInputPassword1" className="form-label text-white">Confirm Password</label>
-                    <input type="password" className="form-control text-white" id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
-                </div>
-                <div className="mb-3 form-check">
-                    <input type="checkbox" className="form-check-input text-white" id="exampleCheck1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
-                    <label className="form-check-label text-white" htmlFor="exampleCheck1" >Check me out</label>
-                </div>
 
-                <div className='d-flex  me-3'>
-                    <Link to='/SignIn' id="emailHelp" className="form-text mt-3"></Link>
+    // function SingIn() {
+    //     return (
 
-                    <div className="border-button ms-auto btnAnimate">
-                        <a href="#" target="_blank">Sign Up</a>
-                    </div>
+    //     )
+    // }
 
-                </div>
-            </div>
-        )
-    }
 
-    function SingIn() {
-        return (
-            <div className='card-body'>
-                <div className='d-flex'>
-                    <div className=' mt-3'>
-                        <img src="./source/assets/images/logo.png" style={{ width: "115px" }} alt="" />
-                    </div>
-                    <button className='btn btn-outline-danger btn-sm ms-auto mt-2' onClick={() => { oncloseModal(false) }}>X</button>
-                </div>
-                <div className="mb-3 mt-5">
-                    <label htmlFor="exampleInputEmail1" className="form-label text-white">Email address</label>
-                    <input type="email" className="form-control text-white" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ backgroundColor: "#23222D", borderColor: emailLogin === "" && emailvalidate === true ? 'red' : "#9254F3" }} />
-                </div>
-                <div className="mb-3 mt-4">
-                    <label htmlFor="exampleInputPassword1" className="form-label text-white">Password</label>
-                    <input type="password"  className="form-control text-white" id="exampleInputPassword1" style={{ backgroundColor: "#23222D", borderColor: emailPassword === "" && emailvalidate === true ? "red" : '#9254F3' }} />
-                </div>
-                <div className="mb-3 form-check">
-                    <input type="checkbox" className="form-check-input text-white" id="exampleCheck1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
-                    <label className="form-check-label text-white" htmlFor="exampleCheck1" >Check me out</label>
-                </div>
 
-                <div className='d-flex '>
-                    <a id="emailHelp" className="form-text mt-3 me-2">Welcome Back To our site</a>
-                    &nbsp;&nbsp;<div className="me-4 border-button ms-auto btnAnimate">
-                        <a onClick={loginData} className='text-white'>Login</a>
-                    </div>
-                </div>
-
-            </div>
-        )
-    }
-
-    function RenderFunction() {
-        return (
-            <SingIn />
-        )
-    }
+    // function RenderFunction() {
+    //     return (
+    //         // <SignUp />
+    //     )
+    // }
 
     var mybutton = document.getElementById("myBtn");
     window.onscroll = function () { scrollFunction() };
@@ -223,9 +130,9 @@ const ItemForm = () => {
                 </div>
             </Modal>
 
-            <Modal open={shouldShow} >
+            {/* <Modal open={shouldShow} >
                 <RenderFunction />
-            </Modal>
+            </Modal> */}
 
             <div className="page-heading normal-space">
                 <div className="container">
