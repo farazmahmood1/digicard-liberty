@@ -23,8 +23,6 @@ const ItemForm = () => {
     const [region, setRegion] = useState("");
     const [city, setCity] = useState("");
     const [postal, setPostal] = useState("");
-    const [quantity, setQuantity] = useState("");
-    const [color, setColor] = useState("");
     const [profile, setProfile] = useState("");
 
     const [submit, setSubmit] = useState(false);
@@ -32,6 +30,12 @@ const ItemForm = () => {
     const [openModal, setOpenModal] = useState(false)
 
     const [login, setLogin] = useState(false)
+
+    const location = useLocation();
+    const { counter } = location.state;
+    const { itemColor } = location.state;
+
+    console.log(counter, itemColor)
 
     const submitData = () => {
 
@@ -49,8 +53,8 @@ const ItemForm = () => {
                 region: region,
                 city: city,
                 postal_code: postal,
-                quantity: quantity,
-                color: color,
+                quantity: counter,
+                color: itemColor,
                 profile_pic: profile
             }
             axios.post(`${Baseurl}buy_item`, userObj)

@@ -91,6 +91,11 @@
     border-radius: 50%;
 }
 
+.borderClass {
+    border: 3px solid;
+    border-color: #7453fc;
+}
+
 .colorsbutton {
     border: none;
     padding: 20px;

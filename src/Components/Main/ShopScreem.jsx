@@ -12,13 +12,23 @@ import Imagesurl from '../SourceFiles/Imageurl';
 const ShopScreem = () => {
 
     const [addCount, setAddCount] = useState(1);
-    const [getColor, setColor] = useState('black')
-
+    const [getColor, setColor] = useState('')
     const [getColors, setColors] = useState('black')
-
+    const [isActive, setIsActive] = useState(false);
 
     const location = useLocation();
     const { items } = location.state
+
+    const changeClass = () => {
+        setIsActive(current => !current)
+    }
+
+    const incrementCount = () => {
+        setAddCount(addCount + 1);
+    }
+    const decrementCount = () => {
+        setAddCount(addCount - 1)
+    }
 
     var settings = {
         infinite: true,
@@ -56,15 +66,6 @@ const ShopScreem = () => {
             }
         ]
     };
-
-
-    const incrementCount = () => {
-        setAddCount(addCount + 1);
-
-    }
-    const decrementCount = () => {
-        setAddCount(addCount - 1)
-    }
 
     var mybutton = document.getElementById("myBtn");
     window.onscroll = function () { scrollFunction() };
@@ -166,22 +167,12 @@ const ShopScreem = () => {
 
                                     <hr style={{ width: "320px", height: "1px", color: "#7453fc" }} />
                                     <h6 style={{ color: "#7453fc" }} className='mt-2 mb-2'>Color Avaiblable;</h6>
-                                    <button className='btnShop' style={{ backgroundColor: `${items.color_avaliable}` }} ></button>
-
-
-                                    <button className={getColors === "black" ? "colorsbutton border border-info" : "colorsbutton"} onClick={() => setColor('black')} style={{ backgroundColor: 'black' }}></button>
-                                    <button className={getColors === "red" ? "colorsbutton border border-info" : "colorsbutton"} onClick={() => setColor('red')} style={{ backgroundColor: 'red' }}></button>
-                                    <button className={getColors === "blue" ? "colorsbutton border border-info" : "colorsbutton"} onClick={() => setColor('blue')} style={{ backgroundColor: 'blue' }}></button>
-                                    <button className={getColors === "pink" ? "colorsbutton border border-info" : "colorsbutton"} onClick={() => setColor('pink')} style={{ backgroundColor: 'pink' }}></button>
-                                    <button className={getColors === "yellow" ? "colorsbutton border border-info" : "colorsbutton"} onClick={() => setColor('yellow')} style={{ backgroundColor: 'yellow' }}></button>
-                                    <button className={getColors === "green" ? "colorsbutton border border-info" : "colorsbutton"} onClick={() => setColor('green')} style={{ backgroundColor: 'green' }}></button>
-                                    <button className={getColors === "grey" ? "colorsbutton border border-info" : "colorsbutton"} onClick={() => setColor('grey')} style={{ backgroundColor: 'grey' }}></button>
-
+                                    <button className={isActive ? 'btnShop borderClass' : 'btnShop'} onClick={changeClass} style={{ backgroundColor: `${items.color_avaliable}` }} ></button>
 
                                     <h6 className='mt-3' style={{ color: "#7459fc" }}>Describtion:</h6>
                                     <p className='p-2'>{items.describtion}</p>
 
-                                    <div className='mt-2 d-flex'><Link to='/ItemForm' className='text-center buttonx col-11'>BUY NOW</Link> <i className="fa-2x ms-2 mt-1 fa-solid fa-heart text-danger" />
+                                    <div className='mt-2 d-flex'><Link to='/ItemForm' state={{ counter: addCount, itemColor: getColor }} className='text-center buttonx col-11'>BUY NOW</Link> <i className="fa-2x ms-2 mt-1 fa-solid fa-heart text-danger" />
                                     </div>
                                     <p style={{ fontSize: "11px" }} className='text-secondary text-center'>Pyament method is COD, other methods are comming soon!</p>
                                 </div>
