@@ -53,11 +53,6 @@ const UserForm = () => {
         }
         else {
 
-            // {
-            //     cv ?
-            //         ("cv", cv, "[PROXY]") : console.log("Cv is Empty")
-            // }
-
             const userobj = {
                 profile_photo: profile,
                 cover_photo: cover,
@@ -154,7 +149,7 @@ const UserForm = () => {
                                     <h3 className='mb-4' style={{ color: "#7453fc" }}>User Info:</h3>
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="title">Full Name*</label>
+                                            <label htmlFor="title">Full Name<span className='text-danger'>*</span></label>
                                             <input onChange={(e) => Setname(e.target.value)} style={{ backgroundColor: "#282b2f", borderRadius: '20px', borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Ali" autoComplete="on" type='text' />
                                             {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
@@ -171,28 +166,28 @@ const UserForm = () => {
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="title">Phone Number*</label>
+                                            <label htmlFor="title">Phone Number</label>
                                             <input onChange={(e) => Setphone(e.target.value)} style={{ borderRadius: '20px', backgroundColor: "#282b2f", borderColor: '#404245' }} id="inputName5" placeholder="Enter your current phone no." autoComplete="on" type='number' />
                                             {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="title">CNIC Number*</label>
+                                            <label htmlFor="title">CNIC Number<span className='text-danger'>*</span></label>
                                             <input onChange={(e) => setCnic(e.target.value)} style={{ borderRadius: '20px', backgroundColor: "#282b2f", borderColor: cnic === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Enter your cnic without dashes" autoComplete="on" type='number' />
                                             {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="title">WhatsApp Number*</label>
+                                            <label htmlFor="title">WhatsApp Number</label>
                                             <input onChange={(e) => setWhatsapp(e.target.value)} style={{ borderRadius: '20px', backgroundColor: "#282b2f", borderColor: '#404245' }} id="inputName5" placeholder="Enter your whatsapp number" autoComplete="on" type='number' />
                                             {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="title">WhatsApp Business*</label>
+                                            <label htmlFor="title">WhatsApp Business</label>
                                             <input onChange={(e) => setWhatsappbuss(e.target.value)} style={{ borderRadius: '20px', backgroundColor: "#282b2f", borderColor: '#404245' }} id="inputName5" placeholder="Enter your business whatsapp number" autoComplete="on" type='number' />
                                             {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
@@ -207,7 +202,7 @@ const UserForm = () => {
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="title">Proffession</label>
+                                            <label htmlFor="title">Proffession<span className='text-danger'>*</span></label>
                                             <input onChange={(e) => setProfession(e.target.value)} style={{ borderRadius: '20px', backgroundColor: "#282b2f", borderColor: profession === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Designer, Painter" autoComplete="on" type='text' />
                                             {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
@@ -219,19 +214,18 @@ const UserForm = () => {
                                             {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
-
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="file">Upload Profile Picture*</label>
-                                            {/* onChange={(e) => setProfile(e.target.files[0])} */}
-                                            <input type="file" id="file" name="myfiles[]" multiple />
+                                            <label htmlFor="file">Upload Profile Picture<span className='text-danger'>*</span></label>
+                                            <div className='m-1' style={{ borderRadius: '20px', border: profile ==='' && submit === true ? '1px solid red' : '1px solid #37393C' }}>
+                                                <input type="file" onChange={(e) => setProfile(e.target.files[0])} id="file" name="myfiles[]" multiple />
+                                            </div>
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="file">Upload Cover Picture</label>
-                                            {/* onChange={(e) => setCover(e.target.files[0]) } */}
-                                            <input type="file" id="file" name="myfiles[]" multiple />
+                                            <input type="file" onChange={(e) => setCover(e.target.files[0])} id="file" name="myfiles[]" multiple />
                                         </fieldset>
                                     </div>
 
@@ -320,7 +314,7 @@ const UserForm = () => {
 
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="title">Bio*</label>
+                                            <label htmlFor="title">Bio<span className='text-danger'>*</span></label>
                                             <input onChange={(e) => setBio(e.target.value)} style={{ borderRadius: '20px', backgroundColor: "#282b2f", borderColor: bio === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Your short bio" autoComplete="on" type='text' />
                                             {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
@@ -328,7 +322,7 @@ const UserForm = () => {
 
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="title">Age*</label>
+                                            <label htmlFor="title">Age</label>
                                             <input onChange={(e) => setAge(e.target.value)} style={{ borderRadius: '20px', backgroundColor: "#282b2f", borderColor: '#404245' }} id="inputName5" placeholder="Enter your age" autoComplete="on" type='number' />
                                         </fieldset>
                                     </div>
@@ -347,7 +341,7 @@ const UserForm = () => {
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
-                                            <label htmlFor="title">Region</label>
+                                            <label htmlFor="title">Region<span className='text-danger'>*</span></label>
                                             <input onChange={(e) => setRegion(e.target.value)} style={{ borderRadius: '20px', backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Lahore / Karachi" autoComplete="on" type='text' />
                                             {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
@@ -355,7 +349,7 @@ const UserForm = () => {
 
                                     <div className="col-lg-12 mb-3">
                                         <fieldset>
-                                            <label htmlFor="title">Professional Describtion</label>
+                                            <label htmlFor="title">Professional Describtion<span className='text-danger'>*</span></label>
                                             <textarea className="form-control text-white" onChange={(e) => setShortDisc(e.target.value)} style={{ backgroundColor: '#282b2f', borderRadius: "20px", borderColor: shortdisc === "" && submit === true ? "red" : '#404245' }} id="exampleFormControlTextarea1" rows={7} placeholder="Describe yourself ..." defaultValue={""} />
                                             {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
@@ -407,8 +401,7 @@ const UserForm = () => {
                                     <div className="col-lg-7 mx-auto">
                                         <fieldset>
                                             <label htmlFor="file">Upload your resume</label>
-                                            {/* onChange={(e) => setCv(e.target.files[0])} */}
-                                            <input type="file" id="file" name="myfiles[]" multiple />
+                                            <input type="file" onChange={(e) => setCv(e.target.files[0])} id="file" name="myfiles[]" multiple />
                                         </fieldset>
                                     </div>
 

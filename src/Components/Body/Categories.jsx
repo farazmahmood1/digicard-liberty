@@ -63,7 +63,7 @@ const Categories = () => {
                                             </div>
                                             <h4>Tattoos</h4>
                                             <div className="icon-button">
-                                                <a href="#"><i className="fa fa-angle-right" /></a>
+                                                <a ><i className="fa fa-angle-right" /></a>
                                             </div>
                                         </div>
                                     </div>
@@ -74,18 +74,7 @@ const Categories = () => {
                                             </div>
                                             <h4>Digi Cards</h4>
                                             <div className="icon-button">
-                                                <a href="#"><i className="fa fa-angle-right" /></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-2 col-sm-6">
-                                        <div className="item">
-                                            <div className="icon">
-                                                <img src="./source/assets/images/icon-03.png" alt />
-                                            </div>
-                                            <h4>Key Chains</h4>
-                                            <div className="icon-button">
-                                                <a href="#"><i className="fa fa-angle-right" /></a>
+                                                <a ><i className="fa fa-angle-right" /></a>
                                             </div>
                                         </div>
                                     </div>
@@ -97,8 +86,20 @@ const Categories = () => {
                                             </div>
                                             <h4>Jewelerry</h4>
                                             <div className="icon-button">
-                                                <a href="#"><i className="fa fa-angle-right" /></a>
+                                                <a h><i className="fa fa-angle-right" /></a>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-2 col-sm-6">
+                                        <div className="item">
+                                            <div class="ribbon ribbon-top-right"><span>soon!</span></div>
+                                            <div className="icon">
+                                                <img src="./source/assets/images/icon-03.png" alt />
+                                            </div>
+                                            <h4>Key Chains</h4>
+                                            {/* <div className="icon-button">
+                                                <a href="#"><i className="fa fa-angle-right" /></a>
+                                            </div> */}
                                         </div>
                                     </div>
                                     {/* <div className="col-lg-2 col-sm-6">
