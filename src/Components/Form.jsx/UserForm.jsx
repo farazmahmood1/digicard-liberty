@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Modal } from 'pretty-modal'
 import { Link } from 'react-router-dom'
+import Baseurl from '../SourceFiles/url';
 
 
 toast.configure()
@@ -36,7 +37,6 @@ const UserForm = () => {
     const [religion, setReligion] = useState("Islam");
     const [region, setRegion] = useState("");
     const [shortdisc, setShortDisc] = useState("");
-
     const [linkedin, setLinkedin] = useState("");
     const [github, setGithub] = useState("");
     const [stackoverflow, setStackoverflow] = useState("");
@@ -47,7 +47,7 @@ const UserForm = () => {
     const [submit, setSubmit] = useState(false);
     const submitData = () => {
 
-        if (!name || !cnic || !profession || !bio || !region || !shortdisc) {
+        if (!profile || !name || !cnic || !profession || !bio || !region || !shortdisc) {
             setSubmit(true)
             toast.warn('Please fill All fields')
         }
@@ -55,7 +55,7 @@ const UserForm = () => {
 
             // {
             //     cv ?
-            //         formdata.append("cv", cv, "[PROXY]") : console.log("Cv is Empty")
+            //         ("cv", cv, "[PROXY]") : console.log("Cv is Empty")
             // }
 
             const userobj = {
@@ -88,16 +88,16 @@ const UserForm = () => {
                 gender: gender,
                 profession: profession,
                 designation: designation,
-                cv: cv
+                cv: cv,
             }
 
-            axios.post(`adddata`, userobj)
+            axios.post(`${Baseurl}adddata`, userobj)
                 .then((response) => {
                     toast.info("Data sumbitted!")
                     setSubmit(true)
-                    setInterval(() => {
-                        window.location.reload(true)
-                    }, 2000)
+                    // setInterval(() => {
+                    //     window.location.reload(true)
+                    // }, 2000)
                     console.log(response)
                 })
                 .catch((error) => {
@@ -223,13 +223,15 @@ const UserForm = () => {
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="file">Upload Profile Picture*</label>
-                                            <input type="file" onChange={(e) => setProfile(e.target.files[0])} id="file" name="myfiles[]" multiple />
+                                            {/* onChange={(e) => setProfile(e.target.files[0])} */}
+                                            <input type="file" id="file" name="myfiles[]" multiple />
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="file">Upload Cover Picture</label>
-                                            <input type="file" onChange={(e) => setCover(e.target.files[0])} id="file" name="myfiles[]" multiple />
+                                            {/* onChange={(e) => setCover(e.target.files[0]) } */}
+                                            <input type="file" id="file" name="myfiles[]" multiple />
                                         </fieldset>
                                     </div>
 
@@ -405,7 +407,8 @@ const UserForm = () => {
                                     <div className="col-lg-7 mx-auto">
                                         <fieldset>
                                             <label htmlFor="file">Upload your resume</label>
-                                            <input onChange={(e) => setCv(e.target.files[0])} type="file" id="file" name="myfiles[]" multiple />
+                                            {/* onChange={(e) => setCv(e.target.files[0])} */}
+                                            <input type="file" id="file" name="myfiles[]" multiple />
                                         </fieldset>
                                     </div>
 

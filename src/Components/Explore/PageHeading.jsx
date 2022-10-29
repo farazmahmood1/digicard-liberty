@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Slider from "react-slick";
 
 
+
 const PageHeading = () => {
 
   var settings = {
@@ -80,13 +81,47 @@ const PageHeading = () => {
                   <div >
                     <div className="item p-3">
                       <div className="thumb">
-                        <img src="./source/assets/images/featured-04.jpg" alt style={{ borderRadius: 20 }} />
+                        <img src="./source/assets/images/WaleedKhan.JPG" alt style={{ borderRadius: 20 , maxHeight:'420px' , maxWidth:'420px'}} />
+                        <div className="hover-effect">
+                          <div className="content">
+                            <h4>Waleed Khan</h4>
+                            <span className="author">
+                              <img src="./source/assets/images/WaleedKhan.JPG" alt style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
+                              <h6>Network Enginner<br /><a>Islamabad</a></h6>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 
+                  <div>
+                    <div className="item p-3">
+                      <div className="thumb">
+                        <img src="./source/assets/images/featured-03.jpg" alt style={{ borderRadius: 20 , maxHeight:'420px' , maxWidth:'420px'}} />
                         <div className="hover-effect">
                           <div className="content">
                             <h4>Crypto Aurora Guy</h4>
                             <span className="author">
                               <img src="./source/assets/images/author.jpg" alt style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
-                              <h6 className='mt-2'>Liberty Artist</h6>
+                              <h6>Liberty Artist<br /><a href="#">New York</a></h6>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+
+                    <div className="item p-3">
+                      <div className="thumb">
+                        <img src="./source/assets/images/AffanSheikh.JPG" alt style={{ borderRadius: 20 , maxHeight:'420px' , maxWidth:'420px'}} />
+                        <div className="hover-effect">
+                          <div className="content">
+                            <h4>Affan Sheikh</h4>
+                            <span className="author">
+                              <img src="./source/assets/images/AffanSheikh.JPG" alt style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
+                              <h6>Backend Devloper<br /><a >Lahore</a></h6>
                             </span>
                           </div>
                         </div>
@@ -96,13 +131,13 @@ const PageHeading = () => {
                   <div>
                     <div className="item p-3">
                       <div className="thumb">
-                        <img src="./source/assets/images/featured-04.jpg" alt style={{ borderRadius: 20 }} />
+                        <img src="./source/assets/images/saribBhai.JPG" alt style={{ borderRadius: 20 , maxHeight:'420px' , maxWidth:'420px'}} />
                         <div className="hover-effect">
                           <div className="content">
-                            <h4>Crypto Aurora Guy</h4>
+                            <h4>Sarib Arshad Khan</h4>
                             <span className="author">
-                              <img src="./source/assets/images/author.jpg" alt style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
-                              <h6>Liberty Artist<br /><a href="#">@libertyart</a></h6>
+                              <img src="./source/assets/images/saribBhai.JPG" alt style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
+                              <h6>Full Stack Developer<br /><a>Lahore</a></h6>
                             </span>
                           </div>
                         </div>
@@ -112,13 +147,13 @@ const PageHeading = () => {
                   <div>
                     <div className="item p-3">
                       <div className="thumb">
-                        <img src="./source/assets/images/featured-04.jpg" alt style={{ borderRadius: 20 }} />
+                        <img src="./source/assets/images/faraz.JPG" alt style={{ borderRadius: 20 , maxHeight:'420px' , maxWidth:'420px'}} />
                         <div className="hover-effect">
                           <div className="content">
-                            <h4>Crypto Aurora Guy</h4>
+                            <h4>Faraz Mahmood</h4>
                             <span className="author">
-                              <img src="./source/assets/images/author.jpg" alt style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
-                              <h6>Liberty Artist<br /><a href="#">@libertyart</a></h6>
+                              <img src="./source/assets/images/current-02.jpg" alt style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
+                              <h6>Musician<br /><a>Karachi</a></h6>
                             </span>
                           </div>
                         </div>
@@ -128,45 +163,13 @@ const PageHeading = () => {
                   <div>
                     <div className="item p-3">
                       <div className="thumb">
-                        <img src="./source/assets/images/featured-04.jpg" alt style={{ borderRadius: 20 }} />
+                        <img src="./source/assets/images/usamaBhai.JPG" alt style={{ borderRadius: 20 , maxHeight:'420px' , maxWidth:'420px' }} />
                         <div className="hover-effect">
                           <div className="content">
-                            <h4>Crypto Aurora Guy</h4>
+                            <h4>Usama </h4>
                             <span className="author">
                               <img src="./source/assets/images/author.jpg" alt style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
-                              <h6>Liberty Artist<br /><a href="#">@libertyart</a></h6>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="item p-3">
-                      <div className="thumb">
-                        <img src="./source/assets/images/featured-04.jpg" alt style={{ borderRadius: 20 }} />
-                        <div className="hover-effect">
-                          <div className="content">
-                            <h4>Crypto Aurora Guy</h4>
-                            <span className="author">
-                              <img src="./source/assets/images/author.jpg" alt style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
-                              <h6>Liberty Artist<br /><a href="#">@libertyart</a></h6>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="item p-3">
-                      <div className="thumb">
-                        <img src="./source/assets/images/featured-04.jpg" alt style={{ borderRadius: 20 }} />
-                        <div className="hover-effect">
-                          <div className="content">
-                            <h4>Crypto Aurora Guy</h4>
-                            <span className="author">
-                              <img src="./source/assets/images/author.jpg" alt style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
-                              <h6>Liberty Artist<br /><a href="#">@libertyart</a></h6>
+                              <h6>Java Developer<br /><a href="#">Lahore</a></h6>
                             </span>
                           </div>
                         </div>

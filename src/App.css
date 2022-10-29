@@ -91,6 +91,19 @@
     border-radius: 50%;
 }
 
+.colorsbutton {
+    border: none;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
 .priceText {
     color: #7453fc;
 }

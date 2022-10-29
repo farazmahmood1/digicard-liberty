@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Imagesurl from '../SourceFiles/Imageurl'
 import Baseurl from '../SourceFiles/url'
+import { saveAs } from "file-saver";
 
 const UserProfile = () => {
 
@@ -45,6 +46,7 @@ const UserProfile = () => {
   const [name, setName] = useState('')
   const [pic, setPic] = useState('')
   const [profile, setProfile] = useState('userProfile')
+
 
   console.log(github)
   const profileData = () => {
@@ -349,7 +351,10 @@ const UserProfile = () => {
                   }
 
                 </div>
-                <button className='buttonx w-25 mt-4 p-3' >View CV</button>
+                {
+                  cv ?
+                    <button onClick={saveFile} className='buttonx w-25 mt-4 p-3' >View CV</button> : console.log('no cv is avavialble')
+                }
               </div>
             </div>
           </div>
@@ -451,6 +456,10 @@ const UserProfile = () => {
     }
   }
 
+  const saveFile = () => {
+    saveAs(`${Imagesurl}${cv}`);
+  };
+
   var mybutton = document.getElementById("myBtn");
   window.onscroll = function () { scrollFunction() };
   function scrollFunction() {
@@ -469,7 +478,7 @@ const UserProfile = () => {
 
   return (
     <div>
-      <div className="CoverImage" style={{ backgroundImage: `url(${Imagesurl}${cover})` }}>
+      <div className="CoverImage" style={{ backgroundImage: cover === '' ? 'url(./source/assets/images/heading-bg.jpg)' : `url(${Imagesurl}${cover})` }}>
       </div>
 
       <div className="darkbg" style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)" }}>

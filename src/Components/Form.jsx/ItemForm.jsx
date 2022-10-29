@@ -7,6 +7,7 @@ import { Modal } from 'pretty-modal'
 import { Link } from 'react-router-dom'
 import Baseurl from '../SourceFiles/url';
 import '../Modal/SignInUser'
+import { useLocation } from 'react-router-dom';
 import SignInUser from '../Modal/SignInUser';
 import SignUpUser from '../Modal/SignUpUser'
 
@@ -30,11 +31,7 @@ const ItemForm = () => {
 
     const [openModal, setOpenModal] = useState(false)
 
-    const [signInModal, setSignInModal] = useState(true)
-    const [signUpModal, setSignUpModal] = useState(true)
-
     const [login, setLogin] = useState(false)
-
 
     const submitData = () => {
 

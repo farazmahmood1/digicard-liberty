@@ -14,6 +14,9 @@ const ShopScreem = () => {
     const [addCount, setAddCount] = useState(1);
     const [getColor, setColor] = useState('black')
 
+    const [getColors, setColors] = useState('black')
+
+
     const location = useLocation();
     const { items } = location.state
 
@@ -164,6 +167,16 @@ const ShopScreem = () => {
                                     <hr style={{ width: "320px", height: "1px", color: "#7453fc" }} />
                                     <h6 style={{ color: "#7453fc" }} className='mt-2 mb-2'>Color Avaiblable;</h6>
                                     <button className='btnShop' style={{ backgroundColor: `${items.color_avaliable}` }} ></button>
+
+
+                                    <button className={getColors === "black" ? "colorsbutton border border-info" : "colorsbutton"} onClick={() => setColor('black')} style={{ backgroundColor: 'black' }}></button>
+                                    <button className={getColors === "red" ? "colorsbutton border border-info" : "colorsbutton"} onClick={() => setColor('red')} style={{ backgroundColor: 'red' }}></button>
+                                    <button className={getColors === "blue" ? "colorsbutton border border-info" : "colorsbutton"} onClick={() => setColor('blue')} style={{ backgroundColor: 'blue' }}></button>
+                                    <button className={getColors === "pink" ? "colorsbutton border border-info" : "colorsbutton"} onClick={() => setColor('pink')} style={{ backgroundColor: 'pink' }}></button>
+                                    <button className={getColors === "yellow" ? "colorsbutton border border-info" : "colorsbutton"} onClick={() => setColor('yellow')} style={{ backgroundColor: 'yellow' }}></button>
+                                    <button className={getColors === "green" ? "colorsbutton border border-info" : "colorsbutton"} onClick={() => setColor('green')} style={{ backgroundColor: 'green' }}></button>
+                                    <button className={getColors === "grey" ? "colorsbutton border border-info" : "colorsbutton"} onClick={() => setColor('grey')} style={{ backgroundColor: 'grey' }}></button>
+
 
                                     <h6 className='mt-3' style={{ color: "#7459fc" }}>Describtion:</h6>
                                     <p className='p-2'>{items.describtion}</p>
