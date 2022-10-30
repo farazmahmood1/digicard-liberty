@@ -22,7 +22,7 @@ const Shop = () => {
       })
   }
 
-  const filtered =   card.filter((item) => item.item_type === type)
+  const filtered = card.filter((item) => item.item_type === type)
 
   var mybutton = document.getElementById("myBtn");
   window.onscroll = function () { scrollFunction() };
@@ -48,7 +48,7 @@ const Shop = () => {
             <div className="col-lg-12 mb-4">
               <h6 className=''>DigiCard Market</h6>
               <h2>Buy Your DigiCard Now.</h2>
-              <span className=''> Home &gt; <a href="#">Shop</a></span>
+              <span className=''> Home &gt; <a href="">Shop</a></span>
             </div>
           </div>
         </div>
@@ -76,7 +76,8 @@ const Shop = () => {
             <div className="col-lg-12">
               <div className="row">
                 {
-                  filtered.map((items) => {
+
+                  card.filter((item) => item.item_type === type).map((items) => {
                     return (
                       <>
                         <div className="col-lg-4">
@@ -99,7 +100,7 @@ const Shop = () => {
                               </div>
                               <div className='d-flex justify-content-center '>
                                 <div className="main-button ms-2 itemBtn">
-                                  <Link state={{items: items}} to='/ShopScreem'>View</ Link>
+                                  <Link state={{ items: items }} to='/ShopScreem'>View</ Link>
                                 </div>
                               </div>
                             </div>

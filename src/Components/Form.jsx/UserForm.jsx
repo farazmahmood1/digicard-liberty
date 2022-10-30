@@ -7,9 +7,7 @@ import { Modal } from 'pretty-modal'
 import { Link } from 'react-router-dom'
 import Baseurl from '../SourceFiles/url';
 
-
 toast.configure()
-
 const UserForm = () => {
 
     const [name, Setname] = useState("");
@@ -84,6 +82,7 @@ const UserForm = () => {
                 profession: profession,
                 designation: designation,
                 cv: cv,
+                // adre : address
             }
 
             axios.post(`${Baseurl}adddata`, userobj)
@@ -193,13 +192,12 @@ const UserForm = () => {
                                         </fieldset>
                                     </div>
 
-                                    <div className="col-lg-12 mb-3">
+                                    {/* <div className="col-lg-12 mb-3">
                                         <fieldset>
                                             <label htmlFor="title">Address</label>
                                             <textarea className="form-control text-white" onChange={(e) => setAddress(e.target.value)} style={{ backgroundColor: '#282b2f', borderColor: '#404245', borderRadius: "20px" }} id="exampleFormControlTextarea1" rows={5} placeholder="Enter your current Address ..." defaultValue={""} />
-                                            {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
-                                    </div>
+                                    </div> */}
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Proffession<span className='text-danger'>*</span></label>
@@ -342,7 +340,7 @@ const UserForm = () => {
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Region<span className='text-danger'>*</span></label>
-                                            <input onChange={(e) => setRegion(e.target.value)} style={{ borderRadius: '20px', backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Lahore / Karachi" autoComplete="on" type='text' />
+                                            <input onChange={(e) => setRegion(e.target.value)} style={{ borderRadius: '20px', backgroundColor: "#282b2f", borderColor: region === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Lahore / Karachi" autoComplete="on" type='text' />
                                             {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
