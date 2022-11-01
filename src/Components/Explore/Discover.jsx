@@ -9,10 +9,10 @@ const Discover = () => {
   const [userData, setUserData] = useState([])
 
   const renderData = () => {
-    axios.get(`${Baseurl}fetchwithreview`)
+    axios.get(`${Baseurl}fetchalldata`)
       .then(res => {
-        setUserData(res.data.ready_to_review)
-        console.log(res.data.ready_to_review)
+        setUserData(res.data.Data)
+        console.log(res.data.Data)
       })
       .catch(err => {
         console.log(err)
@@ -28,10 +28,14 @@ const Discover = () => {
             <div className="col-lg-12">
               <div className="section-heading">
                 <div className="line-dec" />
-                <h2>Our Top <em>Buyers</em>.</h2>
-              </div>
-            </div>
+                <div className='d-flex'>
 
+                  <h2>Our Top <em>Buyers</em></h2>
+                  <button className='buttonx ms-auto'>Create Yours</button>
+                </div>
+              </div>
+
+            </div>
             {
               userData.map((items) => {
                 return (
@@ -43,7 +47,7 @@ const Discover = () => {
                             <span className="author">
                             </span>
                             <img src={`${Imagesurl}${items.profile_photo}`} alt='userphoto' style={{ borderRadius: 20, height: '228px' }} />
-                            <h4>Saqib Hussain</h4>
+                            <h4>{items.name}</h4>
                           </div>
                           <div className="col-lg-12">
                             <div className="line-dec" />

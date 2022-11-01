@@ -89,7 +89,7 @@ const UserProfile = () => {
         setEmail(result.gmail)
         setPhone(result.phone)
         setName(result.name)
-        setCover(result.cover)
+        setCover(result.cover_photo)
         setPic(result.profile_photo)
         setProfDesc(result.professional_desc)
         setGender(result.gender)
@@ -268,7 +268,7 @@ const UserProfile = () => {
                 <div className="section-heading">
                   <div className="line-dec" />
 
-                  {designation !== '' || bio !== '' || longBio !== '' ?
+                  {designation !== '' || bio !== '' ?
                     <>
                       <h1 className='mt-2'>Information about me</h1>
                     </>
@@ -299,7 +299,8 @@ const UserProfile = () => {
                       <>
                         <h3 className='mt-3' style={{ color: "#7453fc" }}>Description:</h3>
                         <p className='mt-3'>{shortBio}</p>
-                      </> :
+                      </>
+                      :
                       console.log('No describtion avaiable')
                   }
 
@@ -331,11 +332,11 @@ const UserProfile = () => {
                   }
 
                   {
-                    location !== '' ?
+                    address !== '' ?
                       <>
                         <div className='d-flex mt-3'>
                           <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-address-book" /></h2>
-                          <p className='mt-3 ms-auto'>sa</p>
+                          <p className='mt-3 ms-auto'>{address}</p>
                         </div>
                       </> : console.log('no address avaiable')
                   }
@@ -344,7 +345,7 @@ const UserProfile = () => {
                     region !== '' ?
                       <>
                         <div className='d-flex mt-3'>
-                          <h2 className='' style={{ color: "#7453fc" }}><i className="fa-solid fa-location-dot" /></h2>
+                          <h2><i className="fa-solid fa-location-dot" style={{ color: "#7453fc" }} /> <span style={{ fontSize: '13px' }}>Region</span></h2>
                           <p className='mt-2 ms-auto'>{region}</p>
                         </div>
                       </> : console.log('no region avaiable')

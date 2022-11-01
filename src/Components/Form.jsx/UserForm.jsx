@@ -82,7 +82,7 @@ const UserForm = () => {
                 profession: profession,
                 designation: designation,
                 cv: cv,
-                // adre : address
+                address: address
             }
 
             axios.post(`${Baseurl}adddata`, userobj)
@@ -101,6 +101,7 @@ const UserForm = () => {
         }
     }
 
+    console.log(name)
 
     var mybutton = document.getElementById("myBtn");
     window.onscroll = function () { scrollFunction() };
@@ -192,12 +193,12 @@ const UserForm = () => {
                                         </fieldset>
                                     </div>
 
-                                    {/* <div className="col-lg-12 mb-3">
+                                    <div className="col-lg-12 mb-3">
                                         <fieldset>
                                             <label htmlFor="title">Address</label>
                                             <textarea className="form-control text-white" onChange={(e) => setAddress(e.target.value)} style={{ backgroundColor: '#282b2f', borderColor: '#404245', borderRadius: "20px" }} id="exampleFormControlTextarea1" rows={5} placeholder="Enter your current Address ..." defaultValue={""} />
                                         </fieldset>
-                                    </div> */}
+                                    </div>
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Proffession<span className='text-danger'>*</span></label>
@@ -215,7 +216,7 @@ const UserForm = () => {
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="file">Upload Profile Picture<span className='text-danger'>*</span></label>
-                                            <div className='m-1' style={{ borderRadius: '20px', border: profile ==='' && submit === true ? '1px solid red' : '1px solid #37393C' }}>
+                                            <div className='m-1' style={{ borderRadius: '20px', border: profile === '' && submit === true ? '1px solid red' : '1px solid #37393C' }}>
                                                 <input type="file" onChange={(e) => setProfile(e.target.files[0])} id="file" name="myfiles[]" multiple />
                                             </div>
                                         </fieldset>

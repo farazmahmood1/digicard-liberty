@@ -10,6 +10,33 @@ const Navbar = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false)
 
+  const [navbar, setNavbar] = useState("Home");
+
+  const navbarDesign = () => {
+    if (navbar === 'Home') {
+      return (
+        <>
+          <navbar-nav style={{ fontSize: '10px' }}></navbar-nav>
+        </>
+      )
+    }
+    else if (navbar === 'Shop') {
+      return (
+        <>
+          <navbar-nav style={{ backgroundColor: 'pink' }}></navbar-nav>
+        </>
+      )
+    }
+    else if (navbar === 'Profiles') {
+      return (
+        <>
+          <navbar-nav style={{ backgroundColor: 'orange' }}></navbar-nav>
+        </>
+      )
+    }
+  }
+
+  // useEffect(() => { navbarDesign() }, [])
 
   return (
     <div>

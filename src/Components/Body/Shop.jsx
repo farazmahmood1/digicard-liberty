@@ -76,7 +76,6 @@ const Shop = () => {
             <div className="col-lg-12">
               <div className="row">
                 {
-
                   card.filter((item) => item.item_type === type).map((items) => {
                     return (
                       <>
