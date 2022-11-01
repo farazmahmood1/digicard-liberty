@@ -3,10 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Imagesurl from '../SourceFiles/Imageurl'
 import Baseurl from '../SourceFiles/url'
+import Icon from '../SourceFiles/arrow-up-icon.svg'
 
 const Discover = () => {
 
   const [userData, setUserData] = useState([])
+  const [visible, setVisible] = useState(false)
 
   const renderData = () => {
     axios.get(`${Baseurl}fetchalldata`)
@@ -18,6 +20,26 @@ const Discover = () => {
         console.log(err)
       })
   }
+
+  //Scroll to top function
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 1800) {
+      setVisible(true)
+    }
+    else if (scrolled <= 1800) {
+      setVisible(false)
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  window.addEventListener('scroll', toggleVisible);
 
   useEffect(() => { renderData() }, [])
   return (
@@ -31,11 +53,18 @@ const Discover = () => {
                 <div className='d-flex'>
 
                   <h2>Our Top <em>Buyers</em></h2>
-                  <button className='buttonx ms-auto'>Create Yours</button>
+                  <div className="main-button ms-auto">
+                    <Link to='/ShopMain'>Create Yours</Link>
+                  </div>
                 </div>
               </div>
 
             </div>
+
+            <button className='buttonx scroolToTop' style={{ display: visible ? 'inline' : 'none' }} onClick={scrollToTop}>
+              <i className="fa-solid fa-chevron-up imgx" />
+            </button>
+
             {
               userData.map((items) => {
                 return (
@@ -72,6 +101,8 @@ const Discover = () => {
                 )
               })
             }
+
+
 
           </div>
         </div>

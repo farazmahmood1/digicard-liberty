@@ -57,7 +57,7 @@ const Navbar = () => {
                       <Link to='/' className="nav-link me-4 active" aria-current="page"><b> Home</b></Link>
                     </li>
                     <li className="nav-item ">
-                      <Link to='/ShopMain' className="nav-link active me-4" aria-current="page"><b> Shop</b></Link>
+                      <Link to='/ShopMain' state={{ values: 'Card' }} className="nav-link active me-4" aria-current="page"><b> Shop</b></Link>
                     </li>
                     <li className="nav-item ">
                       <Link to='/ProfileMain' className="nav-link active me-4" aria-current="page"><b> Profiles</b></Link>

@@ -5,11 +5,15 @@ import axios from 'axios';
 import Baseurl from '../SourceFiles/url';
 import Imagesurl from '../SourceFiles/Imageurl';
 import ShopScreem from '../Main/ShopScreem';
+import { useLocation } from 'react-router-dom';
 
 const Shop = () => {
 
+  const location = useLocation();
+  const { values } = location.state;
+
   const [card, setCard] = useState([])
-  const [type, setType] = useState("Card");
+  const [type, setType] = useState(values ? values : 'Tattos');
 
   const dataRender = () => {
     axios.get(`${Baseurl}getallitems`)
@@ -21,6 +25,9 @@ const Shop = () => {
         console.log(err)
       })
   }
+
+  console.log(values)
+
 
   const filtered = card.filter((item) => item.item_type === type)
 
@@ -48,7 +55,7 @@ const Shop = () => {
             <div className="col-lg-12 mb-4">
               <h6 className=''>DigiCard Market</h6>
               <h2>Buy Your DigiCard Now.</h2>
-              <span className=''> Home &gt; <a href="">Shop</a></span>
+              <span className=''> Home &gt; <a>Shop</a></span>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from "react-slick";
 import data from '../SourceFiles/CardCrousel';
+import { Link } from 'react-router-dom';
 
 const Categories = () => {
 
@@ -63,7 +64,7 @@ const Categories = () => {
                                             </div>
                                             <h4>Tattoos</h4>
                                             <div className="icon-button">
-                                                <a ><i className="fa fa-angle-right" /></a>
+                                                <Link state={{ values: 'Tattos' }} to='/ShopMain' ><i className="fa fa-angle-right" /></Link>
                                             </div>
                                         </div>
                                     </div>
@@ -74,7 +75,7 @@ const Categories = () => {
                                             </div>
                                             <h4>Digi Cards</h4>
                                             <div className="icon-button">
-                                                <a ><i className="fa fa-angle-right" /></a>
+                                                <Link state={{ values: 'Card' }} to='/ShopMain'><i className="fa fa-angle-right" /></Link>
                                             </div>
                                         </div>
                                     </div>
@@ -86,7 +87,7 @@ const Categories = () => {
                                             </div>
                                             <h4>Jewelerry</h4>
                                             <div className="icon-button">
-                                                <a h><i className="fa fa-angle-right" /></a>
+                                                <Link state={{ values: 'Jewellery' }} to='/ShopMain'><i className="fa fa-angle-right" /></Link>
                                             </div>
                                         </div>
                                     </div>
@@ -135,13 +136,14 @@ const Categories = () => {
                                                             <img src="./source/assets/images/collection-01.jpg" alt />
                                                             <div className="down-content">
                                                                 <h4>{items.name}</h4>
-                                                                <span className="collection">Items In Collection:<br /><strong>{items.price}</strong></span>
+                                                                <span className="collection">Items left:<br /><strong>{items.price}</strong></span>
                                                                 <span className="category">Category:<br /><strong>{items.category}</strong></span>
                                                                 <div className='d-flex justify-content-center'>
 
                                                                     <div className="main-button">
                                                                         <a href="explore.html">View</a>
                                                                     </div>
+
                                                                 </div>
                                                             </div>
                                                         </div>

@@ -109,24 +109,24 @@ const ShopScreem = () => {
                         <div className="col-lg-12">
 
                             <div className="row">
-                                <div className="col-lg-7">
+                                <div className="col-lg-6">
                                     <div className='col-lg-12 mb-4'>
                                         <CursorZoom
                                             image={{
                                                 src: `${Imagesurl}${items.item_pic}`,
-                                                width: 650,
-                                                height: 250
+                                                width: 550,
+                                                height: 550
                                             }}
                                             zoomImage={{
                                                 src: `${Imagesurl}${items.item_pic}`,
-                                                width: 1800,
-                                                height: 1000
+                                                width: 600,
+                                                height: 600
                                             }}
-                                            cursorOffset={{ x: 50, y: -50 }}
+                                            cursorOffset={{ x: 10, y: -10 }}
                                         />
                                     </div>
 
-                                    <Slider {...settings}>
+                                    {/* <Slider {...settings}>
                                         <div>
                                             <div className='card-body'>
                                                 <img className='rounded-3' style={{ height: "270px" }} src="./source/assets/images/collection-01.jpg" alt="" />
@@ -147,10 +147,10 @@ const ShopScreem = () => {
                                                 <img className='rounded-3' style={{ height: "270px" }} src="./source/assets/images/discover-03.jpg" alt="" />
                                             </div>
                                         </div>
-                                    </Slider>
+                                    </Slider> */}
 
                                 </div>
-                                <div className="col-lg-5 ps-4 pe-4">
+                                <div className="col-lg-5 ms-4 ps-4 pe-4">
 
                                     <h3>{items.item_name}</h3>
                                     <h5 className='mt-2'>Rs. <span style={{ fontSize: "12px" }} className='text-secondary text-decoration-line-through'><span>{items.previous_price}</span></span>{items.item_price}</h5>
@@ -178,13 +178,24 @@ const ShopScreem = () => {
                                 </div>
                             </div>
                             <hr className='bg-secondary' />
-                            <div className="buttons  mt-5 d-flex justify-content-center">
+                            {/* <div className="buttons  mt-5 d-flex justify-content-center">
                                 <div className="main-button ">
                                     <Link to='/ShopMain' className='p-3 mt-1 me-2'>Explore Our Products</Link>
                                 </div>
                                 <Link to='/ProfileMain' className='buttonx p-4 ms-2'>View Profiles</Link>
+                            </div> */}
+                            <div className='d-flex justify-content-center'>
+                                <div className="buttons me-2">
+                                    <div className="border-button">
+                                        <Link to='/ShopMain' >Explore our products</Link>
+                                    </div>
+                                </div>
+                                <div className='buttons'>
+                                    <div className="main-button">
+                                        <Link to='/ProfileMain' >View Profiles</Link>
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

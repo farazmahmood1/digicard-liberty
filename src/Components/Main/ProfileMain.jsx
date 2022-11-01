@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import PageHeading from '../Explore/PageHeading'
 import Discover from '../Explore/Discover'
 
@@ -17,7 +17,7 @@ const ProfileMain = () => {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
-  
+
     useEffect(() => { topFunction() }, [])
     return (
         <div>
