@@ -195,6 +195,9 @@ const ShopScreem = () => {
                                         <Link to='/ProfileMain' >View Profiles</Link>
                                     </div>
                                 </div>
+
+                                
+
                             </div>
                         </div>
                     </div>
