@@ -196,7 +196,7 @@ const ShopScreem = () => {
                                     </div>
                                 </div>
 
-                            
+
                             </div>
                         </div>
                     </div>

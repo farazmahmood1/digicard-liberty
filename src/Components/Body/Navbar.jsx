@@ -12,12 +12,6 @@ const Navbar = () => {
 
   const [index, setIndex] = useState(1);
 
-
-
-
-
-
-
   return (
     <div>
       <header className="header-area header-sticky" >
@@ -34,13 +28,13 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse " id="navbarNav">
                   <ul className="navbar-nav  ms-auto">
                     <li className="nav-item ">
-                      <p onClick={() => setIndex(1)} className={ index===1 ? 'nav-link me-4' : 'nav-link me-4 enjoy'} aria-current="page"><b><Link className='text-dark' to='/' >Home</Link></b></p>
+                      <p onClick={() => setIndex(1)} className={index === 1 ? 'nav-link me-4 enjoy' : 'nav-link me-4 '} aria-current="page"><b><Link to='/' className='text-secondary' >Home</Link></b></p>
                     </li>
                     <li className="nav-item ">
-                      <p onClick={() => setIndex(2)} className={ index===2 ? 'nav-link me-4' : 'nav-link me-4 enjoy'}  aria-current="page"><b> <Link state={{ values: 'Card' }} className='text-dark' to='/ShopMain'>Shop</Link></b></p>
+                      <p onClick={() => setIndex(2)} className={index === 2 ? 'nav-link me-4 enjoy ' : 'nav-link me-4 '} aria-current="page"><b> <Link state={{ values: 'Card' }} className='text-secondary' to='/ShopMain'>Shop</Link></b></p>
                     </li>
                     <li className="nav-item ">
-                      <p onClick={() => setIndex(3)} className={ index===3 ? 'nav-link me-4' : 'nav-link me-4 enjoy'}  aria-current="page"><b> <Link to='/ProfileMain' className='text-dark'>Profiles</Link> </b></p>
+                      <p onClick={() => setIndex(3)} className={index === 3 ? 'nav-link me-4 enjoy ' : 'nav-link me-4 '} aria-current="page"><b> <Link to='/ProfileMain' className='text-secondary' >Profiles</Link> </b></p>
                     </li>
 
                     <li className="nav-item dropdown">
@@ -62,12 +56,12 @@ const Navbar = () => {
                         </div>
                         <hr />
                         <li className='d-flex'><i className="fa-solid fa-pen mt-2 ms-2" />
-                          <a className="dropdown-item" href="#">Update Profile</a>
+                          <a className="dropdown-item" target={'_blank'} href="https://digicarduserdashboard.netlify.app/">Update Profile</a>
                         </li>
                         <li className='d-flex'>
                           <i className="fa-solid fa-newspaper mt-2 ms-2" />
 
-                          <a className="dropdown-item" href="#">What`s New</a>
+                          <a className="dropdown-item" target={'_blank'} href="https://digicarduserdashboard.netlify.app/">What`s New</a>
                         </li>
                         <li className='d-flex'>
                           <i className="fa-solid fa-question mt-2 ms-2" />
