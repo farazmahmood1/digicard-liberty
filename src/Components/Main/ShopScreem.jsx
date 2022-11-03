@@ -184,10 +184,10 @@ const ShopScreem = () => {
                                 </div>
                                 <Link to='/ProfileMain' className='buttonx p-4 ms-2'>View Profiles</Link>
                             </div> */}
-                            <div className='d-flex justify-content-center'>
+                            <div className='d-flex justify-content-center mt-5'>
                                 <div className="buttons me-2">
                                     <div className="border-button">
-                                        <Link to='/ShopMain' >Explore our products</Link>
+                                        <Link to='/ShopMain' >Explore more products</Link>
                                     </div>
                                 </div>
                                 <div className='buttons'>
@@ -196,8 +196,7 @@ const ShopScreem = () => {
                                     </div>
                                 </div>
 
-                                
-
+                            
                             </div>
                         </div>
                     </div>

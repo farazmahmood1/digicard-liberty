@@ -10,44 +10,13 @@ const Navbar = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false)
 
-  const [navbar, setNavbar] = useState("Home");
+  const [index, setIndex] = useState(1);
 
-  const navbarDesign = () => {
-    if (navbar === 'Home') {
-      return (
-        <>
-          <navbar-nav style={{ fontSize: '10px' }}></navbar-nav>
-        </>
-      )
-    }
-    else if (navbar === 'Shop') {
-      return (
-        <>
-          <navbar-nav style={{ backgroundColor: 'pink' }}></navbar-nav>
-        </>
-      )
-    }
-    else if (navbar === 'Profiles') {
-      return (
-        <>
-          <navbar-nav style={{ backgroundColor: 'orange' }}></navbar-nav>
-        </>
-      )
-    }
-  }
 
-  // Add active class to the current button (highlight it)
-  var header = document.getElementById("myDIV");
-  var btns = header.getElementsByClassName("btn");
-  for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function () {
-      var current = document.getElementsByClassName("active");
-      current[0].className = current[0].className.replace(" active", "");
-      this.className += " active";
-    });
-  }
 
-  // useEffect(() => { navbarDesign() }, [])
+
+
+
 
   return (
     <div>
@@ -65,13 +34,13 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse " id="navbarNav">
                   <ul className="navbar-nav  ms-auto">
                     <li className="nav-item ">
-                      <Link to='/' className="nav-link me-4 active" aria-current="page"><b> Home</b></Link>
+                      <p onClick={() => setIndex(1)} className={ index===1 ? 'nav-link me-4' : 'nav-link me-4 enjoy'} aria-current="page"><b><Link className='text-dark' to='/' >Home</Link></b></p>
                     </li>
                     <li className="nav-item ">
-                      <Link to='/ShopMain' state={{ values: 'Card' }} className="nav-link active me-4" aria-current="page"><b> Shop</b></Link>
+                      <p onClick={() => setIndex(2)} className={ index===2 ? 'nav-link me-4' : 'nav-link me-4 enjoy'}  aria-current="page"><b> <Link state={{ values: 'Card' }} className='text-dark' to='/ShopMain'>Shop</Link></b></p>
                     </li>
                     <li className="nav-item ">
-                      <Link to='/ProfileMain' className="nav-link active me-4" aria-current="page"><b> Profiles</b></Link>
+                      <p onClick={() => setIndex(3)} className={ index===3 ? 'nav-link me-4' : 'nav-link me-4 enjoy'}  aria-current="page"><b> <Link to='/ProfileMain' className='text-dark'>Profiles</Link> </b></p>
                     </li>
 
                     <li className="nav-item dropdown">
@@ -79,14 +48,18 @@ const Navbar = () => {
                         <i className="fa-solid fa-gear" />
                       </a>
                       <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-                        <button onClick={() => setOpenModal(true)} className='buttonx d-flex'><i className="fa-solid fa-user mt-2 ms-2 text-dark" />
-                          &nbsp;&nbsp;<p className="text-dark">Sign In</p>
-                        </button>
-
-                        <button onClick={() => setOpenSignUp(true)} className='buttonx d-flex mt-1'><i className="fa-solid fa-user-plus mt-2 ms-2 text-dark" />
-                          &nbsp;&nbsp;<p className='text-dark'>Sign Up</p>
-                        </button>
+                        <div className='d-flex'>
+                          <i className="fa-solid fa-user text-dark mt-1 ms-2" />
+                          <p onClick={() => setOpenModal(true)} style={{ cursor: 'pointer' }}>
+                            <p className=" ms-2 text-dark">Sign In</p>
+                          </p>
+                        </div>
+                        <div className='d-flex'>
+                          <i className="fa-solid fa-user text-dark mt-1 ms-2" />
+                          <p onClick={() => setOpenSignUp(true)} style={{ cursor: 'pointer' }} >
+                            <p className=" ms-2 text-dark">Sign up</p>
+                          </p>
+                        </div>
                         <hr />
                         <li className='d-flex'><i className="fa-solid fa-pen mt-2 ms-2" />
                           <a className="dropdown-item" href="#">Update Profile</a>

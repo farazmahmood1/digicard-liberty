@@ -2,8 +2,11 @@ import React from 'react'
 import Slider from "react-slick";
 import data from '../SourceFiles/CardCrousel';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Categories = () => {
+
+    const [loader, setLoader] = useState(false)
 
     var settings = {
         dots: true,
@@ -42,6 +45,7 @@ const Categories = () => {
             }
         ]
     };
+
 
     return (
         <div>
@@ -127,32 +131,56 @@ const Categories = () => {
                                         </div>
                                     </div>
 
-                                    <Slider {...settings}>
-                                        {
-                                            data.map((items) => {
-                                                return (
-                                                    <div className='owl-collection p-2'>
-                                                        <div className="item">
-                                                            <img src="./source/assets/images/collection-01.jpg" alt />
-                                                            <div className="down-content">
-                                                                <h4>{items.name}</h4>
-                                                                <span className="collection">Items left:<br /><strong>{items.price}</strong></span>
-                                                                <span className="category">Category:<br /><strong>{items.category}</strong></span>
-                                                                <div className='d-flex justify-content-center'>
-
-                                                                    <div className="main-button">
-                                                                        <a href="explore.html">View</a>
-                                                                    </div>
-
+                                    {
+                                        loader === true ?
+                                            <>
+                                                <div className='col-lg-12'>
+                                                    <div className='row loaderSizing'>
+                                                        <div className='d-flex justify-content-center'>
+                                                            <div className='position-absolute top-50 start-50 translate-middle'>
+                                                                {/* <div className="loader">Loading...</div> */}
+                                                                <div className="spinner-border" style={{ width: '5rem', height: '5rem', marginTop: '25em', color: '#7453fc' }} role="status">
+                                                                    <span className="visually-hidden">Loading...</span>
                                                                 </div>
+
                                                             </div>
                                                         </div>
                                                     </div>
-                                                )
-                                            })
-                                        }
+                                                </div>
+                                            </> :
+                                            <>
+                                                <Slider {...settings}>
+                                                    {
+                                                        data.map((items) => {
+                                                            return (
+                                                                <div className='owl-collection p-2'>
+                                                                    <div className="item">
+                                                                        <img src="./source/assets/images/collection-01.jpg" alt />
+                                                                        <div className="down-content">
+                                                                            <h4>{items.name}</h4>
+                                                                            <span className="collection">Items left:<br /><strong>{items.price}</strong></span>
+                                                                            <span className="category">Category:<br /><strong>{items.category}</strong></span>
+                                                                            <div className='d-flex justify-content-center'>
 
-                                    </Slider>
+                                                                                <div className="main-button">
+                                                                                    <a href="explore.html">View</a>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            )
+                                                        })
+                                                    }
+
+                                                </Slider>
+
+                                            </>
+                                    }
+
+
+
                                 </div>
                             </div>
                         </div>

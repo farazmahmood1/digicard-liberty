@@ -46,10 +46,12 @@ const UserProfile = () => {
   const [name, setName] = useState('')
   const [pic, setPic] = useState('')
   const [profile, setProfile] = useState('userProfile')
+  const [loader, setLoader] = useState(false)
 
 
   console.log(github)
   const profileData = () => {
+    setLoader(true)
     var requestOptions = {
       method: 'GET',
       redirect: 'follow'
@@ -58,6 +60,7 @@ const UserProfile = () => {
     fetch(`${Baseurl}getdata/${id}`, requestOptions)
       .then(response => response.json())
       .then(result => {
+        setLoader(false)
         console.log(result)
         setDesignation(result.designation)
         setProfession(result.profession)
@@ -506,8 +509,26 @@ const UserProfile = () => {
               {/* <button className='buttonx w-25 mt-4 p-3' >View CV</button> */}
             </div>
           </div>
-
-          <ReturnData />
+          {
+            loader === true ?
+              <>
+                <div className='col-lg-12'>
+                  <div className='row loaderSizing'>
+                    <div className='d-flex justify-content-center'>
+                      <div className='position-absolute top-50 start-50 translate-middle'>
+                        {/* <div className="loader">Loading...</div> */}
+                        <div className="spinner-border" style={{ width: '5rem', height: '5rem', marginTop: '15em', color: '#7453fc' }} role="status">
+                          <span className="visually-hidden">Loading...</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </> :
+              <>
+                <ReturnData />
+              </>
+          }
 
         </div>
       </div>
