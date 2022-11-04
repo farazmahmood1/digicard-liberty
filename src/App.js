@@ -38,7 +38,7 @@ function App() {
   return (
     <div >
       <Router>
-        <PreLoader />
+        {/* <PreLoader /> */}
         <Navbar />
 
         <Routes>
