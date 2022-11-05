@@ -26,7 +26,7 @@ const Guide = () => {
             <div className="col-lg-12 mb-4">
               <h6>DigiCard Market</h6>
               <h2>Trouble while purchasing?</h2>
-              <span className=''>Home &gt; <a href="#">Help</a></span>
+              <span className=''>Home &gt; <a href="">Help</a></span>
               {/* <div className="buttons">
                 <div className="main-button">
             <a href="explore.html">Explore Our Items</a>

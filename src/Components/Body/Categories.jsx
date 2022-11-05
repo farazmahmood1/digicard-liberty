@@ -3,10 +3,26 @@ import Slider from "react-slick";
 import data from '../SourceFiles/CardCrousel';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import axios from 'axios';
+import Baseurl from '../SourceFiles/url';
+import { useEffect } from 'react';
 
 const Categories = () => {
 
+    const [data, setData] = useState([])
     const [loader, setLoader] = useState(false)
+
+    // const fetchData = () => {
+    //     setLoader(true)
+    //     axios.get(`${Baseurl}post_collection`)
+    //         .then(res => {
+    //             setData(res.data)
+    //             setLoader(false)
+    //         })
+    //         .catch((err) => {
+    //             console.log(err)
+    //         })
+    // }
 
     var settings = {
         dots: true,
@@ -46,6 +62,7 @@ const Categories = () => {
         ]
     };
 
+    // useEffect(() => {fetchData()} ,[])
 
     return (
         <div>

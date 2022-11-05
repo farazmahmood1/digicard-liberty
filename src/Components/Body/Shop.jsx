@@ -13,7 +13,7 @@ const Shop = () => {
   const { values } = location.state;
 
   const [card, setCard] = useState([])
-  const [type, setType] = useState(values !== '' ? 'Card' : values);
+  const [type, setType] = useState(values ? 'Card' : values);
   const [loader, setLoader] = useState(false)
 
   const dataRender = () => {
@@ -30,7 +30,6 @@ const Shop = () => {
   }
 
   console.log(values)
-
 
   const filtered = card.filter((item) => item.item_type === type)
 

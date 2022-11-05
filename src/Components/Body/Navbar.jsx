@@ -19,9 +19,11 @@ const Navbar = () => {
           <div className='container-fluid' >
             <nav className="navbar  navbar-expand-lg navbar-light bg-light " style={{ borderRadius: "50px" }}>
               <div className="container-fluid">
-                <a href="index.html" className="logo">
-                  <img src="./source/assets/images/logo.png" alt='icon_image' style={{ height: "54px" }} />
-                </a>
+                <p onClick={() => setIndex(1)}>
+                  <Link to='/' className="logo">
+                    <img src="./source/assets/images/logo.png" alt='icon_image' style={{ height: "54px" }} />
+                  </Link>
+                </p>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon" />
                 </button>
