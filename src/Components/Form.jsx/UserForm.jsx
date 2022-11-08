@@ -3,7 +3,6 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Modal } from 'pretty-modal'
 import { Link } from 'react-router-dom'
 import Baseurl from '../SourceFiles/url';
 
@@ -125,7 +124,7 @@ const UserForm = () => {
                         <div className="col-lg-12 mb-4">
                             <h6>DigiCard Market</h6>
                             <h2>Buy Your DigiCard Now.</h2>
-                            <span className=''>Home &gt; <a href="#">Shop</a></span>
+                            <span className=''>Home &gt; <a href="">Shop</a></span>
                         </div>
                     </div>
                 </div>
