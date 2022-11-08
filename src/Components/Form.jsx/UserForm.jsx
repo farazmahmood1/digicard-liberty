@@ -101,8 +101,6 @@ const UserForm = () => {
         }
     }
 
-    console.log(name)
-
     var mybutton = document.getElementById("myBtn");
     window.onscroll = function () { scrollFunction() };
     function scrollFunction() {
