@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Imagesurl from '../SourceFiles/Imageurl'
 import Baseurl from '../SourceFiles/url'
-import Icon from '../SourceFiles/arrow-up-icon.svg'
 
 const Discover = () => {
 
@@ -61,7 +60,6 @@ const Discover = () => {
                   </div>
                 </div>
               </div>
-
             </div>
             {loader === true ?
               <>

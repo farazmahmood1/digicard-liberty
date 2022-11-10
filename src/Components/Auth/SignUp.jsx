@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import Baseurl from '../SourceFiles/url'
 import { toast } from 'react-toastify'
 
-
 const SignUp = ({ setOpenSignUp }) => {
 
     const [name, setName] = useState('')
