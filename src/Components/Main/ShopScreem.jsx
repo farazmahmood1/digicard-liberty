@@ -9,6 +9,9 @@ import CursorZoom from 'react-cursor-zoom';
 import { useLocation } from 'react-router-dom';
 import Imagesurl from '../SourceFiles/Imageurl';
 
+import allImagesUrl from '../SourceFiles/baseimageurl';
+
+
 const ShopScreem = () => {
 
     const [addCount, setAddCount] = useState(1);
@@ -113,12 +116,12 @@ const ShopScreem = () => {
                                     <div className='col-lg-12 mb-4'>
                                         <CursorZoom
                                             image={{
-                                                src: `${Imagesurl}${items.item_pic}`,
+                                                src: `${allImagesUrl.itemImage}${items.item_pic}`,
                                                 width: 550,
                                                 height: 550
                                             }}
                                             zoomImage={{
-                                                src: `${Imagesurl}${items.item_pic}`,
+                                                src: `${allImagesUrl.itemImage}${items.item_pic}`,
                                                 width: 600,
                                                 height: 600
                                             }}

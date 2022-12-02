@@ -55,9 +55,7 @@ const Discover = () => {
                 <div className='d-flex'>
 
                   <h2>Our Top <em>Buyers</em></h2>
-                  <div className="main-button ms-auto">
-                    <Link to='/ShopMain'>Create Yours</Link>
-                  </div>
+
                 </div>
               </div>
             </div>

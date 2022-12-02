@@ -1,16 +1,14 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SignIn from '../Auth/SignIn';
 import SignUp from '../Auth/SignUp'
 
-
 const Navbar = () => {
+
+  const [index, setIndex] = useState(1);
 
   const [openModal, setOpenModal] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false)
-
-  const [index, setIndex] = useState(1);
 
   return (
     <div>
@@ -58,6 +56,7 @@ const Navbar = () => {
                         </div>
                         <hr />
                         <li className='d-flex'><i className="fa-solid fa-pen mt-2 ms-2" />
+
                           <a className="dropdown-item" target={'_blank'} href="https://digicarduserdashboard.netlify.app/">Update Profile</a>
                         </li>
                         <li className='d-flex'>
@@ -69,6 +68,7 @@ const Navbar = () => {
                           <i className="fa-solid fa-question mt-2 ms-2" />
                           <Link className="dropdown-item" to='/WorkingVideo'>Need Help</Link>
                         </li>
+
                       </ul>
                     </li>
                   </ul>

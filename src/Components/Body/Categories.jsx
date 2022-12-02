@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 
 const Categories = () => {
 
-    const [data, setData] = useState([])
+    // const [data, setData] = useState([])
     const [loader, setLoader] = useState(false)
 
     // const fetchData = () => {
@@ -103,18 +103,19 @@ const Categories = () => {
 
                                     <div className="col-lg-2 col-sm-6">
                                         <div className="item">
+                                            <div className="ribbon ribbon-top-right"><span>soon!</span></div>
                                             <div className="icon">
                                                 <img src="./source/assets/images/icon-05.png" alt />
                                             </div>
                                             <h4>Jewelerry</h4>
-                                            <div className="icon-button">
+                                            {/* <div className="icon-button">
                                                 <Link state={{ values: 'Jewellery' }} to='/ShopMain'><i className="fa fa-angle-right" /></Link>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                     <div className="col-lg-2 col-sm-6">
                                         <div className="item">
-                                            <div class="ribbon ribbon-top-right"><span>soon!</span></div>
+                                            <div className="ribbon ribbon-top-right"><span>soon!</span></div>
                                             <div className="icon">
                                                 <img src="./source/assets/images/icon-03.png" alt />
                                             </div>
@@ -190,14 +191,9 @@ const Categories = () => {
                                                             )
                                                         })
                                                     }
-
                                                 </Slider>
-
                                             </>
                                     }
-
-
-
                                 </div>
                             </div>
                         </div>

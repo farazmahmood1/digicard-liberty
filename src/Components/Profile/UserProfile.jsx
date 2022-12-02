@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 import Imagesurl from '../SourceFiles/Imageurl'
 import Baseurl from '../SourceFiles/url'
 import { saveAs } from "file-saver";
+import coverUrl from '../SourceFiles/coverUrl'
 
 const UserProfile = () => {
 
@@ -53,49 +54,49 @@ const UserProfile = () => {
   const profileData = () => {
     setLoader(true)
     var requestOptions = {
-      method: 'GET',
+      method: 'POST',
       redirect: 'follow'
     };
 
-    fetch(`${Baseurl}getdata/${id}`, requestOptions)
+    fetch(`${Baseurl}fetch_webdata_by_userid/${id}`, requestOptions)
       .then(response => response.json())
       .then(result => {
         setLoader(false)
         console.log(result)
-        setDesignation(result.designation)
-        setProfession(result.profession)
-        setAdress(result.address)
-        setUpwork(result.upword)
-        setFiver(result.fiverr)
-        setStackOverflow(result.stackoverflow)
-        setCnic(result.cnic)
-        setRegion(result.region)
-        setReligion(result.religion)
-        setAge(result.age)
-        setPintrest(result.printest)
-        setSkype(result.skype)
-        setTiktok(result.tiktok)
-        setTelegram(result.telegram)
-        setWhatsapp(result.whatsapp)
-        setWhatsappBusiness(result.whatsapp_b)
-        setCv(result.cv)
-        setLongBio(result.long_des)
-        setShortBio(result.short_bio)
-        setBio(result.bio)
-        setFacebook(result.facebook)
-        setGithub(result.github)
-        setTwitter(result.twiter)
-        setTwitter(result.tiwtter)
-        setLinkedin(result.linkedin)
-        setInstagram(result.instagram)
-        setSnapchat(result.snapchat)
-        setEmail(result.gmail)
-        setPhone(result.phone)
-        setName(result.name)
-        setCover(result.cover_photo)
-        setPic(result.profile_photo)
-        setProfDesc(result.professional_desc)
-        setGender(result.gender)
+        setDesignation(result.Data.designation)
+        setProfession(result.Data.profession)
+        setAdress(result.Data.address)
+        setUpwork(result.Data.upword)
+        setFiver(result.Data.fiverr)
+        setStackOverflow(result.Data.stackoverflow)
+        setCnic(result.Data.cnic)
+        setRegion(result.Data.region)
+        setReligion(result.Data.religion)
+        setAge(result.Data.age)
+        setPintrest(result.Data.printest)
+        setSkype(result.Data.skype)
+        setTiktok(result.Data.tiktok)
+        setTelegram(result.Data.telegram)
+        setWhatsapp(result.Data.whatsapp)
+        setWhatsappBusiness(result.Data.whatsapp_b)
+        setCv(result.Data.cv)
+        setLongBio(result.Data.long_des)
+        setShortBio(result.Data.short_bio)
+        setBio(result.Data.bio)
+        setFacebook(result.Data.facebook)
+        setGithub(result.Data.github)
+        setTwitter(result.Data.twiter)
+        setTwitter(result.Data.tiwtter)
+        setLinkedin(result.Data.linkedin)
+        setInstagram(result.Data.instagram)
+        setSnapchat(result.Data.snapchat)
+        setEmail(result.Data.gmail)
+        setPhone(result.Data.phone)
+        setName(result.Data.name)
+        setCover(result.Data.cover_photo)
+        setPic(result.Data.profile_photo)
+        setProfDesc(result.Data.professional_desc)
+        setGender(result.Data.gender)
 
       })
       .catch(error => console.log('error', error));
@@ -482,7 +483,7 @@ const UserProfile = () => {
 
   return (
     <div>
-      <div className="CoverImage" style={{ backgroundImage: cover === '' ? 'url(./source/assets/images/heading-bg.jpg)' : `url(${Imagesurl}${cover})` }}>
+      <div className="CoverImage" style={{ backgroundImage: cover ? `url(${coverUrl}${cover})` : 'url(./source/assets/images/heading-bg.jpg)'  }}>
       </div>
 
       <div className="darkbg" style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)" }}>

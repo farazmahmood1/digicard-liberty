@@ -6,8 +6,12 @@ import Baseurl from '../SourceFiles/url';
 import Imagesurl from '../SourceFiles/Imageurl';
 import ShopScreem from '../Main/ShopScreem';
 import { useLocation } from 'react-router-dom';
+import coverUrl from '../SourceFiles/coverUrl'
+
+import allImagesUrl from '../SourceFiles/baseimageurl';
 
 const Shop = () => {
+
 
   const location = useLocation();
   const { values } = location.state;
@@ -22,7 +26,7 @@ const Shop = () => {
       .then((res) => {
         setLoader(false)
         setCard(res.data.items)
-        console.log(res.data)
+        // console.log(res.data.items)
       })
       .catch((err) => {
         console.log(err)
@@ -109,7 +113,7 @@ const Shop = () => {
                             <div className="col-lg-4">
                               <div className='card mb-5 bg-dark' style={{ borderRadius: "20px" }} >
                                 <div>
-                                  <img className='shopItemImg' src={`${Imagesurl}${items.item_pic}`} alt="item image" />
+                                  <img className='shopItemImg' src={`${allImagesUrl.itemImage}${items.item_pic}`} alt="item image" />
                                 </div>
                                 <div className='card-body shopItemBody'  >
                                   <h4 className='mt-2 ms-2' >{items.item_name}</h4>
