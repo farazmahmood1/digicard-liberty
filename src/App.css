@@ -3,6 +3,10 @@
     --pretty-modal-modal-container-border-radius: 10px;
 }
 
+html,body{
+    overflow-x: hidden;
+}
+
 .navbar-nav li a :hover {
     color: white;
     transition: all 0.2s ease 0s;
