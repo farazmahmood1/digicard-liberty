@@ -14,8 +14,8 @@ const Navbar = () => {
     <div>
       <header className="header-area header-sticky" >
         <div className='container'>
-          <div className='container-fluid' >
-            <nav className="navbar  navbar-expand-lg navbar-light bg-light " style={{ borderRadius: "50px" }}>
+          <div className='container-fluid' style={{ borderRadius: '50px', backgroundColor: '#fff' }} >
+            <nav className="navbar  navbar-expand-lg navbar-light " style={{ borderRadius: "50px", backgroundColor: '#fff' }}>
               <div className="container-fluid">
                 <p onClick={() => setIndex(1)}>
                   <Link to='/' className="logo">

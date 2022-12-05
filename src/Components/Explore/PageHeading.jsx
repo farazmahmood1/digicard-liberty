@@ -81,7 +81,7 @@ const PageHeading = () => {
                   <div >
                     <div className="item p-3">
                       <div className="thumb">
-                        <img src="./source/assets/images/WaleedKhan.JPG" alt style={{ borderRadius: 20 , maxHeight:'420px' , maxWidth:'420px'}} />
+                        <img src="./source/assets/images/WaleedKhan.JPG" alt style={{ borderRadius: 20, maxHeight: '420px', maxWidth: '420px' }} />
                         <div className="hover-effect">
                           <div className="content">
                             <h4>Waleed Khan</h4>
@@ -94,11 +94,11 @@ const PageHeading = () => {
                       </div>
                     </div>
                   </div>
-                 
+
                   <div>
                     <div className="item p-3">
                       <div className="thumb">
-                        <img src="./source/assets/images/featured-03.jpg" alt style={{ borderRadius: 20 , maxHeight:'420px' , maxWidth:'420px'}} />
+                        <img src="./source/assets/images/featured-03.jpg" alt style={{ borderRadius: 20, maxHeight: '420px', maxWidth: '420px' }} />
                         <div className="hover-effect">
                           <div className="content">
                             <h4>Crypto Aurora Guy</h4>
@@ -115,7 +115,7 @@ const PageHeading = () => {
 
                     <div className="item p-3">
                       <div className="thumb">
-                        <img src="./source/assets/images/AffanSheikh.JPG" alt style={{ borderRadius: 20 , maxHeight:'420px' , maxWidth:'420px'}} />
+                        <img src="./source/assets/images/AffanSheikh.JPG" alt style={{ borderRadius: 20, maxHeight: '420px', maxWidth: '420px' }} />
                         <div className="hover-effect">
                           <div className="content">
                             <h4>Affan Sheikh</h4>
@@ -131,7 +131,7 @@ const PageHeading = () => {
                   <div>
                     <div className="item p-3">
                       <div className="thumb">
-                        <img src="./source/assets/images/saribBhai.JPG" alt style={{ borderRadius: 20 , maxHeight:'420px' , maxWidth:'420px'}} />
+                        <img src="./source/assets/images/saribBhai.JPG" alt style={{ borderRadius: 20, maxHeight: '420px', maxWidth: '420px' }} />
                         <div className="hover-effect">
                           <div className="content">
                             <h4>Sarib Arshad Khan</h4>
@@ -147,7 +147,7 @@ const PageHeading = () => {
                   <div>
                     <div className="item p-3">
                       <div className="thumb">
-                        <img src="./source/assets/images/faraz.JPG" alt style={{ borderRadius: 20 , maxHeight:'420px' , maxWidth:'420px'}} />
+                        <img src="./source/assets/images/faraz.JPG" alt style={{ borderRadius: 20, maxHeight: '420px', maxWidth: '420px' }} />
                         <div className="hover-effect">
                           <div className="content">
                             <h4>Faraz Mahmood</h4>
@@ -163,7 +163,7 @@ const PageHeading = () => {
                   <div>
                     <div className="item p-3">
                       <div className="thumb">
-                        <img src="./source/assets/images/usamaBhai.JPG" alt style={{ borderRadius: 20 , maxHeight:'420px' , maxWidth:'420px' }} />
+                        <img src="./source/assets/images/usamaBhai.JPG" alt style={{ borderRadius: 20, maxHeight: '420px', maxWidth: '420px' }} />
                         <div className="hover-effect">
                           <div className="content">
                             <h4>Usama </h4>
