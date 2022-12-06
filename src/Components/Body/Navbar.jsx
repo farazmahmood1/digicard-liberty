@@ -36,7 +36,6 @@ const Navbar = () => {
                     <li className="nav-item ">
                       <p onClick={() => setIndex(3)} className={index === 3 ? 'nav-link me-4 enjoy ' : 'nav-link me-4 '} aria-current="page"><b> <Link to='/ProfileMain' className='text-secondary' >Profiles</Link> </b></p>
                     </li>
-
                     <li className="nav-item dropdown">
                       <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i className="fa-solid fa-gear" />
@@ -56,19 +55,16 @@ const Navbar = () => {
                         </div>
                         <hr />
                         <li className='d-flex'><i className="fa-solid fa-pen mt-2 ms-2" />
-
                           <a className="dropdown-item" target={'_blank'} href="https://digicarduserdashboard.netlify.app/">Update Profile</a>
                         </li>
                         <li className='d-flex'>
                           <i className="fa-solid fa-newspaper mt-2 ms-2" />
-
                           <a className="dropdown-item" target={'_blank'} href="https://digicarduserdashboard.netlify.app/">What`s New</a>
                         </li>
                         <li className='d-flex'>
                           <i className="fa-solid fa-question mt-2 ms-2" />
                           <Link className="dropdown-item" to='/WorkingVideo'>Need Help</Link>
                         </li>
-
                       </ul>
                     </li>
                   </ul>

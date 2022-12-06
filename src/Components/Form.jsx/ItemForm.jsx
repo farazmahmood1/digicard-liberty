@@ -55,7 +55,12 @@ const ItemForm = () => {
                 postal_code: postal,
                 quantity: counter,
                 color: itemColor,
-                profile_pic: profile
+                profile_pic: profile,
+                buy_item: "",
+                order_status: "new",
+                payment_status: "COD",
+                ready_to_review: "",
+
             }
             axios.post(`${Baseurl}buy_item`, userObj)
                 .then(res => {
