@@ -1,3 +1,3 @@
 // base url for images
-const Imagesurl = "https://digicardprofiles.alphanitesofts.com/";
+const Imagesurl = "https://digicarditemsimage.alphanitesofts.com/";
 export default Imagesurl;

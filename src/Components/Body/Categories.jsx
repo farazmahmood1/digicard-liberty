@@ -1,28 +1,31 @@
 import React from 'react'
 import Slider from "react-slick";
-import data from '../SourceFiles/CardCrousel';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import Baseurl from '../SourceFiles/url';
 import { useEffect } from 'react';
+import Imagesurl from '../SourceFiles/Imageurl';
+import allImagesUrl from '../SourceFiles/baseimageurl';
 
 const Categories = () => {
 
-    // const [data, setData] = useState([])
+    const [data, setData] = useState([])
     const [loader, setLoader] = useState(false)
 
-    // const fetchData = () => {
-    //     setLoader(true)
-    //     axios.get(`${Baseurl}post_collection`)
-    //         .then(res => {
-    //             setData(res.data)
-    //             setLoader(false)
-    //         })
-    //         .catch((err) => {
-    //             console.log(err)
-    //         })
-    // }
+    const fetchData = () => {
+        setLoader(true)
+        axios.get(`${Baseurl}getallitems`)
+            .then(res => {
+                setData(res.data.items)
+                setLoader(false)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+
 
     var settings = {
         dots: true,
@@ -62,7 +65,7 @@ const Categories = () => {
         ]
     };
 
-    // useEffect(() => {fetchData()} ,[])
+    useEffect(() => { fetchData() }, [])
 
     return (
         <div>
@@ -169,19 +172,19 @@ const Categories = () => {
                                             <>
                                                 <Slider {...settings}>
                                                     {
-                                                        data.map((items) => {
+                                                        data.filter((item) => item.is_hot === 'true').map((items) => {
                                                             return (
                                                                 <div className='owl-collection p-2'>
                                                                     <div className="item">
-                                                                        <img src="./source/assets/images/collection-01.jpg" alt />
+                                                                        <img src={`${allImagesUrl.itemImage}${items.item_pic}`} alt />
                                                                         <div className="down-content">
-                                                                            <h4>{items.name}</h4>
-                                                                            <span className="collection">Items left:<br /><strong>{items.price}</strong></span>
-                                                                            <span className="category">Category:<br /><strong>{items.category}</strong></span>
+                                                                            <h4>{items.item_name}</h4>
+                                                                            <span className="collection">Price:<br /><strong>{items.item_price}</strong></span>
+                                                                            <span className="category">Category:<br /><strong>{items.item_type}</strong></span>
                                                                             <div className='d-flex justify-content-center'>
 
                                                                                 <div className="main-button">
-                                                                                    <a href="explore.html">View</a>
+                                                                                    <a href=''>View</a>
                                                                                 </div>
 
                                                                             </div>

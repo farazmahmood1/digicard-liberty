@@ -99,8 +99,8 @@ const Shop = () => {
                       {/* <li onClick={() => setType("All")} data-filter="*" className="active">All Items</li> */}
                       <li onClick={() => setType("Card")} className={type === "Card" ? "active" : "kuchNai"} data-filter=".msc" >Digi Cards</li>
                       <li onClick={() => setType("Tattos")} className={type === "Tattos" ? "active" : "kuchNai"} data-filter=".dig">Tattoos</li>
-                      <li onClick={() => setType("Jewellery")} className={type === "Jewellery" ? "active" : "kuchNai"} data-filter=".vtr">Jewelerry
-                      </li>
+                      {/* <li onClick={() => setType("Jewellery")} className={type === "Jewellery" ? "active" : "kuchNai"} data-filter=".vtr">Jewelerry
+                      </li> */}
                     </ul>
                   </div>
                 </div>

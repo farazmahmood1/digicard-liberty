@@ -12,10 +12,10 @@ const Discover = () => {
 
   const renderData = () => {
     setLoader(true)
-    axios.get(`${Baseurl}fetchalldata`)
+    axios.get(`${Baseurl}fetch_all_webdata`)
       .then(res => {
-        setUserData(res.data.Data)
-        console.log(res.data.Data)
+        setUserData(res.data.data)
+        console.log(res.data.data)
         setLoader(false)
       })
       .catch(err => {
@@ -105,7 +105,7 @@ const Discover = () => {
                               </div>
                               <div className="col-lg-12">
                                 <div className="main-button">
-                                  <Link to='/UserProfile' state={{ ID: items.id }}>View</Link>
+                                  <Link to='/UserProfile' state={{ ID: items.user_id }}>View</Link>
                                 </div>
                               </div>
                             </div>

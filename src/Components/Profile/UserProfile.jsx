@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Imagesurl from '../SourceFiles/Imageurl'
@@ -483,7 +482,7 @@ const UserProfile = () => {
 
   return (
     <div>
-      <div className="CoverImage" style={{ backgroundImage: cover ? `url(${coverUrl}${cover})` : 'url(./source/assets/images/heading-bg.jpg)'  }}>
+      <div className="CoverImage" style={{ backgroundImage: cover ? `url(${coverUrl}${cover})` : 'url(./source/assets/images/heading-bg.jpg)' }}>
       </div>
 
       <div className="darkbg" style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)" }}>

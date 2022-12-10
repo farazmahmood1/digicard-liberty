@@ -368,7 +368,7 @@ input {
 .buttonProfile {
     position: fixed;
     right: 0;
-    z-index: 9999;
+    z-index: 9799;
     margin-top: -300px;
 }
 
