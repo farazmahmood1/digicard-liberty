@@ -56,7 +56,7 @@ const SignIn = ({ setOpenModal }) => {
                             <label className="form-check-label text-white" htmlFor="exampleCheck1" >Check me out</label>
                         </div>
                         <div className='d-flex '>
-                            <a className="form-text mt-3 me-2">Welcome Back To our site</a>
+                            <p className="form-text mt-3 me-2" style={{ cursor: 'grab' }}>Welcome Back To our site</p>
                             &nbsp;&nbsp;<div className="me-4 border-button ms-auto btnAnimate">
                                 <a onClick={loginFunction} className='text-white ms-1'>Login</a>
                             </div>

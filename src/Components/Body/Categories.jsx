@@ -25,8 +25,6 @@ const Categories = () => {
             })
     }
 
-
-
     var settings = {
         dots: true,
         infinite: true,
@@ -174,19 +172,21 @@ const Categories = () => {
                                                     {
                                                         data.filter((item) => item.is_hot === 'true').map((items) => {
                                                             return (
-                                                                <div className='owl-collection p-2'>
-                                                                    <div className="item">
-                                                                        <img src={`${allImagesUrl.itemImage}${items.item_pic}`} alt />
-                                                                        <div className="down-content">
-                                                                            <h4>{items.item_name}</h4>
-                                                                            <span className="collection">Price:<br /><strong>{items.item_price}</strong></span>
-                                                                            <span className="category">Category:<br /><strong>{items.item_type}</strong></span>
-                                                                            <div className='d-flex justify-content-center'>
+                                                                <div>
+                                                                    <div className='owl-collection p-2'>
+                                                                        <div className="item">
+                                                                            <img src={`${allImagesUrl.itemImage}${items.item_pic}`} alt />
+                                                                            <div className="down-content">
+                                                                                <h4>{items.item_name}</h4>
+                                                                                <span className="collection">Price:<br /><strong>{items.item_price}</strong></span>
+                                                                                <span className="category">Category:<br /><strong>{items.item_type}</strong></span>
+                                                                                <div className='d-flex justify-content-center'>
 
-                                                                                <div className="main-button">
-                                                                                    <a href=''>View</a>
+                                                                                    <div className="main-button">
+                                                                                        <Link state={{ items: items }} to='/ShopScreem' href='' >View</Link>
+                                                                                    </div>
+
                                                                                 </div>
-
                                                                             </div>
                                                                         </div>
                                                                     </div>
