@@ -10,10 +10,15 @@ import '../Modal/SignInUser'
 import { useLocation } from 'react-router-dom';
 import SignInUser from '../Modal/SignInUser';
 import SignUpUser from '../Modal/SignUpUser'
+import SignIn from '../Auth/SignIn';
+import SignUp from '../Auth/SignUp';
 
 
 toast.configure()
 const ItemForm = () => {
+
+    const [openModal, setOpenModal] = useState(false);
+    const [openSignUp, setOpenSignUp] = useState(false)
 
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
@@ -26,9 +31,7 @@ const ItemForm = () => {
     const [profile, setProfile] = useState("");
 
     const [submit, setSubmit] = useState(false);
-
-    const [openModal, setOpenModal] = useState(false)
-
+    const [openModals, setOpenModals] = useState(false)
     const [login, setLogin] = useState(false)
 
     const location = useLocation();
@@ -66,10 +69,10 @@ const ItemForm = () => {
                 .then(res => {
                     toast.info("Order Confirmed!")
                     setSubmit(true)
-                    setOpenModal(true)
-                    // setInterval(() => {
-                    //     window.location.reload(true)
-                    // }, 2000)
+                    setOpenModals(true)
+                    setInterval(() => {
+                        window.location.reload(true)
+                    }, 2000)
                     console.log(res)
                 })
                 .catch(err => {
@@ -78,6 +81,21 @@ const ItemForm = () => {
                 })
         }
     }
+
+    const [userID, setUserID] = useState()
+    console.log(userID)
+    const SetLocalLogin = async () => {
+        try {
+            let user = await localStorage.getItem('user');
+            let parsed_user = JSON.parse(user)
+            if (parsed_user) {
+                setUserID(parsed_user.id)
+            }
+        } catch {
+            return null;
+        }
+    }
+    useEffect(() => { SetLocalLogin() }, [])
 
     var mybutton = document.getElementById("myBtn");
     window.onscroll = function () { scrollFunction() };
@@ -97,9 +115,80 @@ const ItemForm = () => {
 
     return (
         <div>
-            <Modal open={openModal} >
+            <div>
+                <div>
+                    <header className="header-area header-sticky" >
+                        <div className='container'>
+                            <div className='container-fluid' style={{ borderRadius: '50px', backgroundColor: '#fff' }} >
+                                <nav className="navbar  navbar-expand-lg navbar-light " style={{ borderRadius: "50px", backgroundColor: '#fff' }}>
+                                    <div className="container-fluid">
+                                        <p >
+                                            <Link to='/' className="logo">
+                                                <img src="./source/assets/images/logo.png" alt='icon_image' style={{ height: "54px" }} />
+                                            </Link>
+                                        </p>
+                                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                            <span className="navbar-toggler-icon" />
+                                        </button>
+                                        <div className="collapse navbar-collapse " id="navbarNav">
+                                            <ul className="navbar-nav  ms-auto">
+                                                <li className="nav-item ">
+                                                    <p className={'nav-link me-4 '} aria-current="page"><b><Link to='/' className='text-secondary' >Home</Link></b></p>
+                                                </li>
+                                                <li className="nav-item ">
+                                                    <p className={'nav-link me-4 enjoy'} aria-current="page"><b> <Link state={{ values: 'Card' }} className='text-secondary' to='/ShopMain'>Shop</Link></b></p>
+                                                </li>
+                                                <li className="nav-item ">
+                                                    <p className={'nav-link me-4 '} aria-current="page"><b> <Link to='/ProfileMain' className='text-secondary' >Profiles</Link> </b></p>
+                                                </li>
+                                                <li className="nav-item dropdown">
+                                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i className="fa-solid fa-gear" />
+                                                    </a>
+                                                    <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                        <div className='d-flex signinNav'>
+                                                            <i className="fa-solid fa-user text-dark mt-1 ms-2" />
+                                                            <p onClick={() => setOpenModal(true)} style={{ cursor: 'pointer' }}>
+                                                                <p className=" ms-2 text-dark">Sign In</p>
+                                                            </p>
+                                                        </div>
+                                                        <div className='d-flex signinNav'>
+                                                            <i className="fa-solid fa-user text-dark mt-1 ms-2" />
+                                                            <p onClick={() => setOpenSignUp(true)} style={{ cursor: 'pointer' }} >
+                                                                <p className=" ms-2 text-dark">Sign up</p>
+                                                            </p>
+                                                        </div>
+                                                        <hr />
+                                                        <li className='d-flex updateNav'><i className="fa-solid fa-pen mt-2 ms-2" />
+                                                            <a className="dropdown-item updateNav" target={'_blank'} href="https://digicarduserdashboard.netlify.app/">Update Profile</a>
+                                                        </li>
+                                                        <li className='d-flex updateNav'>
+                                                            <i className="fa-solid fa-newspaper mt-2 ms-2" />
+                                                            <a className="dropdown-item updateNav" target={'_blank'} href="https://digicarduserdashboard.netlify.app/">What`s New</a>
+                                                        </li>
+                                                        <li className='d-flex updateNav'>
+                                                            <i className="fa-solid fa-question mt-2 ms-2" />
+                                                            <Link className="dropdown-item updateNav" to='/WorkingVideo'>Need Help</Link>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </header>
+
+                    {openModal && < SignIn setOpenModal={setOpenModal} />}
+                    {openSignUp && <SignUp setOpenSignUp={setOpenSignUp} />}
+
+                </div>
+            </div>
+
+            <Modal open={openModals} >
                 <div className='card-body'>
-                    <button onClick={() => setOpenModal(false)} className='btn btn-sm btn-danger float-end'>X</button>
+                    <button onClick={() => setOpenModals(false)} className='btn btn-sm btn-danger float-end'>X</button>
                     <div className="row">
                         <h3 className="text-center mt-2">YOUR ORDER HAS BEEN RECEIVED!</h3>
                         <h4 className="text-center mt-2">Thank you for your purchasing</h4>
@@ -109,7 +198,7 @@ const ItemForm = () => {
                         <div className='mx-auto'>
 
                             <Link to='/UserForm' className="btn btn-secondary float-end mt-4">Yes sure!</Link>
-                            <button onClick={() => setOpenModal(false)} className="btn btn-danger float-end me-2 mt-4">Maybe Later</button>
+                            <button onClick={() => setOpenModals(false)} className="btn btn-danger float-end me-2 mt-4">Maybe Later</button>
                         </div>
                     </div>
 
@@ -222,22 +311,19 @@ const ItemForm = () => {
                                             <button onClick={() => { submitData() }} type="submit" id="form-submit" class="orange-button" >Submit Your Applying</button>
                                         </fieldset>
                                     </div>
-                                    {/* setOpenModal(true); */}
-
 
                                 </div>
                             </div>
                         </div>
-                        {/* <SignInUser />
-                        <SignUpUser /> */}
+
                         {
-                            login === true ?
+                            !userID ?
                                 <>
-                                    <SignInUser />
+                                    <SignUpUser />
                                 </>
                                 :
                                 <>
-                                    <SignUpUser />
+                                    <SignInUser />
                                 </>
                         }
                     </div>

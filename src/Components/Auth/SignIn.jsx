@@ -22,8 +22,14 @@ const SignIn = ({ setOpenModal }) => {
             }
             axios.post(`${Baseurl}customerlogin`, userObj)
                 .then(res => {
-                    console.log(res)
+                    console.log(res.data.customer)
                     toast.info('Logged in successfully')
+                    localStorage.setItem('user', JSON.stringify(res.data.customer));
+
+                    setInterval(() => {
+                        window.location.reload()
+                    }, 1500);
+
                 })
                 .catch(err => {
                     console.log(err)
@@ -57,7 +63,7 @@ const SignIn = ({ setOpenModal }) => {
                         </div>
                         <div className='d-flex '>
                             <p className="form-text mt-3 me-2" style={{ cursor: 'grab' }}>Welcome Back To our site</p>
-                            &nbsp;&nbsp;<div className="me-4 border-button ms-auto btnAnimate">
+                            &nbsp;&nbsp;<div className="me-4 border-button ms-auto btnAnimate" style={{ cursor: 'pointer' }}>
                                 <a onClick={loginFunction} className='text-white ms-1'>Login</a>
                             </div>
                         </div>

@@ -175,7 +175,7 @@ const Categories = () => {
                                                                 <div>
                                                                     <div className='owl-collection p-2'>
                                                                         <div className="item">
-                                                                            <img src={`${allImagesUrl.itemImage}${items.item_pic}`} alt />
+                                                                            <img className='shopItemImg' src={`${allImagesUrl.itemImage}${items.item_pic}`} alt />
                                                                             <div className="down-content">
                                                                                 <h4>{items.item_name}</h4>
                                                                                 <span className="collection">Price:<br /><strong>{items.item_price}</strong></span>

@@ -1,6 +1,6 @@
 import "./App.css";
-import { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route, json } from "react-router-dom";
 import Navbar from "./Components/Body/Navbar";
 import PreLoader from "./Components/Body/PreLoader";
 import HomePage from "./Components/Main/HomePage";
@@ -18,6 +18,7 @@ import ItemForm from "./Components/Form.jsx/ItemForm";
 import UserForm from "./Components/Form.jsx/UserForm";
 
 function App() {
+
   // var mybutton = document.getElementById("myBtn");
   // window.onscroll = function () { scrollFunction() };
   // function scrollFunction() {
@@ -55,11 +56,13 @@ function App() {
     topFunction();
   }, []);
 
+
+
   return (
     <div>
       <Router>
         {/* <PreLoader /> */}
-        <Navbar />
+        {/* <Navbar /> */}
 
         <Routes>
           <Route path="/" element={<HomePage />} />

@@ -27,8 +27,16 @@ const SignUp = ({ setOpenSignUp }) => {
             }
             axios.post(`${Baseurl}createcustomer`, userObj)
                 .then(res => {
-                    console.log(res)
+                    console.log(res.data.customer)
                     toast.info('Data added successfully')
+
+                    localStorage.setItem('user', JSON.stringify(res.data.customer));
+
+                    setInterval(() => {
+                        window.location.reload()
+                    }, 1500);
+
+
                 })
                 .catch(err => {
                     console.log(err)
@@ -83,7 +91,6 @@ const SignUp = ({ setOpenSignUp }) => {
                                 <div className="border-button ms-auto btnAnimate">
                                     <a className='text-white' onClick={loginFunction}>Sign Up</a>
                                 </div>
-
                             </div>
                         </div>
                     </div>

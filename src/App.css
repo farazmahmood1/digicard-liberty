@@ -732,3 +732,10 @@ input {
         
     }
 }
+
+.signinNav:hover{
+    background-color: #7e6bce;
+}
+.updateNav:hover{
+    background-color: gray;
+}

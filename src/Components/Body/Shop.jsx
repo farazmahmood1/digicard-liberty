@@ -124,8 +124,8 @@ const Shop = () => {
                                       <h5>{items.item_price}</h5>
                                     </div>
                                     <div>
-                                      <p className='ms-3'>Item type</p>
-                                      <h5>{items.category}</h5>
+                                      <p>Item type</p>
+                                      <h5>{items.item_type}</h5>
                                     </div>
                                   </div>
                                   <div className='d-flex justify-content-center '>
