@@ -33,6 +33,8 @@ const ItemForm = () => {
     const [submit, setSubmit] = useState(false);
     const [openModals, setOpenModals] = useState(false)
     const [login, setLogin] = useState(false)
+    const [userID, setUserID] = useState()
+
 
     const location = useLocation();
     const { counter } = location.state;
@@ -47,42 +49,82 @@ const ItemForm = () => {
             setSubmit(true)
         }
         else {
-            const userObj = {
-                name: name,
-                phone_number: phone,
-                contact_number: contact,
-                email: email,
-                address: address,
-                region: region,
-                city: city,
-                postal_code: postal,
-                quantity: counter,
-                color: itemColor,
-                profile_pic: profile,
-                buy_item: "",
-                order_status: "new",
-                payment_status: "COD",
-                ready_to_review: "",
+            // const userObj = {
+            //     name: name,
+            //     phone_number: phone,
+            //     contact_number: contact,
+            //     email: email,
+            //     address: address,
+            //     region: region,
+            //     city: city,
+            //     postal_code: postal,
+            //     quantity: counter,
+            //     color: itemColor,
+            //     profile_pic: profile,
+            //     buy_item: "",
+            //     order_status: "new",
+            //     payment_status: "COD",
+            //     ready_to_review: "",
 
-            }
-            axios.post(`${Baseurl}buy_item`, userObj)
-                .then(res => {
+            // }
+            // axios.post(`${Baseurl}buy_item`, userObj)
+            //     .then(res => {
+            //         toast.info("Order Confirmed!")
+            //         setSubmit(true)
+            //         setOpenModals(true)
+            //         setInterval(() => {
+            //             window.location.reload(true)
+            //         }, 2000)
+            //         console.log(res)
+            //     })
+            //     .catch(err => {
+            //         toast.warn("Error while submitting response");
+            //         console.log(err)
+            //     })
+
+            var formdata = new FormData();
+            formdata.append("name", name);
+            formdata.append("phone_number", phone);
+            formdata.append("contact_number", contact);
+            formdata.append("email", email);
+            formdata.append("address", address);
+            formdata.append("region", region);
+            formdata.append("city", city);
+            formdata.append("postal_code", postal);
+            formdata.append("quantity", counter);
+            formdata.append("color", itemColor);
+            formdata.append("profile_pic", profile, "[PROXY]");
+            formdata.append("order_status", 'new');
+
+
+            var requestOptions = {
+                method: 'POST',
+                body: formdata,
+                redirect: 'follow'
+            };
+
+            fetch(`${Baseurl}buy_item`, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result)
                     toast.info("Order Confirmed!")
                     setSubmit(true)
                     setOpenModals(true)
-                    setInterval(() => {
-                        window.location.reload(true)
-                    }, 2000)
-                    console.log(res)
+
+                    // setInterval(() => {
+                    //     window.location.reload(true)
+                    // }, 2000)
                 })
-                .catch(err => {
+                .catch(error => {
                     toast.warn("Error while submitting response");
-                    console.log(err)
-                })
+                    console.log('error', error)
+                });
+
         }
     }
 
-    const [userID, setUserID] = useState()
+    console.log(profile)
+
     console.log(userID)
     const SetLocalLogin = async () => {
         try {
@@ -305,6 +347,7 @@ const ItemForm = () => {
                                             <input onChange={(e) => setProfile(e.target.files[0])} type="file" id="file" name="myfiles[]" multiple />
                                         </fieldset>
                                     </div>
+
 
                                     <div class="col-lg-6 mx-auto">
                                         <fieldset>

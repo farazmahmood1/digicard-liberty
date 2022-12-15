@@ -7,12 +7,13 @@ import SignUp from '../Auth/SignUp'
 
 
 const WorkingVideo = () => {
-  const [openModal, setOpenModal] = useState(false);
-  const [openSignUp, setOpenSignUp] = useState(false)
-  return (
-    <div>
-       {/* Navbar */}
-       <div>
+    const [openModal, setOpenModal] = useState(false);
+    const [openSignUp, setOpenSignUp] = useState(false)
+    
+    return (
+        <div>
+            {/* Navbar */}
+            <div>
                 <header className="header-area header-sticky" >
                     <div className='container'>
                         <div className='container-fluid' style={{ borderRadius: '50px', backgroundColor: '#fff' }} >
@@ -81,10 +82,10 @@ const WorkingVideo = () => {
 
             </div>
 
-        <Guide />
-        <HelpVideo />
-    </div>
-  )
+            <Guide />
+            <HelpVideo />
+        </div>
+    )
 }
 
 export default WorkingVideo

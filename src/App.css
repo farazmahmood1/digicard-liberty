@@ -732,10 +732,11 @@ input {
         
     }
 }
-
+/* Navbar mobile screen hover color change */
 .signinNav:hover{
     background-color: #7e6bce;
 }
 .updateNav:hover{
     background-color: gray;
 }
+

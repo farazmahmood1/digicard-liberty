@@ -6,6 +6,8 @@ import { saveAs } from "file-saver";
 import coverUrl from '../SourceFiles/coverUrl'
 import SignIn from '../Auth/SignIn';
 import SignUp from '../Auth/SignUp'
+import axios from 'axios';
+import allImagesUrl from '../SourceFiles/baseimageurl';
 
 const UserProfile = () => {
 
@@ -52,6 +54,8 @@ const UserProfile = () => {
   const [pic, setPic] = useState('')
   const [profile, setProfile] = useState('userProfile')
   const [loader, setLoader] = useState(false)
+
+  const [datas, setDatas] = useState([])
 
 
   console.log(github)
@@ -104,6 +108,17 @@ const UserProfile = () => {
 
       })
       .catch(error => console.log('error', error));
+  }
+
+  const getImages = () => {
+    axios.get(`${Baseurl}get_image/32`)
+    .then((res) => {
+      console.log(res)
+      setDatas(res.data.Data)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
 
   const ReturnData = () => {
@@ -252,15 +267,18 @@ const UserProfile = () => {
             <h2 className='mt-2 text-center'>My Portfolio</h2>
             <div className="col-lg-12">
               <div className="row">
-                <div className='col-lg-4 p-3'>
-                  <img src="./source/assets/images/market-01.jpg" style={{ height: "350px", borderRadius: "10px" }} alt="" />
+                {
+                  datas.map((items) => {
+                    return(
+                      <>
+                      <div className='col-lg-4 p-3'>
+                  <img  src={`${allImagesUrl.itemImage}${items.image}`} style={{ height: "350px", borderRadius: "10px" }} alt="" />
                 </div>
-                <div className='col-lg-4 p-3'>
-                  <img src="./source/assets/images/market-01.jpg" style={{ height: "350px", borderRadius: "10px" }} alt="" />
-                </div>
-                <div className='col-lg-4 p-3'>
-                  <img src="./source/assets/images/market-01.jpg" style={{ height: "350px", borderRadius: "10px" }} alt="" />
-                </div>
+                      </>
+                    )
+                  })
+                }
+               
               </div>
             </div>
           </div>
@@ -483,7 +501,7 @@ const UserProfile = () => {
     document.documentElement.scrollTop = 0;
   }
 
-  useEffect(() => { topFunction(); profileData() }, [])
+  useEffect(() => { topFunction(); profileData();getImages() }, [])
 
   return (
     <div>
@@ -574,7 +592,7 @@ const UserProfile = () => {
           <div className="row">
 
             <div className='col-lg-4' >
-              <img src={`${Imagesurl}${pic}`} className='profileImage' alt="profile image" />
+              <img src={`${allImagesUrl.itemImage}${pic}`} className='profileImage' alt="profile image" />
             </div>
 
             <div className="col-lg-6 me-auto">

@@ -3,8 +3,12 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 import { Modal } from 'pretty-modal'
 import Baseurl from '../SourceFiles/url'
+import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom"
+
 
 const SignUpUser = () => {
+    const navigate = useNavigate();
 
     const [name, setName] = useState('')
     const [lastn, setLastn] = useState('')
@@ -13,7 +17,7 @@ const SignUpUser = () => {
     const [password, setPassword] = useState('')
 
     const [fieldStatus, setFieldStatus] = useState(false)
-    const [openModal , setOpenModal] = useState(true)
+    const [openModal, setOpenModal] = useState(true)
 
     const SignupData = () => {
         if (!name || !lastn || !signUpEmail || !password || !confirmPassword) {
@@ -81,7 +85,7 @@ const SignUpUser = () => {
                     </div>
 
                     <div className='d-flex  me-3'>
-                        <a id="emailHelp" className="form-text mt-3"></a>
+                        <a id="emailHelp" className="form-text mt-3" onClick={() => navigate("/SignInUser")} >Sign IN</a>
 
                         <div className="border-button ms-auto btnAnimate">
                             <a className='text-white' onClick={SignupData}>Sign Up</a>

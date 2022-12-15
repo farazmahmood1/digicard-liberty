@@ -190,7 +190,7 @@ const ShopScreem = () => {
                             <div className="row">
                                 <div className="col-lg-6">
                                     <div className='col-lg-12 mb-4'>
-                                        <CursorZoom
+                                        <CursorZoom className=''
                                             image={{
                                                 src: `${allImagesUrl.itemImage}${items.item_pic}`,
                                                 width: 550,
@@ -204,6 +204,10 @@ const ShopScreem = () => {
                                             cursorOffset={{ x: 10, y: -10 }}
                                         />
                                     </div>
+
+                                    {/* <div className='col-lg-12 mb-4'>
+<img src={`${allImagesUrl.itemImage}${items.item_pic}`} alt="product Image" />
+                                    </div> */}
 
                                     {/* <Slider {...settings}>
                                         <div>
@@ -229,7 +233,7 @@ const ShopScreem = () => {
                                     </Slider> */}
 
                                 </div>
-                                <div className="col-lg-5 ms-4 ps-4 pe-4">
+                                <div className="col-lg-5 ms-1 ps-4 pe-4">
 
                                     <h3>{items.item_name}</h3>
                                     <h5 className='mt-2'>Rs. <span style={{ fontSize: "12px" }} className='text-secondary text-decoration-line-through'><span>{items.previous_price}</span></span>{items.item_price}</h5>
