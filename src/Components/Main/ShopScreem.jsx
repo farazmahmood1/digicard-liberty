@@ -94,8 +94,8 @@ const ShopScreem = () => {
     return (
         <div>
 
- {/* Navbar */}
- <div>
+            {/* Navbar */}
+            <div>
                 <header className="header-area header-sticky" >
                     <div className='container'>
                         <div className='container-fluid' style={{ borderRadius: '50px', backgroundColor: '#fff' }} >
@@ -205,33 +205,6 @@ const ShopScreem = () => {
                                         />
                                     </div>
 
-                                    {/* <div className='col-lg-12 mb-4'>
-<img src={`${allImagesUrl.itemImage}${items.item_pic}`} alt="product Image" />
-                                    </div> */}
-
-                                    {/* <Slider {...settings}>
-                                        <div>
-                                            <div className='card-body'>
-                                                <img className='rounded-3' style={{ height: "270px" }} src="./source/assets/images/collection-01.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div className='card-body'>
-                                                <img className='rounded-3' style={{ height: "270px" }} src="./source/assets/images/item-details-01.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div className='card-body'>
-                                                <img className='rounded-3' style={{ height: "270px" }} src="./source/assets/images/collection-01.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div className='card-body'>
-                                                <img className='rounded-3' style={{ height: "270px" }} src="./source/assets/images/discover-03.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                    </Slider> */}
-
                                 </div>
                                 <div className="col-lg-5 ms-1 ps-4 pe-4">
 
@@ -255,7 +228,7 @@ const ShopScreem = () => {
                                     <h6 className='mt-3' style={{ color: "#7459fc" }}>Describtion:</h6>
                                     <p className='p-2'>{items.describtion}</p>
 
-                                    <div className='mt-2 d-flex'><Link to='/ItemForm' state={{ counter: addCount, itemColor: getColor }} className='text-center buttonx col-11'>BUY NOW</Link> <i className="fa-2x ms-2 mt-1 fa-solid fa-heart text-danger" />
+                                    <div className='mt-2 d-flex'><Link to='/ItemForm' state={{ counter: addCount, itemColor: getColor, item:items }} className='text-center buttonx col-11'>BUY NOW</Link> <i className="fa-2x ms-2 mt-1 fa-solid fa-heart text-danger" />
                                     </div>
                                     <p style={{ fontSize: "11px" }} className='text-secondary text-center'>Pyament method is COD, other methods are comming soon!</p>
                                 </div>

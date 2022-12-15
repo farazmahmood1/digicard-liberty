@@ -39,6 +39,7 @@ const ItemForm = () => {
     const location = useLocation();
     const { counter } = location.state;
     const { itemColor } = location.state;
+    const { item } = location.state;
 
     console.log(counter, itemColor)
 
@@ -95,6 +96,7 @@ const ItemForm = () => {
             formdata.append("color", itemColor);
             formdata.append("profile_pic", profile, "[PROXY]");
             formdata.append("order_status", 'new');
+            formdata.append('product_id', item.id)
 
 
             var requestOptions = {

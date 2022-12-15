@@ -141,7 +141,7 @@ const UserForm = () => {
         formdata.append("item_id", 'id');
         formdata.append("order_status", "new");
         formdata.append("ready_to_review", "new");
-        // formdata.append("user_id", "user_id");
+        formdata.append("user_id", userID);
         formdata.append("gender", gender);
         formdata.append("professional_desc", shortdisc);
         formdata.append("profession", profession);

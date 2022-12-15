@@ -9,6 +9,8 @@ const Discover = () => {
   const [userData, setUserData] = useState([])
   const [visible, setVisible] = useState(false)
   const [loader, setLoader] = useState(false)
+  const [userID, setUserID] = useState()
+
 
   const renderData = () => {
     setLoader(true)
@@ -42,6 +44,20 @@ const Discover = () => {
   };
 
   window.addEventListener('scroll', toggleVisible);
+
+  console.log(userID)
+    const SetLocalLogin = async () => {
+        try {
+            let user = await localStorage.getItem('user');
+            let parsed_user = JSON.parse(user)
+            if (parsed_user) {
+                setUserID(parsed_user.id)
+            }
+        } catch {
+            return null;
+        }
+    }
+    useEffect(() => { SetLocalLogin() }, [])
 
   useEffect(() => { renderData() }, [])
   return (
@@ -105,7 +121,7 @@ const Discover = () => {
                               </div>
                               <div className="col-lg-12">
                                 <div className="main-button">
-                                  <Link to='/UserProfile' state={{ ID: items.user_id }}>View</Link>
+                                  <Link to='/UserProfile' state={{ ID: items.id }}>View</Link>
                                 </div>
                               </div>
                             </div>

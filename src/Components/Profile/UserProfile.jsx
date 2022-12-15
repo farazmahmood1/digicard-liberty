@@ -58,7 +58,7 @@ const UserProfile = () => {
   const [datas, setDatas] = useState([])
 
 
-  console.log(github)
+  console.log(id)
   const profileData = () => {
     setLoader(true)
     var requestOptions = {
@@ -112,13 +112,13 @@ const UserProfile = () => {
 
   const getImages = () => {
     axios.get(`${Baseurl}get_image/32`)
-    .then((res) => {
-      console.log(res)
-      setDatas(res.data.Data)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+      .then((res) => {
+        console.log(res)
+        setDatas(res.data.Data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   const ReturnData = () => {
@@ -269,16 +269,16 @@ const UserProfile = () => {
               <div className="row">
                 {
                   datas.map((items) => {
-                    return(
+                    return (
                       <>
-                      <div className='col-lg-4 p-3'>
-                  <img  src={`${allImagesUrl.itemImage}${items.image}`} style={{ height: "350px", borderRadius: "10px" }} alt="" />
-                </div>
+                        <div className='col-lg-4 p-3'>
+                          <img src={`${allImagesUrl.itemImage}${items.image}`} style={{ height: "350px", borderRadius: "10px" }} alt="" />
+                        </div>
                       </>
                     )
                   })
                 }
-               
+
               </div>
             </div>
           </div>
@@ -501,7 +501,7 @@ const UserProfile = () => {
     document.documentElement.scrollTop = 0;
   }
 
-  useEffect(() => { topFunction(); profileData();getImages() }, [])
+  useEffect(() => { topFunction(); profileData(); getImages() }, [])
 
   return (
     <div>
@@ -612,7 +612,7 @@ const UserProfile = () => {
                     <div className='d-flex justify-content-center'>
                       <div className='position-absolute top-50 start-50 translate-middle'>
                         {/* <div className="loader">Loading...</div> */}
-                        <div className="spinner-border" style={{ width: '5rem', height: '5rem', marginTop: '15em', marginBottom:'10em', color: '#7453fc' }} role="status">
+                        <div className="spinner-border" style={{ width: '5rem', height: '5rem', marginTop: '15em', marginBottom: '10em', color: '#7453fc' }} role="status">
                           <span className="visually-hidden">Loading...</span>
                         </div>
                       </div>
