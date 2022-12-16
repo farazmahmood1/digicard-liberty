@@ -41,8 +41,6 @@ const ItemForm = () => {
     const { itemColor } = location.state;
     const { item } = location.state;
 
-    console.log(counter, itemColor)
-
     const submitData = () => {
 
         if (!name || !phone || !email || !address || !region || !city || !postal) {
@@ -125,7 +123,6 @@ const ItemForm = () => {
         }
     }
 
-    console.log(profile)
 
     console.log(userID)
     const SetLocalLogin = async () => {
@@ -317,7 +314,7 @@ const ItemForm = () => {
                                     <div className="col-lg-12 mb-3">
                                         <fieldset>
                                             <label htmlFor="title">Address</label>
-                                            <textarea className="form-control text-white" onChange={(e) => setAddress(e.target.value)} style={{ borderRadius: "16px", backgroundColor: '#282b2f', borderColor: address === '' && submit === true ? 'red' : '#404245', borderRadius: "20px" }} id="exampleFormControlTextarea1" rows={7} placeholder="Enter your shipping method ..." defaultValue={""} />
+                                            <textarea className="form-control text-white" onChange={(e) => setAddress(e.target.value)} style={{ borderRadius: "16px", backgroundColor: '#282b2f', borderColor: address === '' && submit === true ? 'red' : '#404245', borderRadius: "20px" }} id="exampleFormControlTextarea1" rows={7} placeholder="Enter your shipping address ..." defaultValue={""} />
                                             {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>

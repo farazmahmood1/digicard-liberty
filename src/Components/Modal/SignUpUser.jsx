@@ -35,7 +35,9 @@ const SignUpUser = () => {
             axios.post(`${Baseurl}createcustomer`, userObj)
                 .then(res => {
                     console.log(res)
-                    toast.info('Data added successfully')
+                    toast.info('Registered successfully')
+                    localStorage.setItem('user', JSON.stringify(res.data.customer));
+                    setOpenModal(false)
                 })
                 .catch(err => {
                     console.log(err)
@@ -85,7 +87,7 @@ const SignUpUser = () => {
                     </div>
 
                     <div className='d-flex  me-3'>
-                        <a id="emailHelp" className="form-text mt-3" onClick={() => navigate("/SignInUser")} >Sign IN</a>
+                        <a id="emailHelp" className="form-text mt-3" >You can sign in from navbar</a>
 
                         <div className="border-button ms-auto btnAnimate">
                             <a className='text-white' onClick={SignupData}>Sign Up</a>

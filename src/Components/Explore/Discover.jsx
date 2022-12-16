@@ -121,7 +121,7 @@ const Discover = () => {
                               </div>
                               <div className="col-lg-12">
                                 <div className="main-button">
-                                  <Link to='/UserProfile' state={{ ID: items.id }}>View</Link>
+                                  <Link to='/UserProfile' state={{ ID: items.user_id }}>View</Link>
                                 </div>
                               </div>
                             </div>

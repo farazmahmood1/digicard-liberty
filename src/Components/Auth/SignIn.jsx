@@ -26,9 +26,9 @@ const SignIn = ({ setOpenModal }) => {
                     toast.info('Logged in successfully')
                     localStorage.setItem('user', JSON.stringify(res.data.customer));
 
-                    setInterval(() => {
-                        window.location.reload()
-                    }, 1500);
+                    // setInterval(() => {
+                    //     window.location.reload()
+                    // }, 1500);
 
                 })
                 .catch(err => {

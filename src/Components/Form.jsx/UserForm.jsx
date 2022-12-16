@@ -49,9 +49,8 @@ const UserForm = () => {
     const [cv, setCv] = useState("");
     const [userID, setUserID] = useState()
 
-
-
     const [submit, setSubmit] = useState(false);
+
     const submitData = () => {
 
         if (!profile || !name || !cnic || !profession || !bio || !region || !shortdisc) {
@@ -60,114 +59,115 @@ const UserForm = () => {
         }
         else {
 
-        // const userobj = {
-        //     profile_photo: profile,
-        //     cover_photo: cover,
-        //     name: name,
-        //     phone: phone,
-        //     gmail: email,
-        //     snapchat: snapchat,
-        //     instagram: instagram,
-        //     linkedin: linkedin,
-        //     twitter: twiter,
-        //     github: github,
-        //     facebook: facebook,
-        //     bio: bio,
-        //     short_desc: shortdisc,
-        //     whatsapp: whatsapp,
-        //     whatsapp_b: whatsappbuss,
-        //     telegram: telegram,
-        //     tiktok: tiktok,
-        //     skype: skype,
-        //     printest: pinterest,
-        //     age: age,
-        //     religion: religion,
-        //     region: region,
-        //     cnic: cnic,
-        //     stackoverflow: stackoverflow,
-        //     fiverr: fiver,
-        //     upword: upwork,
-        //     gender: gender,
-        //     profession: profession,
-        //     designation: designation,
-        //     cv: cv,
-        //     address: address
-        // }
-        // axios.post(`${Baseurl}adddata`, requestOptions)
-        //     .then((response) => {
-        //         toast.info("Data sumbitted!")
-        //         setSubmit(true)
-        //         // setInterval(() => {
-        //         //     window.location.reload(true)
-        //         // }, 2000)
-        //         console.log(response)
-        //     })
-        //     .catch((error) => {
-        //         toast.warn("error while submitting");
-        //         console.log(error)
-        //     })
+            // const userobj = {
+            //     profile_photo: profile,
+            //     cover_photo: cover,
+            //     name: name,
+            //     phone: phone,
+            //     gmail: email,
+            //     snapchat: snapchat,
+            //     instagram: instagram,
+            //     linkedin: linkedin,
+            //     twitter: twiter,
+            //     github: github,
+            //     facebook: facebook,
+            //     bio: bio,
+            //     short_desc: shortdisc,
+            //     whatsapp: whatsapp,
+            //     whatsapp_b: whatsappbuss,
+            //     telegram: telegram,
+            //     tiktok: tiktok,
+            //     skype: skype,
+            //     printest: pinterest,
+            //     age: age,
+            //     religion: religion,
+            //     region: region,
+            //     cnic: cnic,
+            //     stackoverflow: stackoverflow,
+            //     fiverr: fiver,
+            //     upword: upwork,
+            //     gender: gender,
+            //     profession: profession,
+            //     designation: designation,
+            //     cv: cv,
+            //     address: address
+            // }
+            // axios.post(`${Baseurl}adddata`, requestOptions)
+            //     .then((response) => {
+            //         toast.info("Data sumbitted!")
+            //         setSubmit(true)
+            //         // setInterval(() => {
+            //         //     window.location.reload(true)
+            //         // }, 2000)
+            //         console.log(response)
+            //     })
+            //     .catch((error) => {
+            //         toast.warn("error while submitting");
+            //         console.log(error)
+            //     })
 
 
-        var formdata = new FormData();
-        formdata.append("profile_photo", profile, "[PROXY]");
-        formdata.append("cover_photo", cover, "[PROXY]");
-        formdata.append("name", name);
-        formdata.append("phone", phone);
-        formdata.append("gmail", email);
-        formdata.append("snapchat", snapchat);
-        formdata.append("instagram", instagram);
-        formdata.append("linkedin", linkedin);
-        formdata.append("twitter", twiter);
-        formdata.append("github", github);
-        formdata.append("facebook", facebook);
-        formdata.append("bio", bio);
-        // formdata.append("short_desc", "shoert describtion");
-        // formdata.append("long_desc", 'long-desc');
-        formdata.append("cv", cv, "[PROXY]");
-        formdata.append("whatsapp", whatsapp);
-        formdata.append("whatsapp_b", whatsappbuss);
-        formdata.append("payment_status", "payment status");
-        formdata.append("telegram", telegram);
-        formdata.append("tiktok", tiktok);
-        formdata.append("skype", skype);
-        formdata.append("printest", pinterest);
-        formdata.append("age", age);
-        formdata.append("religion", religion);
-        formdata.append("region", region);
-        formdata.append("cnic", cnic);
-        formdata.append("stackoverflow", stackoverflow);
-        formdata.append("fiverr", fiver);
-        formdata.append("upword", upwork);
-        formdata.append("item_id", 'id');
-        formdata.append("order_status", "new");
-        formdata.append("ready_to_review", "new");
-        formdata.append("user_id", userID);
-        formdata.append("gender", gender);
-        formdata.append("professional_desc", shortdisc);
-        formdata.append("profession", profession);
-        formdata.append("designation", designation);
-        formdata.append("address", address);
+            var formdata = new FormData();
+            formdata.append("profile_photo", profile, "[PROXY]");
+            formdata.append("cover_photo", cover, "[PROXY]");
+            formdata.append("name", name);
+            formdata.append("phone", phone);
+            formdata.append("gmail", email);
+            formdata.append("snapchat", snapchat);
+            formdata.append("instagram", instagram);
+            formdata.append("linkedin", linkedin);
+            formdata.append("twitter", twiter);
+            formdata.append("github", github);
+            formdata.append("facebook", facebook);
+            formdata.append("bio", bio);
+            // formdata.append("short_desc", "shoert describtion");
+            // formdata.append("long_desc", 'long-desc');
+            formdata.append("cv", cv, "[PROXY]");
+            formdata.append("whatsapp", whatsapp);
+            formdata.append("whatsapp_b", whatsappbuss);
+            formdata.append("payment_status", "payment status");
+            formdata.append("telegram", telegram);
+            formdata.append("tiktok", tiktok);
+            formdata.append("skype", skype);
+            formdata.append("printest", pinterest);
+            formdata.append("age", age);
+            formdata.append("religion", religion);
+            formdata.append("region", region);
+            formdata.append("cnic", cnic);
+            formdata.append("stackoverflow", stackoverflow);
+            formdata.append("fiverr", fiver);
+            formdata.append("upword", upwork);
+            formdata.append("item_id", 'id');
+            formdata.append("order_status", "new");
+            formdata.append("ready_to_review", "new");
+            formdata.append("user_id", userID);
+            formdata.append("gender", gender);
+            formdata.append("professional_desc", shortdisc);
+            formdata.append("profession", profession);
+            formdata.append("designation", designation);
+            formdata.append("address", address);
 
-        var requestOptions = {
-            method: 'POST',
-            body: formdata,
-            redirect: 'follow'
-        };
+            var requestOptions = {
+                method: 'POST',
+                body: formdata,
+                redirect: 'follow'
+            };
 
-        fetch(`${Baseurl}adddata`, requestOptions)
-            .then(response =>  response.json())
-            .then(result => { 
-                console.log(result)
-                toast.info("Data sumbitted!")
-                setSubmit(true)
-                // setInterval(() => {
-                //     window.location.reload(true)
-                // }, 2000)
-                 })
-            .catch(error => { 
-                toast.warn("error while submitting");
-                console.log('error', error)});
-    }
+            fetch(`${Baseurl}adddata`, requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result)
+                    toast.info("Data sumbitted!")
+                    setSubmit(true)
+                    // setInterval(() => {
+                    //     window.location.reload(true)
+                    // }, 2000)
+                })
+                .catch(error => {
+                    toast.warn("error while submitting");
+                    console.log('error', error)
+                });
+        }
     }
 
     var mybutton = document.getElementById("myBtn");
@@ -196,9 +196,8 @@ const UserForm = () => {
             return null;
         }
     }
-    useEffect(() => { SetLocalLogin() }, [])
 
-    useEffect(() => { topFunction() }, [])
+    useEffect(() => { topFunction(); SetLocalLogin() }, [])
 
     return (
         <div>
@@ -567,12 +566,10 @@ const UserForm = () => {
                         {
                             !userID ?
                                 <>
-                                    <SignUpUser />
-                                </>
-                                :
-                                <>
                                     <SignInUser />
                                 </>
+                                :
+                                null
                         }
                     </div>
                 </div>

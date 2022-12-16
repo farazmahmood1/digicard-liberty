@@ -447,7 +447,10 @@ input {
     background-position: center center;
     background-size: cover;
     padding: 40px 0px;
-    position: relative;
+    /* position: relative; */
+
+    
+
 }
 
 
@@ -740,3 +743,10 @@ input {
     background-color: gray;
 }
 
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}

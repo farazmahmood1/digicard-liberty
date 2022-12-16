@@ -8,6 +8,7 @@ import SignIn from '../Auth/SignIn';
 import SignUp from '../Auth/SignUp'
 import axios from 'axios';
 import allImagesUrl from '../SourceFiles/baseimageurl';
+import coverImage from '../SourceFiles/heading-bg.jpg'
 
 const UserProfile = () => {
 
@@ -576,8 +577,8 @@ const UserProfile = () => {
 
       </div>
 
-
-      <div className="CoverImage" style={{ backgroundImage: cover ? `url(${coverUrl}${cover})` : 'url(./source/assets/images/heading-bg.jpg)' }}>
+      
+      <div className="CoverImage" style={{ backgroundImage: cover ? `url(${Imagesurl}${cover})` : "url(./source/assets/images/heading-bg.jpg)"  }}>
       </div>
 
       <div className="darkbg" style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)" }}>

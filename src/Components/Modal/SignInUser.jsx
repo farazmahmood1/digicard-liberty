@@ -26,7 +26,9 @@ const SignInUser = () => {
             axios.post(`${Baseurl}/login`, userobj)
                 .then(res => {
                     toast.info('Email login successfully')
+                    localStorage.setItem('user', JSON.stringify(res.data.customer));
                     console.log(res)
+                    setOpenModal(false)
                 })
                 .catch(err => {
                     console.log(err)
@@ -59,7 +61,7 @@ const SignInUser = () => {
                     </div>
 
                     <div className='d-flex '>
-                        <a id="emailHelp" className="form-text mt-3 me-2">Welcome Back To our site</a>
+                        <a id="emailHelp" className="form-text mt-3 me-2">You can register from navbar</a>
                         &nbsp;&nbsp;<div className="me-4 border-button ms-auto btnAnimate">
                             <a onClick={loginData} className='text-white'>Login</a>
                         </div>
