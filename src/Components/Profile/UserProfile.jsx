@@ -268,6 +268,7 @@ const UserProfile = () => {
             <h2 className='mt-2 text-center'>My Portfolio</h2>
             <div className="col-lg-12">
               <div className="row">
+
                 {
                   datas.map((items) => {
                     return (
@@ -278,6 +279,11 @@ const UserProfile = () => {
                       </>
                     )
                   })
+                }
+                {
+                  <div className='col-lg-4 p-3'>
+                    <img src={`${allImagesUrl.itemImage}${pic}`} style={{ height: "350px", borderRadius: "10px" }} alt="" />
+                  </div>
                 }
 
               </div>
@@ -372,7 +378,7 @@ const UserProfile = () => {
                     region !== '' ?
                       <>
                         <div className='d-flex mt-3'>
-                          <h2><i className="fa-solid fa-location-dot" style={{ color: "#7453fc" }} /> <span style={{ fontSize: '13px' }}>Region</span></h2>
+                          <h2><i className="fa-solid fa-location-dot" style={{ color: "#7453fc" }} /> <span style={{ fontSize: '13px' }}></span></h2>
                           <p className='mt-2 ms-auto'>{region}</p>
                         </div>
                       </> : console.log('no region avaiable')
@@ -577,8 +583,8 @@ const UserProfile = () => {
 
       </div>
 
-      
-      <div className="CoverImage" style={{ backgroundImage: cover ? `url(${Imagesurl}${cover})` : "url(./source/assets/images/heading-bg.jpg)"  }}>
+
+      <div className="CoverImage" style={{ backgroundImage: cover ? `url(${Imagesurl}${cover})` : "url(./source/assets/images/heading-bg.jpg)" }}>
       </div>
 
       <div className="darkbg" style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)" }}>
