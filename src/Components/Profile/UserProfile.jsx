@@ -57,6 +57,8 @@ const UserProfile = () => {
   const [loader, setLoader] = useState(false)
 
   const [datas, setDatas] = useState([])
+  const [userID, setUserID] = useState()
+
 
 
   console.log(id)
@@ -112,7 +114,7 @@ const UserProfile = () => {
   }
 
   const getImages = () => {
-    axios.get(`${Baseurl}get_image/32`)
+    axios.get(`${Baseurl}get_image/${id}`)
       .then((res) => {
         console.log(res)
         setDatas(res.data.Data)
@@ -121,6 +123,20 @@ const UserProfile = () => {
         console.log(err)
       })
   }
+
+  console.log(userID)
+  const SetLocalLogin = async () => {
+    try {
+      let user = await localStorage.getItem('user');
+      let parsed_user = JSON.parse(user)
+      if (parsed_user) {
+        setUserID(parsed_user.id)
+      }
+    } catch {
+      return null;
+    }
+  }
+
 
   const ReturnData = () => {
     if (profile === 'userProfile') {
@@ -374,6 +390,7 @@ const UserProfile = () => {
                       </> : console.log('no address avaiable')
                   }
 
+
                   {
                     region !== '' ?
                       <>
@@ -508,7 +525,7 @@ const UserProfile = () => {
     document.documentElement.scrollTop = 0;
   }
 
-  useEffect(() => { topFunction(); profileData(); getImages() }, [])
+  useEffect(() => { topFunction(); profileData(); getImages(); SetLocalLogin() }, [])
 
   return (
     <div>

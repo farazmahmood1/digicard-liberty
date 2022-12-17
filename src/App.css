@@ -339,8 +339,8 @@ input {
 .profileImage {
     margin-top: -70px;
     border-radius: 10px;
-    max-width: 300px;
-    max-height: 350px;
+    max-width: 400px;
+    max-height: 650px;
     margin-left: 15px;
 }
 
@@ -355,7 +355,7 @@ input {
 
 @media only screen and (max-width: 880px) {
     .profileImage {
-        margin-top: -100px;
+        margin-top: -40px;
         border-radius: 10px;
         max-width: 250px;
         max-height: 250px;
