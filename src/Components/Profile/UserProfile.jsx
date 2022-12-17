@@ -377,7 +377,7 @@ const UserProfile = () => {
                           <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-address-card" /></h2>
                           <p className='mt-2 ms-auto'>{cnic}</p>
                         </div>
-                      </> : console.log('no cnic avaiable')
+                      </> : console.log('no CNIC avaiable')
                   }
 
                   {
@@ -503,7 +503,7 @@ const UserProfile = () => {
       )
     }
     else {
-      console.log('returnFunction')
+      return null;
     }
   }
 
