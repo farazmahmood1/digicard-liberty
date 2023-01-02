@@ -13,9 +13,12 @@ const SignUp = ({ setOpenSignUp }) => {
     const [fieldStatus, setFieldStatus] = useState(false)
 
     const loginFunction = () => {
-        if (!name || !lastn || !email || !password || !confirmPassword) {
+        if (name !=="" && lastn !=="" && !email !=="" && password === confirmPassword) {
             toast.warn('please fill all fields')
             setFieldStatus(true)
+        }
+        else if(password !== confirmPassword){
+            toast.warn('password does not match')
         }
         else {
             const userObj = {
