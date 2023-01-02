@@ -17,7 +17,7 @@ const Shop = () => {
   const { values } = location.state;
 
   const [card, setCard] = useState([])
-  const [type, setType] = useState(values ? 'Card' : values);
+  const [type, setType] = useState(values);
   const [loader, setLoader] = useState(false)
 
   const dataRender = () => {
