@@ -21,7 +21,7 @@ const SignUpUser = () => {
 
     const SignupData = () => {
         if (!name || !lastn || !signUpEmail || !password || !confirmPassword) {
-            toast.warn('please fill all fields')
+            toast.warn('please fill all fields', { theme: "dark" })
             setFieldStatus(true)
         }
         else {
@@ -35,13 +35,13 @@ const SignUpUser = () => {
             axios.post(`${Baseurl}createcustomer`, userObj)
                 .then(res => {
                     console.log(res)
-                    toast.info('Registered successfully')
+                    toast.info('Registered successfully', { theme: "dark" })
                     localStorage.setItem('user', JSON.stringify(res.data.customer));
                     setOpenModal(false)
                 })
                 .catch(err => {
                     console.log(err)
-                    toast.warn('Error while registering')
+                    toast.warn('Error while registering', { theme: "dark" })
                 })
         }
     }
@@ -90,7 +90,7 @@ const SignUpUser = () => {
                         <a id="emailHelp" className="form-text mt-3" >You can sign in from navbar</a>
 
                         <div className="border-button ms-auto btnAnimate">
-                            <a className='text-white' onClick={SignupData}>Sign Up</a>
+                            <a style={{cursor:'pointer'}} className='text-white' onClick={SignupData}>Sign Up</a>
                         </div>
 
                     </div>

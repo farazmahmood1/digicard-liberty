@@ -59,8 +59,6 @@ const UserProfile = () => {
   const [datas, setDatas] = useState([])
   const [userID, setUserID] = useState()
 
-
-
   console.log(id)
   const profileData = () => {
     setLoader(true)
@@ -143,7 +141,7 @@ const UserProfile = () => {
       return (
         <>
           <div>
-            <hr className='mx-auto mt-4' style={{ width: "320px", height: "3px", color: "#7453fc" }} />
+            <hr className='mx-auto' style={{ width: "320px", height: "3px", color: "#7453fc", marginTop: '50px' }} />
             <h2 className='mt-2 text-center'>My Social Accounts</h2>
             <div className='row mt-2'>
               <div className='col-lg-5 ms-auto'>
@@ -280,7 +278,7 @@ const UserProfile = () => {
       return (
         <>
           <div>
-            <hr className='mx-auto mt-4' style={{ width: "320px", height: "3px", color: "#7453fc" }} />
+            <hr className='mx-auto' style={{ width: "320px", height: "3px", color: "#7453fc", marginTop: '50px' }} />
             <h2 className='mt-2 text-center'>My Portfolio</h2>
             <div className="col-lg-12">
               <div className="row">
@@ -311,7 +309,7 @@ const UserProfile = () => {
     else if (profile === 'About') {
       return (
         <>
-          <div>
+          <div style={{ marginTop: '50px' }}>
             <div className="row mt-3">
               <div className="col-lg-5">
                 <div className="section-heading">
@@ -415,7 +413,7 @@ const UserProfile = () => {
     else if (profile === 'Social') {
       return (
         <>
-          <div>
+          <div style={{ marginTop: '50px' }}>
             <div className="row">
 
               <div className="col-lg-6 mx-auto mt-4">

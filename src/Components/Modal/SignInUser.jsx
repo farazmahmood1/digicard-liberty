@@ -16,7 +16,7 @@ const SignInUser = () => {
     const loginData = () => {
         if (!emailLogin || !emailPassword) {
             setEmailValidate(true)
-            toast.warn('Please fill all fields')
+            toast.warn('Please fill all fields', { theme: "dark" })
         }
         else {
             const userobj = {
@@ -25,14 +25,14 @@ const SignInUser = () => {
             }
             axios.post(`${Baseurl}/login`, userobj)
                 .then(res => {
-                    toast.info('Email login successfully')
+                    toast.info('Email login successfully', { theme: "dark" })
                     localStorage.setItem('user', JSON.stringify(res.data.customer));
                     console.log(res)
                     setOpenModal(false)
                 })
                 .catch(err => {
                     console.log(err)
-                    toast.warn('Error while loging in')
+                    toast.warn('Error while loging in', { theme: "dark" })
                 })
         }
     }
@@ -63,7 +63,7 @@ const SignInUser = () => {
                     <div className='d-flex '>
                         <a id="emailHelp" className="form-text mt-3 me-2">You can register from navbar</a>
                         &nbsp;&nbsp;<div className="me-4 border-button ms-auto btnAnimate">
-                            <a onClick={loginData} className='text-white'>Login</a>
+                            <a style={{cursor:'pointer'}} onClick={loginData} className='text-white'>Login</a>
                         </div>
                     </div>
 

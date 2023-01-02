@@ -12,7 +12,7 @@ const SignIn = ({ setOpenModal }) => {
 
     const loginFunction = () => {
         if (!email || !password) {
-            toast.warn('please fill all fields')
+            toast.warn('please fill all fields', { theme: "dark" })
             setFieldStatus(true)
         }
         else {
@@ -23,7 +23,7 @@ const SignIn = ({ setOpenModal }) => {
             axios.post(`${Baseurl}customerlogin`, userObj)
                 .then(res => {
                     console.log(res.data.customer)
-                    toast.info('Logged in successfully')
+                    toast.info('Logged in successfully', { theme: "dark" })
                     localStorage.setItem('user', JSON.stringify(res.data.customer));
 
                     // setInterval(() => {
@@ -33,7 +33,7 @@ const SignIn = ({ setOpenModal }) => {
                 })
                 .catch(err => {
                     console.log(err)
-                    toast.warn('Error while logging in')
+                    toast.warn('Error while logging in', { theme: "dark" })
                 })
         }
     }

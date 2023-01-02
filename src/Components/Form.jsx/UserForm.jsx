@@ -55,7 +55,7 @@ const UserForm = () => {
 
         if (!profile || !name || !cnic || !profession || !bio || !region || !shortdisc) {
             setSubmit(true)
-            toast.warn('Please fill All fields')
+            toast.warn('Please fill All fields', { theme: "dark" })
         }
         else {
 
@@ -109,7 +109,8 @@ const UserForm = () => {
 
             var formdata = new FormData();
             formdata.append("profile_photo", profile, "[PROXY]");
-            formdata.append("cover_photo", cover, "[PROXY]");
+
+            formdata.append("cover_photo", cover ? cover : 'noCover', "[PROXY]");
             formdata.append("name", name);
             formdata.append("phone", phone);
             formdata.append("gmail", email);
@@ -120,12 +121,12 @@ const UserForm = () => {
             formdata.append("github", github);
             formdata.append("facebook", facebook);
             formdata.append("bio", bio);
-            // formdata.append("short_desc", "shoert describtion");
-            // formdata.append("long_desc", 'long-desc');
-            formdata.append("cv", cv, "[PROXY]");
+            formdata.append("short_desc", "shoert describtion");
+            formdata.append("long_desc", 'long-desc');
+            formdata.append("cv", cv ? cv : 'no cv', "[PROXY]");
             formdata.append("whatsapp", whatsapp);
             formdata.append("whatsapp_b", whatsappbuss);
-            formdata.append("payment_status", "payment status");
+            formdata.append("payment_status", "cod");
             formdata.append("telegram", telegram);
             formdata.append("tiktok", tiktok);
             formdata.append("skype", skype);
@@ -157,14 +158,14 @@ const UserForm = () => {
                 .then(response => response.json())
                 .then(result => {
                     console.log(result)
-                    toast.info("Data sumbitted!")
+                    toast.info("Data sumbitted!", { theme: "dark" })
                     setSubmit(true)
                     // setInterval(() => {
                     //     window.location.reload(true)
                     // }, 2000)
                 })
                 .catch(error => {
-                    toast.warn("error while submitting");
+                    toast.warn("error while submitting", { theme: "dark" });
                     console.log('error', error)
                 });
         }
@@ -367,14 +368,14 @@ const UserForm = () => {
                                         <fieldset>
                                             <label htmlFor="file">Upload Profile Picture<span className='text-danger'>*</span></label>
                                             <div className='m-1' style={{ borderRadius: '20px', border: profile === '' && submit === true ? '1px solid red' : '1px solid #37393C' }}>
-                                                <input type="file" onChange={(e) => setProfile(e.target.files[0])} id="file" name="myfiles[]" multiple />
+                                                <input type="file" onChange={(e) => setProfile(e.target.files[0])} id="file"  multiple />
                                             </div>
                                         </fieldset>
                                     </div>
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="file">Upload Cover Picture</label>
-                                            <input type="file" onChange={(e) => setCover(e.target.files[0])} id="file" name="myfiles[]" multiple />
+                                            <input type="file" onChange={(e) => setCover(e.target.files[0])} id="file"  multiple />
                                         </fieldset>
                                     </div>
 

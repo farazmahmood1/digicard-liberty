@@ -14,11 +14,11 @@ const SignUp = ({ setOpenSignUp }) => {
 
     const loginFunction = () => {
         if (name !=="" && lastn !=="" && !email !=="" && password === confirmPassword) {
-            toast.warn('please fill all fields')
+            toast.warn('please fill all fields', { theme: "dark" })
             setFieldStatus(true)
         }
         else if(password !== confirmPassword){
-            toast.warn('password does not match')
+            toast.warn('password does not match', { theme: "dark" })
         }
         else {
             const userObj = {
@@ -31,7 +31,7 @@ const SignUp = ({ setOpenSignUp }) => {
             axios.post(`${Baseurl}createcustomer`, userObj)
                 .then(res => {
                     console.log(res.data.customer)
-                    toast.info('Data added successfully')
+                    toast.info('Data added successfully', { theme: "dark" })
 
                     localStorage.setItem('user', JSON.stringify(res.data.customer));
 
@@ -43,7 +43,7 @@ const SignUp = ({ setOpenSignUp }) => {
                 })
                 .catch(err => {
                     console.log(err)
-                    toast.warn('Error while registering')
+                    toast.warn('Error while registering', { theme: "dark" })
                 })
         }
     }

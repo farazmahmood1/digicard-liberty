@@ -44,7 +44,7 @@ const ItemForm = () => {
     const submitData = () => {
 
         if (!name || !phone || !email || !address || !region || !city || !postal) {
-            toast.warn('Please fill all fields')
+            toast.warn('Please fill all fields', { theme: "dark" })
             setSubmit(true)
         }
         else {
@@ -107,7 +107,7 @@ const ItemForm = () => {
                 .then(response => response.json())
                 .then(result => {
                     console.log(result)
-                    toast.info("Order Confirmed!")
+                    toast.info("Order Confirmed!", { theme: "dark" })
                     setSubmit(true)
                     setOpenModals(true)
 
@@ -116,10 +116,9 @@ const ItemForm = () => {
                     // }, 2000)
                 })
                 .catch(error => {
-                    toast.warn("Error while submitting response");
+                    toast.warn("Error while submitting response", { theme: "dark" });
                     console.log('error', error)
                 });
-
         }
     }
 
@@ -262,8 +261,8 @@ const ItemForm = () => {
                     <div className="row">
 
                         <div className='contactWhatsapp card-body col-lg-2' >
-                            <div className='d-flex'>
-                                <a className='text-white' target={'_blank'} href="tel:03034450790" >Buy through Whatsapp</a>
+                            <div className='d-flex '>
+                                <a className='text-white mt-1 me-2' target={'_blank'} href="tel:03034450790" >Buy through Whatsapp</a>
                                 <img src="./source/assets/images/whatsapp-color-icon.png" alt="whatsapp icon" style={{ height: "40px", width: "40px" }} />
                             </div>
                         </div>
