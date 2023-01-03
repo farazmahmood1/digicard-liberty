@@ -234,12 +234,12 @@ const ItemForm = () => {
                         <h4 className="text-center mt-2">Thank you for your purchasing</h4>
                         <p className="text-center">Your order id # is: 000023</p>
                         <p className="text-center mt-3">You will receive an order confirmation email with details of your order &#128512;</p>
-                        <h2 className='mt-3 text-center'>Do You want to Create your Digital Website? </h2>
+                        {/* <h2 className='mt-3 text-center'>Do You want to Create your Digital Website? </h2>
                         <div className='mx-auto'>
 
                             <Link to='/UserForm' className="btn btn-secondary float-end mt-4">Yes sure!</Link>
                             <button onClick={() => setOpenModals(false)} className="btn btn-danger float-end me-2 mt-4">Maybe Later</button>
-                        </div>
+                        </div> */}
                     </div>
 
                 </div>
