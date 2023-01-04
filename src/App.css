@@ -16,6 +16,30 @@ html,body{
     padding: 7px 15px 7px 15px;
 }
 
+.borderSignup{
+    /* border: 2px solid #7453fc; */
+    border-radius: 20px;
+    background-color: #7453fc;
+}
+.borderLogin{
+    border:1px solid #7453fc;
+    border-radius: 20px;
+    color: #000;
+}
+/* .borderLogin:hover{
+    border:1px solid #7453fc;
+    border-radius: 20px;
+    background-color: #7453fc;
+    color: #fff;
+} */
+
+@media screen and (max-width: 880px) {
+    .borderSignup {
+        margin-top: 4px;
+        border-radius: 20px;
+    background-color: #7453fc;
+    }
+}
 .imageBanner {
     margin-left: 70px;
 }
@@ -725,6 +749,7 @@ input {
     height: 40px;
     border-bottom: 2px solid #7453fc;
     text-transform: capitalize;
+    
 
 }
 
@@ -733,7 +758,7 @@ input {
         max-width: 60px;
         height: 40px;
         border-bottom: 2px solid #7453fc;
-        
+        text-align: center;        
     }
 }
 /* Navbar mobile screen hover color change */
@@ -751,3 +776,17 @@ input {
     width: 100%;
     text-align: center;
 } */
+
+.profileHeading{
+    margin-left: 30px;
+}
+
+@media only screen and (max-width: 995px) {
+    .profileHeading {
+        text-align: center;
+        margin: 0;
+        
+    }
+}
+
+/* adding context to the table */

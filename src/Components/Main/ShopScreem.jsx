@@ -170,7 +170,7 @@ const ShopScreem = () => {
                         <div className="col-lg-12 mb-4">
                             <h6>DigiCard Market</h6>
                             <h2>Buy Your DigiCard Now.</h2>
-                            <span className=''>Home &gt; <a href="#">Shop</a></span>
+                            <span className=''> <Link state={{ values: 'Card' }} to='/ShopMain'>Shop</Link>  &gt; <a style={{cursor:'default'}}>Buy Item</a></span>
                         </div>
                     </div>
                 </div>
@@ -198,8 +198,8 @@ const ShopScreem = () => {
                                             }}
                                             zoomImage={{
                                                 src: `${allImagesUrl.itemImage}${items.item_pic}`,
-                                                width: 600,
-                                                height: 600
+                                                width: 3500,
+                                                height: 2300
                                             }}
                                             cursorOffset={{ x: 10, y: -10 }}
                                         />
@@ -228,7 +228,7 @@ const ShopScreem = () => {
                                     <h6 className='mt-3' style={{ color: "#7459fc" }}>Describtion:</h6>
                                     <p className='p-2'>{items.describtion}</p>
 
-                                    <div className='mt-2 d-flex'><Link to='/ItemForm' state={{ counter: addCount, itemColor: getColor, item:items }} className='text-center buttonx col-11'>BUY NOW</Link> <i className="fa-2x ms-2 mt-1 fa-solid fa-heart text-danger" />
+                                    <div className='mt-2 d-flex'><Link to='/ItemForm' state={{ counter: addCount, itemColor: getColor, item: items }} className='text-center buttonx col-11'>BUY NOW</Link> <i className="fa-2x ms-2 mt-1 fa-solid fa-heart text-danger" />
                                     </div>
                                     <p style={{ fontSize: "11px" }} className='text-secondary text-center'>Pyament method is COD, other methods are comming soon!</p>
                                 </div>

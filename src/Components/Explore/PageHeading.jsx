@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 
 
@@ -68,7 +69,7 @@ const PageHeading = () => {
             <div className="col-lg-12">
               <h6>DigiCard Market</h6>
               <h2>Discover Our Top Buyers</h2>
-              <span>Home &gt; <a href="#">Profiles</a></span>
+              <span className=''> <Link to='/'>Home</Link>  &gt; <a style={{ cursor: 'default' }}>Profiles</a></span>
             </div>
           </div>
         </div>
@@ -121,7 +122,7 @@ const PageHeading = () => {
                             <h4>Affan Sheikh</h4>
                             <span className="author">
                               <img src="./source/assets/images/AffanSheikh.JPG" alt style={{ maxWidth: 50, maxHeight: 50, borderRadius: '50%' }} />
-                              <h6>Backend Devloper<br /><a >Lahore</a></h6>
+                              <h6>Backend Developer<br /><a >Lahore</a></h6>
                             </span>
                           </div>
                         </div>

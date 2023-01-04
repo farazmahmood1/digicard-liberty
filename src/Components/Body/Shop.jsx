@@ -61,7 +61,7 @@ const Shop = () => {
             <div className="col-lg-12 mb-4">
               <h6 className=''>DigiCard Market</h6>
               <h2>Buy Your DigiCard Now.</h2>
-              <span className=''> Home &gt; <a href=''>Shop</a></span>
+              <span className=''> <Link to='/'>Home</Link>  &gt; <a style={{cursor:'default'}}>Shop</a></span>
             </div>
           </div>
         </div>

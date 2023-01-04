@@ -144,7 +144,7 @@ const UserProfile = () => {
             <hr className='mx-auto' style={{ width: "320px", height: "3px", color: "#7453fc", marginTop: '50px' }} />
             <h2 className='mt-2 text-center'>My Social Accounts</h2>
             <div className='row mt-2'>
-              <div className='col-lg-5 ms-auto'>
+              <div className='col-lg-5 mx-auto'>
 
                 <a href={`${whatsapp}`} target="_blank">
                   <div className='card-body d-flex mt-2 profileCard'>
@@ -202,9 +202,6 @@ const UserProfile = () => {
                     </> : console.log('no telegram avaible')
                 }
 
-              </div>
-
-              <div className='col-lg-5 me-auto'>
 
                 {
                   snapchat !== '' ?
@@ -268,7 +265,12 @@ const UserProfile = () => {
                 }
 
 
+
+
+
               </div>
+
+
             </div>
           </div>
         </>
@@ -617,12 +619,12 @@ const UserProfile = () => {
               <img src={`${allImagesUrl.itemImage}${pic}`} className='profileImage' alt="profile image" />
             </div>
 
-            <div className="col-lg-6 me-auto">
-              <hr className='mx-auto' style={{ width: "320px", height: "3px", color: "#7453fc" }} />
-              <h1 className='mt-2 text-center'>{name}</h1>
-              <p className='text-center' style={{ fontSize: '12px' }}>{phone}</p>
-              <h2 className='mt-3 text-center'>{profession}</h2>
-              <p className='mt-3 text-center'>{bio}</p>
+            <div className="col-lg-6 profileHeading">
+              <hr className='w-75 ' style={{ height: "3px", color: "#7453fc" }} />
+              <h1 className='mt-2'>{name}</h1>
+              <p style={{ fontSize: '12px' }}>{phone}</p>
+              <h2 className='mt-3'>{profession}</h2>
+              <p className='mt-3'>{bio}</p>
               {/* <button className='buttonx w-25 mt-4 p-3' >View CV</button> */}
             </div>
           </div>

@@ -30,6 +30,10 @@ const ItemForm = () => {
     const [postal, setPostal] = useState("");
     const [profile, setProfile] = useState("");
 
+    // userData
+    const [userEmail, setUserEmail] = useState()
+    const [userName, setUserName] = useState()
+    const [userLname, setUserLname] = useState()
     const [submit, setSubmit] = useState(false);
     const [openModals, setOpenModals] = useState(false)
     const [login, setLogin] = useState(false)
@@ -130,6 +134,9 @@ const ItemForm = () => {
             let parsed_user = JSON.parse(user)
             if (parsed_user) {
                 setUserID(parsed_user.id)
+                setUserEmail(parsed_user.email)
+                setUserName(parsed_user.firstname)
+                setUserLname(parsed_user.lastname)
             }
         } catch {
             return null;
@@ -251,7 +258,7 @@ const ItemForm = () => {
                         <div className="col-lg-12 mb-4">
                             <h6>DigiCard Market</h6>
                             <h2>Buy Your DigiCard Now.</h2>
-                            <span className=''>Home &gt; <a href="#">Shop</a></span>
+                            <span className=''> <Link state={{ values: 'Card' }} to='/ShopMain'>Shop</Link>  &gt; <a style={{cursor:'default'}}>Buy Item</a></span>
                         </div>
                     </div>
                 </div>
@@ -282,7 +289,7 @@ const ItemForm = () => {
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Name*</label>
-                                            <input onChange={(e) => setName(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Ali Ahmed" autoComplete="on" type='text' />
+                                            <input defaultValue={userName + " " + userLname} onChange={(e) => setName(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: name === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder="Ex. Ali Ahmed" autoComplete="on" type='text' />
                                             {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
@@ -305,7 +312,7 @@ const ItemForm = () => {
                                     <div className="col-lg-6">
                                         <fieldset>
                                             <label htmlFor="title">Email*</label>
-                                            <input onChange={(e) => setEmail(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: email === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder='Ex. user@mail.com' autoComplete="on" type='email' />
+                                            <input defaultValue={userEmail} onChange={(e) => setEmail(e.target.value)} style={{ borderRadius: "16px", backgroundColor: "#282b2f", borderColor: email === "" && submit === true ? "red" : '#404245' }} id="inputName5" placeholder='Ex. user@mail.com' autoComplete="on" type='email' />
                                             {/* {name === "" && submit === true ? <span className='text-danger'>input empty</span> : ""} */}
                                         </fieldset>
                                     </div>
