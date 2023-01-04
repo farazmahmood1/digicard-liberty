@@ -13,11 +13,11 @@ const SignUp = ({ setOpenSignUp }) => {
     const [fieldStatus, setFieldStatus] = useState(false)
 
     const loginFunction = () => {
-        if (name !=="" && lastn !=="" && !email !=="" && password === confirmPassword) {
+        if (!name || !lastn || !email || !password || !confirmPassword) {
             toast.warn('please fill all fields', { theme: "dark" })
             setFieldStatus(true)
         }
-        else if(password !== confirmPassword){
+        else if (password !== confirmPassword) {
             toast.warn('password does not match', { theme: "dark" })
         }
         else {
@@ -31,7 +31,7 @@ const SignUp = ({ setOpenSignUp }) => {
             axios.post(`${Baseurl}createcustomer`, userObj)
                 .then(res => {
                     console.log(res.data.customer)
-                    toast.info('Data added successfully', { theme: "dark" })
+                    toast.info('Registered successfully', { theme: "dark" })
 
                     localStorage.setItem('user', JSON.stringify(res.data.customer));
 

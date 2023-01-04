@@ -5,6 +5,7 @@ import { Modal } from 'pretty-modal'
 import Baseurl from '../SourceFiles/url'
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom"
+import SignInUser from './SignInUser'
 
 
 const SignUpUser = () => {
@@ -19,10 +20,15 @@ const SignUpUser = () => {
     const [fieldStatus, setFieldStatus] = useState(false)
     const [openModal, setOpenModal] = useState(true)
 
+    // const [openLogin, setOpenLogin] = useState(false)
+
     const SignupData = () => {
         if (!name || !lastn || !signUpEmail || !password || !confirmPassword) {
             toast.warn('please fill all fields', { theme: "dark" })
             setFieldStatus(true)
+        }
+        else if (password !== confirmPassword) {
+            toast.warn('password does not match', { theme: "dark" })
         }
         else {
             const userObj = {
@@ -44,6 +50,10 @@ const SignUpUser = () => {
                     toast.warn('Error while registering', { theme: "dark" })
                 })
         }
+    }
+
+    const openLogin = () => {
+        <SignInUser />
     }
 
     return (
@@ -83,14 +93,14 @@ const SignUpUser = () => {
                     </div>
                     <div className="mb-3 form-check">
                         <input type="checkbox" className="form-check-input text-white" id="exampleCheck1" style={{ backgroundColor: "#23222D", borderColor: "#9254F3" }} />
-                        <label className="form-check-label text-white" htmlFor="exampleCheck1" >Check me out</label>
+                        <label className="form-check-label text-white" htmlFor="exampleCheck1" >Remember Me</label>
                     </div>
 
                     <div className='d-flex  me-3'>
-                        <a id="emailHelp" className="form-text mt-3" >You can sign in from navbar</a>
+                        <button onClick={openLogin} id="emailHelp" className="form-text mt-3" >You can Sign in from Top</button>
 
                         <div className="border-button ms-auto btnAnimate">
-                            <a style={{cursor:'pointer'}} className='text-white' onClick={SignupData}>Sign Up</a>
+                            <a style={{ cursor: 'pointer' }} className='text-white' onClick={SignupData}>Sign Up</a>
                         </div>
 
                     </div>

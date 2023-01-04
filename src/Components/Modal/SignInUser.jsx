@@ -61,7 +61,7 @@ const SignInUser = () => {
                     </div>
 
                     <div className='d-flex '>
-                        <a id="emailHelp" className="form-text mt-3 me-2">You can register from navbar</a>
+                        <a  id="emailHelp" style={{cursor:'pointer'}} className="form-text mt-3 me-2">You can Sign Up from Top</a>
                         &nbsp;&nbsp;<div className="me-4 border-button ms-auto btnAnimate">
                             <a style={{cursor:'pointer'}} onClick={loginData} className='text-white'>Login</a>
                         </div>

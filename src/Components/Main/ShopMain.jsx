@@ -37,24 +37,21 @@ const ShopMain = () => {
                                             <li className="nav-item ">
                                                 <p className={'nav-link me-4 '} aria-current="page"><b> <Link to='/ProfileMain' className='text-secondary' >Profiles</Link> </b></p>
                                             </li>
-                                            <li className="nav-item dropdown">
-                                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                                            <li className="nav-item ">
+                                                <p className={'nav-link borderLogin  me-4 '} aria-current="page"><b> <p onClick={() => setOpenModal(true)} className='text-secondary' style={{ cursor: 'pointer' }}  >Login</p> </b></p>
+                                            </li>
+
+                                            <li className="nav-item ">
+                                                <p className={'nav-link borderSignup me-4 '} aria-current="page"><b> <p onClick={() => setOpenSignUp(true)} style={{ cursor: 'pointer' }} className='text-white' >SIgn up for free</p> </b></p>
+                                            </li>
+
+                                            <li className="nav-item dropdown" >
+                                                <a className="nav-link dropdown-toggle mt-1" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i className="fa-solid fa-gear" />
                                                 </a>
                                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                    <div className='d-flex signinNav'>
-                                                        <i className="fa-solid fa-user text-dark mt-1 ms-2" />
-                                                        <p onClick={() => setOpenModal(true)} style={{ cursor: 'pointer' }}>
-                                                            <p className=" ms-2 text-dark">Sign In</p>
-                                                        </p>
-                                                    </div>
-                                                    <div className='d-flex signinNav'>
-                                                        <i className="fa-solid fa-user text-dark mt-1 ms-2" />
-                                                        <p onClick={() => setOpenSignUp(true)} style={{ cursor: 'pointer' }} >
-                                                            <p className=" ms-2 text-dark">Sign up</p>
-                                                        </p>
-                                                    </div>
-                                                    <hr />
+
                                                     <li className='d-flex updateNav'><i className="fa-solid fa-pen mt-2 ms-2" />
                                                         <a className="dropdown-item updateNav" target={'_blank'} href="https://digicarduserdashboard.netlify.app/">Update Profile</a>
                                                     </li>
@@ -80,7 +77,6 @@ const ShopMain = () => {
                 {openSignUp && <SignUp setOpenSignUp={setOpenSignUp} />}
 
             </div>
-
             <Shop />
         </div>
     )
