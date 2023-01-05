@@ -38,7 +38,6 @@ const ItemForm = () => {
     const [login, setLogin] = useState(false)
     const [userID, setUserID] = useState()
 
-
     const location = useLocation();
     const { counter } = location.state;
     const { itemColor } = location.state;

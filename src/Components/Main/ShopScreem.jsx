@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Modal } from 'pretty-modal'
 import { Link } from 'react-router-dom'
 import Slider from "react-slick";
-import CursorZoom from 'react-cursor-zoom';
+// import CursorZoom from 'react-cursor-zoom';
 import { useLocation } from 'react-router-dom';
 import Imagesurl from '../SourceFiles/Imageurl';
 
@@ -187,7 +187,7 @@ const ShopScreem = () => {
                             <div className="row">
                                 <div className="col-lg-6">
                                     <div className='col-lg-12 mb-4'>
-                                        <CursorZoom className=''
+                                        {/* <CursorZoom className=''
                                             image={{
                                                 src: `${allImagesUrl.itemImage}${items.item_pic}`,
                                                 width: 550,
@@ -199,7 +199,10 @@ const ShopScreem = () => {
                                                 height: 2300
                                             }}
                                             cursorOffset={{ x: 10, y: -10 }}
-                                        />
+                                        /> */}
+
+<img  src={`${allImagesUrl.itemImage}${items.item_pic}`} alt="" />
+
                                     </div>
 
                                 </div>
