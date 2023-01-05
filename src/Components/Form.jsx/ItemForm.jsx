@@ -13,7 +13,6 @@ import SignUpUser from '../Modal/SignUpUser'
 import SignIn from '../Auth/SignIn';
 import SignUp from '../Auth/SignUp';
 
-
 toast.configure()
 const ItemForm = () => {
 
@@ -117,9 +116,9 @@ const ItemForm = () => {
                     setSubmit(true)
                     setOpenModals(true)
 
-                    // setInterval(() => {
-                    //     window.location.reload(true)
-                    // }, 2000)
+                    setInterval(() => {
+                        window.location.reload(true)
+                    }, 2000)
                 })
                 .catch(error => {
                     toast.warn("Error while submitting response", { theme: "dark" });
@@ -349,7 +348,6 @@ const ItemForm = () => {
                                             <input onChange={(e) => setProfile(e.target.files[0])} type="file" id="file" name="myfiles[]" multiple />
                                         </fieldset>
                                     </div>
-
 
                                     <div class="col-lg-6 mx-auto">
                                         <fieldset>
