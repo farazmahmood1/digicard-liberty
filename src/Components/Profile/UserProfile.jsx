@@ -9,12 +9,22 @@ import SignUp from '../Auth/SignUp'
 import axios from 'axios';
 import allImagesUrl from '../SourceFiles/baseimageurl';
 import coverImage from '../SourceFiles/heading-bg.jpg'
+import { useSearchParams,useParams } from 'react-router-dom';
 
-const UserProfile = () => {
+const UserProfile = (id) => {
+console.log('UserProfileeee',id.id)
+const Id = id.id
+  // const params = useParams();
+  const { userId } = useParams()
+  const [searchParams, setSearchParams] = useSearchParams()
 
-  const location = useLocation()
-  const id = location.state.ID
-  console.log(id)
+  // const location = useLocation()
+  // const id = location.state.ID
+
+  // const queryParams = new URLSearchParams(window.location.search);
+  // const id = queryParams.get('id');
+//   let { id } = useParams();
+// console.log(id)
 
   const [openModal, setOpenModal] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false)
@@ -59,7 +69,21 @@ const UserProfile = () => {
   const [datas, setDatas] = useState([])
   const [userID, setUserID] = useState()
 
-  console.log(id)
+
+
+
+
+
+useEffect(() => { 
+  profileData(); getImages(); 
+
+},[Id]
+)
+
+
+
+
+  
   const profileData = () => {
     setLoader(true)
     var requestOptions = {
@@ -67,7 +91,7 @@ const UserProfile = () => {
       redirect: 'follow'
     };
 
-    fetch(`${Baseurl}fetch_webdata_by_userid/${id}`, requestOptions)
+    fetch(`${Baseurl}fetch_webdata_by_userid/${String(Id)}`, requestOptions)
       .then(response => response.json())
       .then(result => {
         setLoader(false)
@@ -112,17 +136,38 @@ const UserProfile = () => {
   }
 
   const getImages = () => {
-    axios.get(`${Baseurl}get_image/${id}`)
-      .then((res) => {
-        console.log(res)
-        setDatas(res.data.Data)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    // axios.get(`${Baseurl}get_image/${Id}`)
+    //   .then((res) => {
+    //     console.log(res)
+    //     setDatas(res.data.Data)
+    //   })
+    //   .catch((err) => {
+    //     console.log(err)
+    //   })
+
+
+
+      var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+      
+      fetch(`${Baseurl}get_image/${String(Id)}`, requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          
+          setDatas(result.Data)
+          console.log(result)})
+        .catch(error => console.log('error', error));
+
+
+
+
+
+
+
   }
 
-  console.log(userID)
   const SetLocalLogin = async () => {
     try {
       let user = await localStorage.getItem('user');
@@ -525,78 +570,83 @@ const UserProfile = () => {
     document.documentElement.scrollTop = 0;
   }
 
-  useEffect(() => { topFunction(); profileData(); getImages(); SetLocalLogin() }, [])
+  useEffect(() => { topFunction();
+    
+    
+   
+    
+    
+     }, [])
 
   return (
     <div>
 
       {/* Navbar */}
       <div>
-                <header className="header-area header-sticky" >
-                    <div className='container'>
-                        <div className='container-fluid' style={{ borderRadius: '50px', backgroundColor: '#fff' }} >
-                            <nav className="navbar  navbar-expand-lg navbar-light " style={{ borderRadius: "50px", backgroundColor: '#fff' }}>
-                                <div className="container-fluid">
-                                    <p >
-                                        <Link to='/' className="logo">
-                                            <img src="./source/assets/images/logo.png" alt='icon_image' style={{ height: "54px" }} />
-                                        </Link>
-                                    </p>
-                                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                        <span className="navbar-toggler-icon" />
-                                    </button>
-                                    <div className="collapse navbar-collapse " id="navbarNav">
-                                        <ul className="navbar-nav  ms-auto">
-                                            <li className="nav-item ">
-                                                <p className={'nav-link me-4 '} aria-current="page"><b><Link to='/' className='text-secondary' >Home</Link></b></p>
-                                            </li>
-                                            <li className="nav-item ">
-                                                <p className={'nav-link me-4 '} aria-current="page"><b> <Link state={{ values: 'Card' }} className='text-secondary' to='/ShopMain'>Shop</Link></b></p>
-                                            </li>
-                                            <li className="nav-item ">
-                                                <p className={'nav-link me-4 enjoy'} aria-current="page"><b> <Link to='/ProfileMain' className='text-secondary' >Profiles</Link> </b></p>
-                                            </li>
+        <header className="header-area header-sticky" >
+          <div className='container'>
+            <div className='container-fluid' style={{ borderRadius: '50px', backgroundColor: '#fff' }} >
+              <nav className="navbar  navbar-expand-lg navbar-light " style={{ borderRadius: "50px", backgroundColor: '#fff' }}>
+                <div className="container-fluid">
+                  <p >
+                    <Link to='/' className="logo">
+                      <img src="./source/assets/images/logo.png" alt='icon_image' style={{ height: "54px" }} />
+                    </Link>
+                  </p>
+                  <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon" />
+                  </button>
+                  <div className="collapse navbar-collapse " id="navbarNav">
+                    <ul className="navbar-nav  ms-auto">
+                      <li className="nav-item ">
+                        <p className={'nav-link me-4 '} aria-current="page"><b><Link to='/' className='text-secondary' >Home</Link></b></p>
+                      </li>
+                      <li className="nav-item ">
+                        <p className={'nav-link me-4 '} aria-current="page"><b> <Link state={{ values: 'Card' }} className='text-secondary' to='/ShopMain'>Shop</Link></b></p>
+                      </li>
+                      <li className="nav-item ">
+                        <p className={'nav-link me-4 enjoy'} aria-current="page"><b> <Link to='/ProfileMain' className='text-secondary' >Profiles</Link> </b></p>
+                      </li>
 
-                                            <li className="nav-item ">
-                                                <p className={'nav-link borderLogin  me-4 '} aria-current="page"><b> <p onClick={() => setOpenModal(true)} className='text-secondary' style={{ cursor: 'pointer' }}  >Login</p> </b></p>
-                                            </li>
+                      <li className="nav-item ">
+                        <p className={'nav-link borderLogin  me-4 '} aria-current="page"><b> <p onClick={() => setOpenModal(true)} className='text-secondary' style={{ cursor: 'pointer' }}  >Login</p> </b></p>
+                      </li>
 
-                                            <li className="nav-item ">
-                                                <p className={'nav-link borderSignup me-4 '} aria-current="page"><b> <p onClick={() => setOpenSignUp(true)} style={{ cursor: 'pointer' }} className='text-white' >SIgn up for free</p> </b></p>
-                                            </li>
+                      <li className="nav-item ">
+                        <p className={'nav-link borderSignup me-4 '} aria-current="page"><b> <p onClick={() => setOpenSignUp(true)} style={{ cursor: 'pointer' }} className='text-white' >SIgn up for free</p> </b></p>
+                      </li>
 
-                                            <li className="nav-item dropdown" >
-                                                <a className="nav-link dropdown-toggle mt-1" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i className="fa-solid fa-gear" />
-                                                </a>
-                                                <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li className="nav-item dropdown" >
+                        <a className="nav-link dropdown-toggle mt-1" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i className="fa-solid fa-gear" />
+                        </a>
+                        <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                                    <li className='d-flex updateNav'><i className="fa-solid fa-pen mt-2 ms-2" />
-                                                        <a className="dropdown-item updateNav" target={'_blank'} href="https://digicarduserdashboard.netlify.app/">Update Profile</a>
-                                                    </li>
-                                                    <li className='d-flex updateNav'>
-                                                        <i className="fa-solid fa-newspaper mt-2 ms-2" />
-                                                        <a className="dropdown-item updateNav" target={'_blank'} href="https://digicarduserdashboard.netlify.app/">What`s New</a>
-                                                    </li>
-                                                    <li className='d-flex updateNav'>
-                                                        <i className="fa-solid fa-question mt-2 ms-2" />
-                                                        <Link className="dropdown-item updateNav" to='/WorkingVideo'>Need Help</Link>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </header>
-
-                {openModal && < SignIn setOpenModal={setOpenModal} />}
-                {openSignUp && <SignUp setOpenSignUp={setOpenSignUp} />}
-
+                          <li className='d-flex updateNav'><i className="fa-solid fa-pen mt-2 ms-2" />
+                            <a className="dropdown-item updateNav" target={'_blank'} href="https://digicarduserdashboard.netlify.app/">Update Profile</a>
+                          </li>
+                          <li className='d-flex updateNav'>
+                            <i className="fa-solid fa-newspaper mt-2 ms-2" />
+                            <a className="dropdown-item updateNav" target={'_blank'} href="https://digicarduserdashboard.netlify.app/">What`s New</a>
+                          </li>
+                          <li className='d-flex updateNav'>
+                            <i className="fa-solid fa-question mt-2 ms-2" />
+                            <Link className="dropdown-item updateNav" to='/WorkingVideo'>Need Help</Link>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
             </div>
+          </div>
+        </header>
 
+        {openModal && < SignIn setOpenModal={setOpenModal} />}
+        {openSignUp && <SignUp setOpenSignUp={setOpenSignUp} />}
+
+      </div>
 
       <div className="CoverImage" style={{ backgroundImage: cover ? `url(${Imagesurl}${cover})` : "url(./source/assets/images/heading-bg.jpg)" }}>
       </div>

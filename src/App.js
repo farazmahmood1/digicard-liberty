@@ -1,6 +1,6 @@
 import "./App.css";
-import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, json } from "react-router-dom";
+import { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Body/Navbar";
 import PreLoader from "./Components/Body/PreLoader";
 import HomePage from "./Components/Main/HomePage";
@@ -16,9 +16,9 @@ import Portfolio from "./Components/Profile/Portfolio";
 import ShopScreem from "./Components/Main/ShopScreem";
 import ItemForm from "./Components/Form.jsx/ItemForm";
 import UserForm from "./Components/Form.jsx/UserForm";
+import Decider from "./Components/Decider/Decider";
 
 function App() {
-
   // var mybutton = document.getElementById("myBtn");
   // window.onscroll = function () { scrollFunction() };
   // function scrollFunction() {
@@ -56,8 +56,6 @@ function App() {
     topFunction();
   }, []);
 
-
-
   return (
     <div>
       <Router>
@@ -65,7 +63,7 @@ function App() {
         {/* <Navbar /> */}
 
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Decider />} />
           <Route path="/ShopMain" element={<ShopMain />} />
           <Route path="/ProfileMain" element={<ProfileMain />} />
           <Route path="/WorkingVideo" element={<WorkingVideo />} />
