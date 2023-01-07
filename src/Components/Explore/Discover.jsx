@@ -25,6 +25,10 @@ const Discover = () => {
       })
   }
 
+  // let name = window.location.href;
+  // name = name.replace(/\s+/g, '-');
+  // const url = `/lookup/${name}`
+
   //Scroll to top function
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
@@ -46,18 +50,18 @@ const Discover = () => {
   window.addEventListener('scroll', toggleVisible);
 
   console.log(userID)
-    const SetLocalLogin = async () => {
-        try {
-            let user = await localStorage.getItem('user');
-            let parsed_user = JSON.parse(user)
-            if (parsed_user) {
-                setUserID(parsed_user.id)
-            }
-        } catch {
-            return null;
-        }
+  const SetLocalLogin = async () => {
+    try {
+      let user = await localStorage.getItem('user');
+      let parsed_user = JSON.parse(user)
+      if (parsed_user) {
+        setUserID(parsed_user.id)
+      }
+    } catch {
+      return null;
     }
-    useEffect(() => { SetLocalLogin() }, [])
+  }
+  useEffect(() => { SetLocalLogin() }, [])
 
   useEffect(() => { renderData() }, [])
   return (

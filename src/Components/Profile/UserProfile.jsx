@@ -9,11 +9,11 @@ import SignUp from '../Auth/SignUp'
 import axios from 'axios';
 import allImagesUrl from '../SourceFiles/baseimageurl';
 import coverImage from '../SourceFiles/heading-bg.jpg'
-import { useSearchParams,useParams } from 'react-router-dom';
+import { useSearchParams, useParams } from 'react-router-dom';
 
 const UserProfile = (id) => {
-console.log('UserProfileeee',id.id)
-const Id = id.id
+  console.log('UserProfileeee', id.id)
+  const Id = id.id
   // const params = useParams();
   const { userId } = useParams()
   const [searchParams, setSearchParams] = useSearchParams()
@@ -23,8 +23,8 @@ const Id = id.id
 
   // const queryParams = new URLSearchParams(window.location.search);
   // const id = queryParams.get('id');
-//   let { id } = useParams();
-// console.log(id)
+  //   let { id } = useParams();
+  // console.log(id)
 
   const [openModal, setOpenModal] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false)
@@ -74,16 +74,16 @@ const Id = id.id
 
 
 
-useEffect(() => { 
-  profileData(); getImages(); 
+  useEffect(() => {
+    profileData(); getImages();
 
-},[Id]
-)
-
-
+  }, [Id]
+  )
 
 
-  
+
+
+
   const profileData = () => {
     setLoader(true)
     var requestOptions = {
@@ -147,18 +147,19 @@ useEffect(() => {
 
 
 
-      var requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
-      };
-      
-      fetch(`${Baseurl}get_image/${String(Id)}`, requestOptions)
-        .then(response => response.json())
-        .then(result => {
-          
-          setDatas(result.Data)
-          console.log(result)})
-        .catch(error => console.log('error', error));
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
+
+    fetch(`${Baseurl}get_image/${String(Id)}`, requestOptions)
+      .then(response => response.json())
+      .then(result => {
+
+        setDatas(result.Data)
+        console.log(result)
+      })
+      .catch(error => console.log('error', error));
 
 
 
@@ -168,17 +169,17 @@ useEffect(() => {
 
   }
 
-  const SetLocalLogin = async () => {
-    try {
-      let user = await localStorage.getItem('user');
-      let parsed_user = JSON.parse(user)
-      if (parsed_user) {
-        setUserID(parsed_user.id)
-      }
-    } catch {
-      return null;
-    }
-  }
+  // const SetLocalLogin = async () => {
+  //   try {
+  //     let user = await localStorage.getItem('user');
+  //     let parsed_user = JSON.parse(user)
+  //     if (parsed_user) {
+  //       setUserID(parsed_user.id)
+  //     }
+  //   } catch {
+  //     return null;
+  //   }
+  // }
 
 
   const ReturnData = () => {
@@ -570,13 +571,14 @@ useEffect(() => {
     document.documentElement.scrollTop = 0;
   }
 
-  useEffect(() => { topFunction();
-    
-    
-   
-    
-    
-     }, [])
+  useEffect(() => {
+    topFunction();
+
+
+
+
+
+  }, [])
 
   return (
     <div>
