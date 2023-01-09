@@ -12,19 +12,23 @@ import coverImage from '../SourceFiles/heading-bg.jpg'
 import { useSearchParams, useParams } from 'react-router-dom';
 
 const UserProfile = (id) => {
-  console.log('UserProfileeee', id.id)
   const Id = id.id
+
   // const params = useParams();
-  const { userId } = useParams()
-  const [searchParams, setSearchParams] = useSearchParams()
+  // const { userId } = useParams()
+  // const [searchParams, setSearchParams] = useSearchParams()
+
+  const location = useLocation()
+  const IDD = location.state.coustomerData;
+  console.log(IDD)
 
   // const location = useLocation()
-  // const id = location.state.ID
+  // const IDD = location.state.userDataa
+  // console.log(location)
 
   // const queryParams = new URLSearchParams(window.location.search);
   // const id = queryParams.get('id');
   //   let { id } = useParams();
-  // console.log(id)
 
   const [openModal, setOpenModal] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false)
@@ -69,20 +73,11 @@ const UserProfile = (id) => {
   const [datas, setDatas] = useState([])
   const [userID, setUserID] = useState()
 
-
-
-
-
-
   useEffect(() => {
-    profileData(); getImages();
-
+    profileData();
+    getImages();
   }, [Id]
   )
-
-
-
-
 
   const profileData = () => {
     setLoader(true)
@@ -91,7 +86,7 @@ const UserProfile = (id) => {
       redirect: 'follow'
     };
 
-    fetch(`${Baseurl}fetch_webdata_by_userid/${String(Id)}`, requestOptions)
+    fetch(`${Baseurl}fetch_webdata_by_userid/${String(IDD)}`, requestOptions)
       .then(response => response.json())
       .then(result => {
         setLoader(false)
@@ -135,15 +130,6 @@ const UserProfile = (id) => {
   }
 
   const getImages = () => {
-    // axios.get(`${Baseurl}get_image/${Id}`)
-    //   .then((res) => {
-    //     console.log(res)
-    //     setDatas(res.data.Data)
-    //   })
-    //   .catch((err) => {
-    //     console.log(err)
-    //   })
-
 
 
     var requestOptions = {
@@ -151,7 +137,7 @@ const UserProfile = (id) => {
       redirect: 'follow'
     };
 
-    fetch(`${Baseurl}get_image/${String(Id)}`, requestOptions)
+    fetch(`${Baseurl}get_image/${String(IDD)}`, requestOptions)
       .then(response => response.json())
       .then(result => {
 
@@ -161,24 +147,8 @@ const UserProfile = (id) => {
       .catch(error => console.log('error', error));
 
 
-
-
-
-
-
   }
 
-  // const SetLocalLogin = async () => {
-  //   try {
-  //     let user = await localStorage.getItem('user');
-  //     let parsed_user = JSON.parse(user)
-  //     if (parsed_user) {
-  //       setUserID(parsed_user.id)
-  //     }
-  //   } catch {
-  //     return null;
-  //   }
-  // }
 
 
   const ReturnData = () => {

@@ -12,6 +12,7 @@
     "emailjs": "^4.0.1",
     "emailjs-com": "^3.2.0",
     "file-saver": "^2.0.5",
+    "flatted": "^3.2.7",
     "node-sass": "^7.0.3",
     "pretty-modal": "^3.0.1",
     "react": "^18.2.0",

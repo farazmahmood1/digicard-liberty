@@ -9,7 +9,7 @@ const Decider = () => {
     const url = `${window.location.href}`;
     const part = url.split("?");
     const path = part[1];
-    setId(path ? path : "nullg");
+    setId(path !== null ? path : "noID");
   }
 
   console.log(id);
@@ -18,7 +18,7 @@ const Decider = () => {
     getLink();
   }, []);
 
-  return <>{id == "nullg" ? <HomePage /> : <UserProfile id={id} />}</>;
+  return <>{id == "noID" ? <HomePage /> : <UserProfile id={id} />}</>;
 };
 
 export default Decider;

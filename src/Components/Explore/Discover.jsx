@@ -1,16 +1,30 @@
-import axios from 'axios'
+import { parse, stringify, toJSON, fromJSON } from 'flatted';
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import Imagesurl from '../SourceFiles/Imageurl'
 import Baseurl from '../SourceFiles/url'
+import { Link } from 'react-router-dom'
+import axios from 'axios';
+import UserProfile from '../Profile/UserProfile';
 
 const Discover = () => {
 
   const [userData, setUserData] = useState([])
   const [visible, setVisible] = useState(false)
   const [loader, setLoader] = useState(false)
-  const [userID, setUserID] = useState()
+  const [userID, setUserID] = useState();
+  const [que, setQue] = useState()
 
+  const SetLocalLogin = async () => {
+    try {
+      let user = await localStorage.getItem('user');
+      let parsed_user = JSON.parse(user)
+      if (parsed_user) {
+        setUserID(parsed_user.id)
+      }
+    } catch {
+      return null;
+    }
+  }
 
   const renderData = () => {
     setLoader(true)
@@ -24,7 +38,6 @@ const Discover = () => {
         console.log(err)
       })
   }
-
   // let name = window.location.href;
   // name = name.replace(/\s+/g, '-');
   // const url = `/lookup/${name}`
@@ -47,23 +60,23 @@ const Discover = () => {
     });
   };
 
+
+
+  // const  questionMark = stringify(<span style={{display:"none"}}>?</span>)
+
+  // const questionMark = ()=>{
+  //   setQue( <span style={{display:"none"}}>?</span>)
+
+  // }
+  useEffect(() => {
+    SetLocalLogin()
+    renderData()
+
+  }, [])
+
+
   window.addEventListener('scroll', toggleVisible);
 
-  console.log(userID)
-  const SetLocalLogin = async () => {
-    try {
-      let user = await localStorage.getItem('user');
-      let parsed_user = JSON.parse(user)
-      if (parsed_user) {
-        setUserID(parsed_user.id)
-      }
-    } catch {
-      return null;
-    }
-  }
-  useEffect(() => { SetLocalLogin() }, [])
-
-  useEffect(() => { renderData() }, [])
   return (
     <div>
       <div className="discover-items">
@@ -123,12 +136,19 @@ const Discover = () => {
                                   </div>
                                 </div>
                               </div>
+
                               <div className="col-lg-12">
                                 <div className="main-button">
-                                  <Link to={`/?${items.user_id}`} >View</Link>
+                                  <Link to={`/?${items.name}`}
+                                    state={{ coustomerData: items.user_id }}
+                                  >View</Link>
                                 </div>
                               </div>
                             </div>
+                            {/* {
+                              userData ?
+                                <UserProfile IDD={items.user_id} /> : alert("User not found")
+                            } */}
                           </div>
                         </div>
                       </>

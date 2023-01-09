@@ -65,6 +65,8 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Decider />} />
+          {/* <Route path="/" element={<HomePage />} /> */}
+
           <Route path="/ShopMain" element={<ShopMain />} />
           <Route path="/ProfileMain" element={<ProfileMain />} />
           <Route path="/WorkingVideo" element={<WorkingVideo />} />
