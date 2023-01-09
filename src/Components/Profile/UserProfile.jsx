@@ -118,8 +118,7 @@ const UserProfile = (id) => {
         setBio(result.Data.bio)
         setFacebook(result.Data.facebook)
         setGithub(result.Data.github)
-        setTwitter(result.Data.twiter)
-        setTwitter(result.Data.tiwtter)
+        setTwitter(result.Data.twitter)
         setLinkedin(result.Data.linkedin)
         setInstagram(result.Data.instagram)
         setSnapchat(result.Data.snapchat)
@@ -192,12 +191,16 @@ const UserProfile = (id) => {
             <div className='row mt-2'>
               <div className='col-lg-5 mx-auto'>
 
-                <a href={`${whatsapp}`} target="_blank">
-                  <div className='card-body d-flex mt-2 profileCard'>
-                    <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-whatsapp" /></p>
-                    <p className='text-white ms-auto mt-1'>My Whatsapp no.</p>
-                  </div>
-                </a>
+                {
+                  whatsapp !== '' ?
+                    <a href={`${whatsapp}`} target="_blank">
+                      <div className='card-body d-flex mt-2 profileCard'>
+                        <p style={{ color: "#7453fc" }}><i className="fa-2x mt-1 fa-brands fa-whatsapp" /></p>
+                        <p className='text-white ms-auto mt-1'>My Whatsapp no.</p>
+                      </div>
+                    </a>
+                    : null
+                }
 
                 {
                   facebook !== '' ?
@@ -209,7 +212,8 @@ const UserProfile = (id) => {
                         </div>
                       </a>
                     </> :
-                    console.log('no facebook link available')
+                    null
+
                 }
 
                 {
@@ -221,7 +225,7 @@ const UserProfile = (id) => {
                           <p className='text-white ms-auto mt-1'>My Instagram Account</p>
                         </div>
                       </a>
-                    </> : console.log('no instagram link avaible')
+                    </> : null
                 }
 
                 {
@@ -233,7 +237,7 @@ const UserProfile = (id) => {
                           <p className='text-white ms-auto mt-1'>My Twitter Account</p>
                         </div>
                       </a>
-                    </> : console.log('twitter link not avaible')
+                    </> : null
                 }
 
                 {
@@ -245,7 +249,7 @@ const UserProfile = (id) => {
                           <p className='text-white ms-auto mt-1'>My telegram Link</p>
                         </div>
                       </a>
-                    </> : console.log('no telegram avaible')
+                    </> : null
                 }
 
 
@@ -258,7 +262,7 @@ const UserProfile = (id) => {
                           <p className='text-white ms-auto mt-1'>My Snapchat Account</p>
                         </div>
                       </a>
-                    </> : console.log('no snapchat avaiable')
+                    </> : null
                 }
 
                 {
@@ -270,7 +274,7 @@ const UserProfile = (id) => {
                           <p className='text-white ms-auto mt-1'>My tiktok Account</p>
                         </div>
                       </a>
-                    </> : console.log('no tiktok avaible')
+                    </> : null
                 }
 
 
@@ -283,7 +287,7 @@ const UserProfile = (id) => {
                           <p className='text-white ms-auto mt-1'>My Skype Account</p>
                         </div>
                       </a>
-                    </> : console.log('no skype avaible')
+                    </> : null
                 }
 
                 {
@@ -295,7 +299,7 @@ const UserProfile = (id) => {
                           <p className='text-white ms-auto mt-1'>My Pinterest Account</p>
                         </div>
                       </a>
-                    </> : console.log('no pinterest avaible')
+                    </> : null
                 }
 
                 {
@@ -307,7 +311,7 @@ const UserProfile = (id) => {
                           <p className='text-white ms-auto mt-1'>My Email Account</p>
                         </div>
                       </a>
-                    </> : console.log('mail is not avaiable')
+                    </> : null
                 }
 
 
@@ -367,7 +371,7 @@ const UserProfile = (id) => {
                     <>
                       <h1 className='mt-2'>Information about me</h1>
                     </>
-                    : console.log('bio, designation , longbio')
+                    : null
                   }
 
                   {
@@ -377,7 +381,7 @@ const UserProfile = (id) => {
                         <p className='mt-3'>{designation}</p>
                       </>
                       :
-                      console.log('no designation avaiable')
+                      null
                   }
 
                   {
@@ -386,17 +390,17 @@ const UserProfile = (id) => {
                         <h3 className='mt-3' style={{ color: "#7453fc" }}>Bio:</h3>
                         <p className='mt-3'>{bio}</p>
                       </> :
-                      console.log('no bio avaiable')
+                      null
                   }
 
                   {
-                    shortBio !== '' ?
+                    profDes !== '' ?
                       <>
                         <h3 className='mt-3' style={{ color: "#7453fc" }}>Description:</h3>
-                        <p className='mt-3'>{shortBio}</p>
+                        <p className='mt-3'>{profDes}</p>
                       </>
                       :
-                      console.log('No describtion avaiable')
+                      null
                   }
 
                 </div>
@@ -413,7 +417,7 @@ const UserProfile = (id) => {
                           <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-phone" /></h2>
                           <p className='mt-3 ms-auto'>{phone}</p>
                         </div>
-                      </> : console.log('no phone avaiable')
+                      </> : null
                   }
 
                   {
@@ -423,7 +427,7 @@ const UserProfile = (id) => {
                           <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-address-card" /></h2>
                           <p className='mt-2 ms-auto'>{cnic}</p>
                         </div>
-                      </> : console.log('no CNIC avaiable')
+                      </> : null
                   }
 
                   {
@@ -433,7 +437,7 @@ const UserProfile = (id) => {
                           <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-address-book" /></h2>
                           <p className='mt-3 ms-auto'>{address}</p>
                         </div>
-                      </> : console.log('no address avaiable')
+                      </> : null
                   }
 
 
@@ -444,13 +448,13 @@ const UserProfile = (id) => {
                           <h2><i className="fa-solid fa-location-dot" style={{ color: "#7453fc" }} /> <span style={{ fontSize: '13px' }}></span></h2>
                           <p className='mt-2 ms-auto'>{region}</p>
                         </div>
-                      </> : console.log('no region avaiable')
+                      </> : null
                   }
 
                 </div>
                 {
                   cv ?
-                    <button onClick={saveFile} className='buttonx w-25 mt-4 p-3' >View CV</button> : console.log('no cv is avavialble')
+                    <button onClick={saveFile} className='buttonx w-25 p-3' >View CV</button> : null
                 }
               </div>
             </div>
@@ -478,7 +482,7 @@ const UserProfile = (id) => {
                             <p className='text-white ms-auto mt-1'>My Business Whatsapp</p>
                           </div>
                         </a>
-                      </> : console.log('whatsappBusiines is not avaiable')
+                      </> : null
                   }
 
                   {
@@ -490,7 +494,7 @@ const UserProfile = (id) => {
                             <p className='text-white ms-auto mt-1'>My LinkedIn Account</p>
                           </div>
                         </a>
-                      </> : console.log('no linkdein avaiable')
+                      </> : null
                   }
 
                   {
@@ -502,7 +506,7 @@ const UserProfile = (id) => {
                             <p className='text-white ms-auto mt-1'>My Github Account</p>
                           </div>
                         </a>
-                      </> : console.log('no github available')
+                      </> : null
                   }
 
                   {
@@ -514,7 +518,7 @@ const UserProfile = (id) => {
                             <p className='text-white ms-auto mt-1'>My StackOverflow Account</p>
                           </div>
                         </a>
-                      </> : console.log('stackoverflow is not avaible')
+                      </> : null
                   }
 
                   {
@@ -526,7 +530,7 @@ const UserProfile = (id) => {
                             <p className='text-white ms-auto mt-1'>My Upwork Account</p>
                           </div>
                         </a>
-                      </> : console.log('no upwork avaiable')
+                      </> : null
                   }
 
                   {fiver !== '' ?
@@ -537,7 +541,7 @@ const UserProfile = (id) => {
                           <p className='text-white ms-auto mt-1'>My Fiver Account</p>
                         </div>
                       </a>
-                    </> : console.log('no fiver avaiablle')
+                    </> : null
                   }
 
 
