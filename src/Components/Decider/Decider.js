@@ -18,7 +18,7 @@ const Decider = () => {
     getLink();
   }, []);
 
-  return <>{id == "noID" ? <HomePage /> : <UserProfile id={id} />}</>;
+  return <>{id !== "noID" ? <HomePage /> : <UserProfile id={id} />}</>;
 };
 
 export default Decider;

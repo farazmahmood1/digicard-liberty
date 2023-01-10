@@ -74,10 +74,10 @@ const UserProfile = (id) => {
   const [userID, setUserID] = useState()
 
   useEffect(() => {
+    topFunction();
     profileData();
     getImages();
-  }, [Id]
-  )
+  }, [Id])
 
   const profileData = () => {
     setLoader(true)
@@ -131,7 +131,6 @@ const UserProfile = (id) => {
 
   const getImages = () => {
 
-
     var requestOptions = {
       method: 'GET',
       redirect: 'follow'
@@ -140,16 +139,11 @@ const UserProfile = (id) => {
     fetch(`${Baseurl}get_image/${String(IDD)}`, requestOptions)
       .then(response => response.json())
       .then(result => {
-
         setDatas(result.Data)
         console.log(result)
       })
       .catch(error => console.log('error', error));
-
-
   }
-
-
 
   const ReturnData = () => {
     if (profile === 'userProfile') {
@@ -545,15 +539,6 @@ const UserProfile = (id) => {
     document.documentElement.scrollTop = 0;
   }
 
-  useEffect(() => {
-    topFunction();
-
-
-
-
-
-  }, [])
-
   return (
     <div>
 
@@ -636,21 +621,7 @@ const UserProfile = (id) => {
             <button onClick={() => setProfile("Social")} className={profile === 'Social' ? 'btn  buttonx actives rounded-pill me-2 mb-2' : 'btn hoverBtn buttonx rounded-pill me-2 mb-2'} style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-envelope p-2" /></button>
           </div>
 
-          <div className="row">
 
-            <div className='col-lg-4' >
-              <img src={`${allImagesUrl.itemImage}${pic}`} className='profileImage' alt="profile image" />
-            </div>
-
-            <div className="col-lg-6 profileHeading">
-              <hr className='w-75 ' style={{ height: "3px", color: "#7453fc" }} />
-              <h1 className='mt-2'>{name}</h1>
-              <p style={{ fontSize: '12px' }}>{phone}</p>
-              <h2 className='mt-3'>{profession}</h2>
-              <p className='mt-3'>{bio}</p>
-              {/* <button className='buttonx w-25 mt-4 p-3' >View CV</button> */}
-            </div>
-          </div>
           {
             loader === true ?
               <>
@@ -668,6 +639,21 @@ const UserProfile = (id) => {
                 </div>
               </> :
               <>
+
+                <div className="row">
+                  <div className='col-lg-4' >
+                    <img src={`${allImagesUrl.itemImage}${pic}`} className='profileImage' alt="profile image" />
+                  </div>
+                  <div className="col-lg-6 profileHeading">
+                    <hr className='w-75 ' style={{ height: "3px", color: "#7453fc" }} />
+                    <h1 className='mt-2'>{name}</h1>
+                    <p style={{ fontSize: '12px' }}>{phone}</p>
+                    <h2 className='mt-3'>{profession}</h2>
+                    <p className='mt-3'>{bio}</p>
+                    {/* <button className='buttonx w-25 mt-4 p-3' >View CV</button> */}
+                  </div>
+                </div>
+
                 <ReturnData />
               </>
           }
