@@ -32,6 +32,7 @@ const HelpVideo = () => {
 
     return (
         <div>
+            
             <Modal
                 open={shouldShow}
             >
@@ -40,7 +41,6 @@ const HelpVideo = () => {
                         oncloseModal()
                     }}>X</button>
                     <div className="row">
-
                         <div className="col-lg-7">
                             <form ref={form} onSubmit={sendEmail}>
                                 <h4 className='mt-4'>Get in Touch</h4>
@@ -90,6 +90,7 @@ const HelpVideo = () => {
                     </div>
                 </div>
             </Modal>
+
             <div className="categories-collections">
                 <div className="container">
                     <div className="row">
@@ -108,14 +109,12 @@ const HelpVideo = () => {
                                             <iframe width="560" height="315" autoplay="on" src="https://www.youtube.com/embed/el3N6qQjr-I?start=8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
                                     </div>
-
                                     <div className="col-lg-12 mt-5">
                                         <div className="section-heading">
                                             <div className="line-dec" />
                                             <h2>Something's wrong <em>Tell</em> us</h2>
                                         </div>
                                     </div>
-
                                     <div className="col-lg-2 col-sm-6">
                                         <div className="item">
                                             <div className="icon">
@@ -149,7 +148,6 @@ const HelpVideo = () => {
                                             </div>
                                         </div>
                                     </div>
-
                                     <div className="col-lg-2 col-sm-6">
                                         <div className="item">
                                             <div className="icon">
@@ -161,11 +159,9 @@ const HelpVideo = () => {
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

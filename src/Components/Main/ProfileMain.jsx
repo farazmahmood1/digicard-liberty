@@ -30,7 +30,7 @@ const ProfileMain = () => {
         <div>
 
             {/* Navbar */}
-           <div>
+            <div>
                 <header className="header-area header-sticky" >
                     <div className='container'>
                         <div className='container-fluid' style={{ borderRadius: '50px', backgroundColor: '#fff' }} >

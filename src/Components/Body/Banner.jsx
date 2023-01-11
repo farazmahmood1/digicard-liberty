@@ -15,7 +15,14 @@ const Banner = () => {
                 <p>Liberty NFT Market is a really cool and professional design for your NFT websites. This HTML CSS template is based on Bootstrap v5 and it is designed for NFT related web portals. Liberty can be freely downloaded from TemplateMo's free css templates.</p>
                 <div className="buttons">
                   <div className="border-button">
-                    <Link to='/ShopMain' state={{ values: 'Card' }} >Explore Shop</Link>
+                    <Link to={`/ShopMain/${'Card'}`} >Explore Shop</Link>
+                    {/* <Link to='/ShopMain' state={{ values: 'Card' }} >Explore Shop</Link> */}
+                    {/* <Link to={{
+                      pathname: "/ShopMain",
+                      search: "?value=Card",
+                      state: { values: 'Card' }
+                    }}>Explore Shop</Link> */}
+
                   </div>
                   <div className="main-button">
                     <Link to='/WorkingVideo' >How to buy</Link>

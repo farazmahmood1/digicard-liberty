@@ -1,14 +1,8 @@
 import React, { useEffect } from 'react'
-import axios, { Axios } from 'axios';
 import { useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
-import { Modal } from 'pretty-modal'
-import { Link } from 'react-router-dom'
-import Slider from "react-slick";
-// import CursorZoom from 'react-cursor-zoom';
+import { Link, useParams } from 'react-router-dom'
 import { useLocation } from 'react-router-dom';
-import Imagesurl from '../SourceFiles/Imageurl';
-
 import allImagesUrl from '../SourceFiles/baseimageurl';
 import SignIn from '../Auth/SignIn';
 import SignUp from '../Auth/SignUp';
@@ -21,8 +15,10 @@ const ShopScreem = () => {
 
     const [addCount, setAddCount] = useState(1);
     const [getColor, setColor] = useState('')
-    const [getColors, setColors] = useState('black')
     const [isActive, setIsActive] = useState(false);
+
+    const { product } = useParams()
+
 
     const location = useLocation();
     const { items } = location.state
@@ -94,8 +90,8 @@ const ShopScreem = () => {
     return (
         <div>
 
-           {/* Navbar */}
-           <div>
+            {/* Navbar */}
+            <div>
                 <header className="header-area header-sticky" >
                     <div className='container'>
                         <div className='container-fluid' style={{ borderRadius: '50px', backgroundColor: '#fff' }} >
@@ -167,7 +163,7 @@ const ShopScreem = () => {
                         <div className="col-lg-12 mb-4">
                             <h6>DigiCard Market</h6>
                             <h2>Buy Your DigiCard Now.</h2>
-                            <span className=''> <Link state={{ values: 'Card' }} to='/ShopMain'>Shop</Link>  &gt; <a style={{cursor:'default'}}>Buy Item</a></span>
+                            <span className=''> <Link state={{ values: 'Card' }} to='/ShopMain'>Shop</Link>  &gt; <a style={{ cursor: 'default' }}>Buy Item</a></span>
                         </div>
                     </div>
                 </div>
@@ -201,7 +197,7 @@ const ShopScreem = () => {
                                             cursorOffset={{ x: 10, y: -10 }}
                                         /> */}
 
-<img  src={`${allImagesUrl.itemImage}${items.item_pic}`} alt="" />
+                                        <img src={`${allImagesUrl.itemImage}${items.item_pic}`} alt="" />
 
                                     </div>
 

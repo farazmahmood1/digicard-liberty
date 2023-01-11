@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Baseurl from '../SourceFiles/url';
 import Imagesurl from '../SourceFiles/Imageurl';
@@ -12,12 +12,13 @@ import allImagesUrl from '../SourceFiles/baseimageurl';
 
 const Shop = () => {
 
+  const { product } = useParams()
 
-  const location = useLocation();
-  const { values } = location.state;
+  // const location = useLocation();
+  // const { values } = location.state;
 
   const [card, setCard] = useState([])
-  const [type, setType] = useState(!values ? 'Card' : values);
+  const [type, setType] = useState(!product ? 'Card' : product);
   const [loader, setLoader] = useState(false)
 
   const dataRender = () => {
@@ -33,7 +34,7 @@ const Shop = () => {
       })
   }
 
-  console.log(values)
+  // console.log(values)
 
   const filtered = card.filter((item) => item.item_type === type)
 
@@ -61,7 +62,7 @@ const Shop = () => {
             <div className="col-lg-12 mb-4">
               <h6 className=''>DigiCard Market</h6>
               <h2>Buy Your DigiCard Now.</h2>
-              <span className=''> <Link to='/'>Home</Link>  &gt; <a style={{cursor:'default'}}>Shop</a></span>
+              <span className=''> <Link to='/'>Home</Link>  &gt; <a style={{ cursor: 'default' }}>Shop</a></span>
             </div>
           </div>
         </div>
@@ -130,7 +131,9 @@ const Shop = () => {
                                   </div>
                                   <div className='d-flex justify-content-center '>
                                     <div className="main-button ms-2 itemBtn">
-                                      <Link state={{ items: items }} to='/ShopScreem'>View</ Link>
+                                      {/* <Link state={{ items: items }} to='/ShopScreem'>View</ Link> */}
+                                      <Link state={{ items: items }}  to={`/ShopScreem/${items.id}`}>View</ Link>
+
                                     </div>
                                   </div>
                                 </div>

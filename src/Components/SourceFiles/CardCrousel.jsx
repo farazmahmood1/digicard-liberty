@@ -1,4 +1,4 @@
-const data = [ {
+const data = [{
     name: "Mutant Bored Ape Yacht Club",
     category: "Tattoo",
     price: "999"
