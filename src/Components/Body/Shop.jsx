@@ -12,13 +12,30 @@ import allImagesUrl from '../SourceFiles/baseimageurl';
 
 const Shop = () => {
 
-  const { product } = useParams()
+  // const params = useParams()
+  // const { shop } = params
+
+  const [para, setpara] = useState();
+  const getLink = () => {
+    const url = `${window.location.href}`;
+    const part = url.split("?");
+    const path = part[1];
+    setType(path);
+  }
+
+  console.log(para)
+
+  useEffect(() => {
+    getLink();
+  }, []);
 
   // const location = useLocation();
   // const { values } = location.state;
+  // console.log(values)
+  // !code ? 'Card' : 
 
   const [card, setCard] = useState([])
-  const [type, setType] = useState(!product ? 'Card' : product);
+  const [type, setType] = useState('');
   const [loader, setLoader] = useState(false)
 
   const dataRender = () => {
@@ -98,8 +115,11 @@ const Shop = () => {
                   <div className="filters">
                     <ul>
                       {/* <li onClick={() => setType("All")} data-filter="*" className="active">All Items</li> */}
-                      <li onClick={() => setType("Card")} className={type === "Card" ? "active" : "kuchNai"} data-filter=".msc" >Digi Cards</li>
-                      <li onClick={() => setType("Tattos")} className={type === "Tattos" ? "active" : "kuchNai"} data-filter=".dig">Tattoos</li>
+                      <Link to='/ShopMain?Card'><li onClick={() => setType("Card")} className={type === "Card" ? "active" : "kuchNai"} data-filter=".msc" >Digi Cards</li>
+                      </Link>
+                      <Link to='/ShopMain?Tattos'><li onClick={() => setType("Tattos")} className={type === "Tattos" ? "active" : "kuchNai"} data-filter=".dig">Tattoos</li>
+                      </Link>
+
                       {/* <li onClick={() => setType("Jewellery")} className={type === "Jewellery" ? "active" : "kuchNai"} data-filter=".vtr">Jewelerry
                       </li> */}
                     </ul>
@@ -132,7 +152,7 @@ const Shop = () => {
                                   <div className='d-flex justify-content-center '>
                                     <div className="main-button ms-2 itemBtn">
                                       {/* <Link state={{ items: items }} to='/ShopScreem'>View</ Link> */}
-                                      <Link state={{ items: items }}  to={`/ShopScreem/${items.id}`}>View</ Link>
+                                      <Link state={{ items: items }} to={`/ShopScreem/${items.id}`}>View</ Link>
 
                                     </div>
                                   </div>

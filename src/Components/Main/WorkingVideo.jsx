@@ -9,7 +9,7 @@ import SignUp from '../Auth/SignUp'
 const WorkingVideo = () => {
     const [openModal, setOpenModal] = useState(false);
     const [openSignUp, setOpenSignUp] = useState(false)
-    
+
     return (
         <div>
             {/* Navbar */}

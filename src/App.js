@@ -68,14 +68,14 @@ function App() {
           <Route path="/" element={<Decider />} />
           {/* <Route path="/" element={<HomePage />} /> */}
 
-          <Route path="/ShopMain/:Card" element={<ShopMain />} />
+          <Route path="/ShopMain" element={<ShopMain />} />
           <Route path="/ProfileMain" element={<ProfileMain />} />
           <Route path="/WorkingVideo" element={<WorkingVideo />} />
           <Route path="/UserProfile" element={<UserProfile />} />
           <Route path="/About" element={<About />} />
           <Route path="/Social" element={<Social />} />
           <Route path="/Portfolio" element={<Portfolio />} />
-          <Route path="/ShopScreem/:items" element={<ShopScreem />} />
+          <Route path="/ShopScreem" element={<ShopScreem />} />
 
           <Route path="/UserForm" element={<UserForm />} />
           <Route path="/Form" element={<Form />} />

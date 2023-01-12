@@ -5,7 +5,6 @@ import { useState } from 'react';
 import axios from 'axios';
 import Baseurl from '../SourceFiles/url';
 import { useEffect } from 'react';
-import Imagesurl from '../SourceFiles/Imageurl';
 import allImagesUrl from '../SourceFiles/baseimageurl';
 
 const Categories = () => {
@@ -86,7 +85,9 @@ const Categories = () => {
                                             </div>
                                             <h4>Tattoos</h4>
                                             <div className="icon-button">
-                                                <Link state={{ values: 'Tattos' }} to='/ShopMain' ><i className="fa fa-angle-right" /></Link>
+                                                {/* <Link state={{ values: 'Tattos' }} to='/ShopMain' ><i className="fa fa-angle-right" /></Link> */}
+                                                <Link to='/ShopMain?Tattos' ><i className="fa fa-angle-right" /></Link>
+
                                             </div>
                                         </div>
                                     </div>
