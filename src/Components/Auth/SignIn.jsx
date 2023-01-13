@@ -3,7 +3,7 @@ import React from 'react'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import Baseurl from '../SourceFiles/url'
-
+import image from '..//SourceFiles/images/dark-bg.jpg'
 const SignIn = ({ setOpenModal }) => {
 
     const [email, setEmail] = useState('')
@@ -41,7 +41,7 @@ const SignIn = ({ setOpenModal }) => {
     return (
         <div className='row'>
             <div className='col-lg-4  ms-auto'>
-                <div className='card in-left  mainModal mt-5' style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)", borderRadius: "15px" }}>
+                <div className='card in-left  mainModal mt-5' style={{  borderRadius: "15px" }}>
                     <div className='card-body'>
                         <div className='d-flex'>
                             <div className=' mt-3'>

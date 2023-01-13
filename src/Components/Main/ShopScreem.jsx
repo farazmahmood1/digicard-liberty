@@ -6,22 +6,48 @@ import { useLocation } from 'react-router-dom';
 import allImagesUrl from '../SourceFiles/baseimageurl';
 import SignIn from '../Auth/SignIn';
 import SignUp from '../Auth/SignUp';
+import axios from 'axios';
+import Baseurl from '../SourceFiles/url';
 
 
 const ShopScreem = () => {
 
+    const [data, setData] = useState([])
+    const [loader, setLoader] = useState(false)
     const [openModal, setOpenModal] = useState(false);
     const [openSignUp, setOpenSignUp] = useState(false)
-
     const [addCount, setAddCount] = useState(1);
     const [getColor, setColor] = useState('')
     const [isActive, setIsActive] = useState(false);
+    // product attributes
 
-    const { product } = useParams()
+    const [name, setName] = useState('')
+    const [pic, setpic] = useState()
+    const [type, setType] = useState()
+    const [price, setPrice] = useState()
+    const [color, setpColor] = useState()
+    const [describtion, setDescribtion] = useState()
+    const [quantity, setQuantity] = useState()
 
+    const { items } = useParams()
+    console.log(items)
 
-    const location = useLocation();
-    const { items } = location.state
+    // const location = useLocation();
+    // const { items } = location.state
+
+    const fetchData = () => {
+        setLoader(true)
+        axios.get(`${Baseurl}getitemwithid/${items}`)
+            .then(res => {
+                setData(res.data)
+                console.log(res)
+                setLoader(false)
+
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
 
     const changeClass = () => {
         setIsActive(current => !current)
@@ -85,7 +111,7 @@ const ShopScreem = () => {
         document.documentElement.scrollTop = 0;
     }
 
-    useEffect(() => { topFunction() }, [])
+    useEffect(() => { topFunction(); fetchData() }, [])
 
     return (
         <div>
@@ -180,10 +206,28 @@ const ShopScreem = () => {
 
                         <div className="col-lg-12">
 
-                            <div className="row">
-                                <div className="col-lg-6">
-                                    <div className='col-lg-12 mb-4'>
-                                        {/* <CursorZoom className=''
+                            {
+                                loader === true ?
+                                    <>
+                                        <div className='col-lg-12'>
+                                            <div className='row loaderSizing'>
+                                                <div className='d-flex justify-content-center'>
+                                                    <div className='position-absolute top-50 start-50 translate-middle'>
+                                                        {/* <div className="loader">Loading...</div> */}
+                                                        <div className="spinner-border" style={{ width: '5rem', height: '5rem', color: '#7453fc' }} role="status">
+                                                            <span className="visually-hidden">Loading...</span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </> :
+                                    <>
+                                        <div className="row">
+                                            <div className="col-lg-6">
+                                                <div className='col-lg-12 mb-4'>
+                                                    {/* <CursorZoom className=''
                                             image={{
                                                 src: `${allImagesUrl.itemImage}${items.item_pic}`,
                                                 width: 550,
@@ -197,38 +241,43 @@ const ShopScreem = () => {
                                             cursorOffset={{ x: 10, y: -10 }}
                                         /> */}
 
-                                        <img src={`${allImagesUrl.itemImage}${items.item_pic}`} alt="" />
+                                                    <img src={`${allImagesUrl.itemImage}${data.item_pic}`} alt="" />
 
-                                    </div>
+                                                </div>
 
-                                </div>
-                                <div className="col-lg-5 ms-1 ps-4 pe-4">
+                                            </div>
+                                            <div className="col-lg-5 ms-1 ps-4 pe-4">
 
-                                    <h3>{items.item_name}</h3>
-                                    <h5 className='mt-2'>Rs. <span style={{ fontSize: "12px" }} className='text-secondary text-decoration-line-through'><span>{items.previous_price}</span></span>{items.item_price}</h5>
-                                    <hr style={{ width: "320px", height: "1px", color: "#7453fc" }} />
-                                    <h6 style={{ color: "#7453fc" }}>Quantity:</h6>
-                                    <div className='mt-2'>
-                                        {
-                                            addCount > 1 ?
-                                                <button className='btn btn-secondary me-2 btn-sm' style={{ backgroundColor: "#7453fc" }} onClick={decrementCount}><i className="fa-solid fa-angle-left" /></button> : console.log(".-.")
-                                        }
-                                        <label className='text-white' htmlFor="exampleInputPassword1">{addCount}</label>
-                                        <button className='btn btn-secondary ms-2 btn-sm' style={{ backgroundColor: "#7453fc" }} onClick={incrementCount}><i className="fa-solid fa-angle-right" /></button>
-                                    </div>
+                                                <h3>{data.item_name}</h3>
+                                                <h5 className='mt-2'>Rs. <span style={{ fontSize: "12px" }} className='text-secondary text-decoration-line-through'><span>{data.previous_price}</span></span>{data.item_price}</h5>
+                                                <hr style={{ width: "320px", height: "1px", color: "#7453fc" }} />
+                                                <h6 style={{ color: "#7453fc" }}>Quantity:</h6>
+                                                <div className='mt-2'>
+                                                    {
+                                                        addCount > 1 ?
+                                                            <button className='btn btn-secondary me-2 btn-sm' style={{ backgroundColor: "#7453fc" }} onClick={decrementCount}><i className="fa-solid fa-angle-left" /></button> : console.log(".-.")
+                                                    }
+                                                    <label className='text-white' htmlFor="exampleInputPassword1">{addCount}</label>
+                                                    <button className='btn btn-secondary ms-2 btn-sm' style={{ backgroundColor: "#7453fc" }} onClick={incrementCount}><i className="fa-solid fa-angle-right" /></button>
+                                                </div>
 
-                                    <hr style={{ width: "320px", height: "1px", color: "#7453fc" }} />
-                                    <h6 style={{ color: "#7453fc" }} className='mt-2 mb-2'>Color Avaiblable;</h6>
-                                    <button className={isActive ? 'btnShop borderClass' : 'btnShop'} onClick={changeClass} style={{ backgroundColor: `${items.color_avaliable}` }} ></button>
+                                                <hr style={{ width: "320px", height: "1px", color: "#7453fc" }} />
+                                                <h6 style={{ color: "#7453fc" }} className='mt-2 mb-2'>Color Avaiblable;</h6>
+                                                <button className={isActive ? 'btnShop borderClass' : 'btnShop'} onClick={changeClass} style={{ backgroundColor: `${data.color_avaliable}` }} ></button>
 
-                                    <h6 className='mt-3' style={{ color: "#7459fc" }}>Describtion:</h6>
-                                    <p className='p-2'>{items.describtion}</p>
+                                                <h6 className='mt-3' style={{ color: "#7459fc" }}>Describtion:</h6>
+                                                <p className='p-2'>{data.describtion}</p>
 
-                                    <div className='mt-2 d-flex'><Link to='/ItemForm' state={{ counter: addCount, itemColor: getColor, item: items }} className='text-center buttonx col-11'>BUY NOW</Link> <i className="fa-2x ms-2 mt-1 fa-solid fa-heart text-danger" />
-                                    </div>
-                                    <p style={{ fontSize: "11px" }} className='text-secondary text-center'>Pyament method is COD, other methods are comming soon!</p>
-                                </div>
-                            </div>
+                                                <div className='mt-2 d-flex'><Link to='/ItemForm' state={{ counter: addCount, itemColor: getColor, item: data }} className='text-center buttonx col-11'>BUY NOW</Link> <i className="fa-2x ms-2 mt-1 fa-solid fa-heart text-danger" />
+                                                </div>
+                                                <p style={{ fontSize: "11px" }} className='text-secondary text-center'>Pyament method is COD, other methods are comming soon!</p>
+                                            </div>
+                                        </div>
+                                    </>
+                            }
+
+
+
                             <hr className='bg-secondary' />
                             {/* <div className="buttons  mt-5 d-flex justify-content-center">
                                 <div className="main-button ">
@@ -239,7 +288,7 @@ const ShopScreem = () => {
                             <div className='d-flex justify-content-center mt-5'>
                                 <div className="buttons me-2">
                                     <div className="border-button">
-                                        <Link to='/ShopMain' >Explore more products</Link>
+                                        <Link to='/ShopMain?Card' >Explore more products</Link>
                                     </div>
                                 </div>
                                 <div className='buttons'>

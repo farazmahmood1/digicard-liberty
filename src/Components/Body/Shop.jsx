@@ -15,19 +15,12 @@ const Shop = () => {
   // const params = useParams()
   // const { shop } = params
 
-  const [para, setpara] = useState();
   const getLink = () => {
     const url = `${window.location.href}`;
     const part = url.split("?");
     const path = part[1];
     setType(path);
   }
-
-  console.log(para)
-
-  useEffect(() => {
-    getLink();
-  }, []);
 
   // const location = useLocation();
   // const { values } = location.state;
@@ -69,7 +62,7 @@ const Shop = () => {
     document.documentElement.scrollTop = 0;
   }
 
-  useEffect(() => { topFunction(); dataRender() }, [])
+  useEffect(() => { topFunction(); dataRender(); getLink() }, [])
 
   return (
     <div>

@@ -2,6 +2,7 @@
 
 :root {
   --pretty-modal-modal-container-background-color: #23222d;
+  /* --pretty-modal-modal-container-background-color: red; */
   --pretty-modal-modal-container-border-radius: 10px;
 }
 
@@ -57,6 +58,7 @@ body {
 .mainModal {
   z-index: 9920;
   position: fixed;
+  background-image: url(..//src/Components/SourceFiles/images/dark-bg.jpg);
 }
 
 @media screen and (max-width: 880px) {
@@ -615,6 +617,26 @@ input {
 }
 
 /* loading on page shifting */
+
+.spinner{
+  /* style={{ width: '5rem', height: '5rem', marginTop: '15em', marginBottom: '10em', color: '#7453fc' }} */
+  width:5em;
+  height: 5rem;
+  margin-top: 40em;
+  margin-bottom: 10em;
+  color: #7453fc;
+}
+
+
+@media only screen and (max-width: 995px) {
+  .spinner {
+    width:5em;
+  height: 5rem;
+  margin-top: 60em;
+  margin-bottom: 10em;
+  color: #7453fc;
+  }
+}
 
 .loader {
   color: #7453fc;

@@ -11,20 +11,6 @@ const Discover = () => {
   const [userData, setUserData] = useState([])
   const [visible, setVisible] = useState(false)
   const [loader, setLoader] = useState(false)
-  const [userID, setUserID] = useState();
-  const [que, setQue] = useState()
-
-  const SetLocalLogin = async () => {
-    try {
-      let user = await localStorage.getItem('user');
-      let parsed_user = JSON.parse(user)
-      if (parsed_user) {
-        setUserID(parsed_user.id)
-      }
-    } catch {
-      return null;
-    }
-  }
 
   const renderData = () => {
     setLoader(true)
@@ -69,9 +55,7 @@ const Discover = () => {
 
   // }
   useEffect(() => {
-    SetLocalLogin()
     renderData()
-
   }, [])
 
 
@@ -139,8 +123,8 @@ const Discover = () => {
 
                               <div className="col-lg-12">
                                 <div className="main-button">
-                                  <Link to={`/?${items.name}`}
-                                    state={{ coustomerData: items.user_id }}
+                                  <Link to={`/${items.user_id}`}
+                                  // state={{ coustomerData: items.user_id }}
                                   >View</Link>
                                 </div>
                               </div>

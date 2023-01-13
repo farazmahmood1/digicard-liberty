@@ -98,7 +98,8 @@ const Categories = () => {
                                             </div>
                                             <h4>Digi Cards</h4>
                                             <div className="icon-button">
-                                                <Link state={{ values: 'Card' }} to='/ShopMain'><i className="fa fa-angle-right" /></Link>
+                                                {/* <Link state={{ values: 'Card' }} to='/ShopMain'><i className="fa fa-angle-right" /></Link> */}
+                                                <Link to='/ShopMain?Card' ><i className="fa fa-angle-right" /></Link>
                                             </div>
                                         </div>
                                     </div>
@@ -162,7 +163,6 @@ const Categories = () => {
                                                                 <div className="spinner-border" style={{ width: '5rem', height: '5rem', marginTop: '25em', color: '#7453fc' }} role="status">
                                                                     <span className="visually-hidden">Loading...</span>
                                                                 </div>
-
                                                             </div>
                                                         </div>
                                                     </div>
@@ -184,9 +184,9 @@ const Categories = () => {
                                                                                 <div className='d-flex justify-content-center'>
 
                                                                                     <div className="main-button">
-                                                                                        <Link state={{ items: items }} to='/ShopScreem' href='' >View</Link>
+                                                                                        {/* <Link state={{ items: items }} to={`/ShopScreem/${items.id}`}  href='' >View</Link> */}
+                                                                                        <Link to={`/ShopScreem/${items.id}`} href='' >View</Link>
                                                                                     </div>
-
                                                                                 </div>
                                                                             </div>
                                                                         </div>

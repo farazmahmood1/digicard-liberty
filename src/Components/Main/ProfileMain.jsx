@@ -50,7 +50,7 @@ const ProfileMain = () => {
                                                 <p className={'nav-link me-4 '} aria-current="page"><b><Link to='/' className='text-secondary' >Home</Link></b></p>
                                             </li>
                                             <li className="nav-item ">
-                                                <p className={'nav-link me-4 '} aria-current="page"><b> <Link state={{ values: 'Card' }} className='text-secondary' to='/ShopMain'>Shop</Link></b></p>
+                                                <p className={'nav-link me-4 '} aria-current="page"><b> <Link className='text-secondary' to='/ShopMain?Card'>Shop</Link></b></p>
                                             </li>
                                             <li className="nav-item ">
                                                 <p className={'nav-link me-4 enjoy'} aria-current="page"><b> <Link to='/ProfileMain' className='text-secondary' >Profiles</Link> </b></p>

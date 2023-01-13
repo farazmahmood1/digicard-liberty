@@ -13,14 +13,14 @@ import { useSearchParams, useParams } from 'react-router-dom';
 
 const UserProfile = (id) => {
   const Id = id.id
-
+  console.log(Id)
   // const params = useParams();
   // const { userId } = useParams()
   // const [searchParams, setSearchParams] = useSearchParams()
 
-  const location = useLocation()
-  const IDD = location.state.coustomerData;
-  console.log(IDD)
+  // const location = useLocation()
+  // const IDD = location.state.coustomerData;
+  // console.log(IDD)
 
   // const location = useLocation()
   // const IDD = location.state.userDataa
@@ -86,7 +86,7 @@ const UserProfile = (id) => {
       redirect: 'follow'
     };
 
-    fetch(`${Baseurl}fetch_webdata_by_userid/${String(IDD)}`, requestOptions)
+    fetch(`${Baseurl}fetch_webdata_by_userid/${String(Id)}`, requestOptions)
       .then(response => response.json())
       .then(result => {
         setLoader(false)
@@ -136,7 +136,7 @@ const UserProfile = (id) => {
       redirect: 'follow'
     };
 
-    fetch(`${Baseurl}get_image/${String(IDD)}`, requestOptions)
+    fetch(`${Baseurl}get_image/${String(Id)}`, requestOptions)
       .then(response => response.json())
       .then(result => {
         setDatas(result.Data)
@@ -348,14 +348,14 @@ const UserProfile = (id) => {
                       null
                   }
 
-                  {
+                  {/* {
                     bio !== '' ?
                       <>
                         <h3 className='mt-3' style={{ color: "#7453fc" }}>Bio:</h3>
                         <p className='mt-3'>{bio}</p>
                       </> :
                       null
-                  }
+                  } */}
 
                   {
                     profDes !== '' ?
@@ -399,7 +399,7 @@ const UserProfile = (id) => {
                       <>
                         <div className='d-flex mt-3'>
                           <h2 style={{ color: "#7453fc" }}><i className="fa-solid fa-address-book" /></h2>
-                          <p className='mt-3 ms-auto'>{address}</p>
+                          <p className='mt-3 ms-auto ' style={{ textAlign: 'right' }}>{address}</p>
                         </div>
                       </> : null
                   }
@@ -410,11 +410,10 @@ const UserProfile = (id) => {
                       <>
                         <div className='d-flex mt-3'>
                           <h2><i className="fa-solid fa-location-dot" style={{ color: "#7453fc" }} /> <span style={{ fontSize: '13px' }}></span></h2>
-                          <p className='mt-2 ms-auto'>{region}</p>
+                          <p className='mt-2 ms-auto' style={{ textAlign: 'right' }} >{region}</p>
                         </div>
                       </> : null
                   }
-
                 </div>
                 {
                   cv ?
@@ -543,7 +542,7 @@ const UserProfile = (id) => {
     <div>
 
       {/* Navbar */}
-      <div>
+      {/* <div>
         <header className="header-area header-sticky" >
           <div className='container'>
             <div className='container-fluid' style={{ borderRadius: '50px', backgroundColor: '#fff' }} >
@@ -607,20 +606,36 @@ const UserProfile = (id) => {
         {openModal && < SignIn setOpenModal={setOpenModal} />}
         {openSignUp && <SignUp setOpenSignUp={setOpenSignUp} />}
 
-      </div>
+      </div> */}
 
-      <div className="CoverImage" style={{ backgroundImage: cover ? `url(${Imagesurl}${cover})` : "url(./source/assets/images/heading-bg.jpg)" }}>
+      <div className="CoverImage" style={{ backgroundImage: cover !== "" ? `url(${Imagesurl}${cover})` : "url(./source/assets/images/heading-bg.jpg)" }}>
       </div>
 
       <div className="darkbg" style={{ backgroundImage: "url(./source/assets/images/dark-bg.jpg)" }}>
         <div className="container">
           <div className='col-lg-1 ms-auto mt-5 buttonProfile'>
+            <Link to='/profileMain'><button className='btn hoverBtn buttonx rounded-pill me-2 mb-2' style={{ color: "white", borderColor: " #7453fc" }}><i className="fa-solid fa-rotate-left p-2" /></button></Link>
             <button onClick={() => setProfile("userProfile")} className={profile === 'userProfile' ? 'btn  buttonx actives rounded-pill me-2 mb-2' : 'btn hoverBtn buttonx rounded-pill me-2 mb-2'} style={{ color: "white", borderColor: " #7453fc" }}><i className="fa-solid fa-house p-2" /></button>
             <button onClick={() => setProfile("Portfolio")} className={profile === 'Portfolio' ? 'btn  buttonx actives rounded-pill me-2 mb-2' : 'btn hoverBtn buttonx rounded-pill me-2 mb-2'} style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-newspaper p-2" /></button>
             <button onClick={() => setProfile("About")} className={profile === 'About' ? 'btn  buttonx actives rounded-pill me-2 mb-2' : 'btn hoverBtn buttonx rounded-pill me-2 mb-2'} style={{ color: "white", borderColor: " #7453fc" }} ><i className="fa-solid fa-user p-2" /></button>
             <button onClick={() => setProfile("Social")} className={profile === 'Social' ? 'btn  buttonx actives rounded-pill me-2 mb-2' : 'btn hoverBtn buttonx rounded-pill me-2 mb-2'} style={{ color: "white", borderColor: "#7453fc" }} ><i className="fa-solid fa-envelope p-2" /></button>
           </div>
 
+
+          <div className="row">
+            <div className='col-lg-4' >
+              <img src={`${allImagesUrl.itemImage}${pic}`} className='profileImage' alt="profile image" />
+            </div>
+            <div className="col-lg-6 profileHeading">
+              <hr className='w-75 ' style={{ height: "3px", color: "#7453fc" }} />
+              <h1 className='mt-2'>{name}</h1>
+              <p style={{ fontSize: '12px' }}>{phone}</p>
+              <h2 className='mt-3'>{profession}</h2>
+              <h4 className='mt-3' style={{ color: "#7453fc" }}>Bio</h4>
+              <p>{bio}</p>
+              {/* <button className='buttonx w-25 mt-4 p-3' >View CV</button> */}
+            </div>
+          </div>
 
           {
             loader === true ?
@@ -630,7 +645,7 @@ const UserProfile = (id) => {
                     <div className='d-flex justify-content-center'>
                       <div className='position-absolute top-50 start-50 translate-middle'>
                         {/* <div className="loader">Loading...</div> */}
-                        <div className="spinner-border" style={{ width: '5rem', height: '5rem', marginTop: '15em', marginBottom: '10em', color: '#7453fc' }} role="status">
+                        <div className="spinner-border spinner" role="status">
                           <span className="visually-hidden">Loading...</span>
                         </div>
                       </div>
@@ -639,20 +654,6 @@ const UserProfile = (id) => {
                 </div>
               </> :
               <>
-
-                <div className="row">
-                  <div className='col-lg-4' >
-                    <img src={`${allImagesUrl.itemImage}${pic}`} className='profileImage' alt="profile image" />
-                  </div>
-                  <div className="col-lg-6 profileHeading">
-                    <hr className='w-75 ' style={{ height: "3px", color: "#7453fc" }} />
-                    <h1 className='mt-2'>{name}</h1>
-                    <p style={{ fontSize: '12px' }}>{phone}</p>
-                    <h2 className='mt-3'>{profession}</h2>
-                    <p className='mt-3'>{bio}</p>
-                    {/* <button className='buttonx w-25 mt-4 p-3' >View CV</button> */}
-                  </div>
-                </div>
 
                 <ReturnData />
               </>

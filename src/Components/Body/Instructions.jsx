@@ -15,7 +15,8 @@ const Instructions = () => {
             </div>
             <div className="col-lg-4">
               <div className="main-button">
-                <Link to='/ShopMain' state={{ values: 'Card' }}>See Shop</Link>
+                {/* <Link to='/ShopMain' state={{ values: 'Card' }}>See Shop</Link> */}
+                <Link to='/ShopMain?Card'>Explore Shop</Link>
               </div>
             </div>
             <div className="col-lg-4">
