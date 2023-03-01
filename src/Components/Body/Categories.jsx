@@ -24,6 +24,7 @@ const Categories = () => {
             })
     }
 
+
     var settings = {
         dots: true,
         infinite: true,

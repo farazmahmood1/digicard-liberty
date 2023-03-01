@@ -5,36 +5,19 @@ import HomePage from "../Main/HomePage";
 import UserProfile from "../Profile/UserProfile";
 
 const Decider = () => {
-  // const [id, setId] = useState("");
-  // function getLink() {
-  //   const url = `${window.location.href}`;
-  //   const part = url.split("?");
-  //   const path = part[1];
-  //   setId(path !== null ? path : "noID");
-  // }
+  const [id, setId] = useState("");
+  function getLink() {
+    const url = `${window.location.href}`;
+    const part = url.split("?");
+    const path = part[1];
+    setId(path !== null ? path : "noID");
+  }
 
-  // console.log(id);
+  useEffect(() => {
+    getLink();
+  }, []);
 
-  // useEffect(() => {
-  //   getLink();
-  // }, []);
-
-  // return <>{id === "noID" ? <HomePage /> : <UserProfile id={id} />}</>;
-  const { id } = useParams();
-  console.log(id);
-  return (
-    <div>
-      {id==='null' ? (
-        <>
-          <HomePage id={id} />
-        </>
-      ) : (
-        <>
-          <UserProfile id={id} />
-        </>
-      )}
-    </div>
-  );
+  return <>{!id ? <HomePage /> : <UserProfile id={id} />}</>;
 };
 
 export default Decider;

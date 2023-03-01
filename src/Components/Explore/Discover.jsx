@@ -2,12 +2,13 @@ import { parse, stringify, toJSON, fromJSON } from 'flatted';
 import React, { useEffect, useState } from 'react'
 import Imagesurl from '../SourceFiles/Imageurl'
 import Baseurl from '../SourceFiles/url'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import UserProfile from '../Profile/UserProfile';
 
 const Discover = () => {
 
+  const navigate = useNavigate();
   const [userData, setUserData] = useState([])
   const [visible, setVisible] = useState(false)
   const [loader, setLoader] = useState(false)
@@ -17,18 +18,13 @@ const Discover = () => {
     axios.get(`${Baseurl}fetch_all_webdata`)
       .then(res => {
         setUserData(res.data.data)
-        console.log(res.data.data)
         setLoader(false)
       })
       .catch(err => {
         console.log(err)
       })
   }
-  // let name = window.location.href;
-  // name = name.replace(/\s+/g, '-');
-  // const url = `/lookup/${name}`
 
-  //Scroll to top function
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
     if (scrolled > 1800) {
@@ -38,6 +34,7 @@ const Discover = () => {
       setVisible(false)
     }
   };
+  window.addEventListener('scroll', toggleVisible);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -46,20 +43,10 @@ const Discover = () => {
     });
   };
 
-
-
-  // const  questionMark = stringify(<span style={{display:"none"}}>?</span>)
-
-  // const questionMark = ()=>{
-  //   setQue( <span style={{display:"none"}}>?</span>)
-
-  // }
   useEffect(() => {
     renderData()
   }, [])
 
-
-  window.addEventListener('scroll', toggleVisible);
 
   return (
     <div>
@@ -123,16 +110,11 @@ const Discover = () => {
 
                               <div className="col-lg-12">
                                 <div className="main-button">
-                                  <Link to={`/${items.user_id}`}
-                                  // state={{ coustomerData: items.user_id }}
-                                  >View</Link>
+                                  <Link to={`/?${items.user_id}`} >View</Link>
+
                                 </div>
                               </div>
                             </div>
-                            {/* {
-                              userData ?
-                                <UserProfile IDD={items.user_id} /> : alert("User not found")
-                            } */}
                           </div>
                         </div>
                       </>

@@ -65,7 +65,9 @@ function App() {
         {/* <Navbar /> */}
 
         <Routes>
-          <Route path="/:id" element={<Decider />} />
+          {/* <Route path="/:id" element={<Decider />} /> */}
+          <Route path="/" element={<Decider />} />
+
           {/* <Route path="/" element={<HomePage />} /> */}
 
           <Route path="/ShopMain" element={<ShopMain />} />
