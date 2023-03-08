@@ -1,14 +1,11 @@
-import { parse, stringify, toJSON, fromJSON } from 'flatted';
 import React, { useEffect, useState } from 'react'
 import Imagesurl from '../SourceFiles/Imageurl'
 import Baseurl from '../SourceFiles/url'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios';
-import UserProfile from '../Profile/UserProfile';
 
 const Discover = () => {
 
-  const navigate = useNavigate();
   const [userData, setUserData] = useState([])
   const [visible, setVisible] = useState(false)
   const [loader, setLoader] = useState(false)
@@ -69,7 +66,6 @@ const Discover = () => {
                   <div className='row loaderSizing'>
                     <div className='d-flex justify-content-center'>
                       <div className='position-absolute top-50 start-50 translate-middle'>
-                        {/* <div className="loader">Loading...</div> */}
                         <div className="spinner-border" style={{ width: '5rem', height: '5rem', marginTop: '25em', color: '#7453fc' }} role="status">
                           <span className="visually-hidden">Loading...</span>
                         </div>
@@ -121,8 +117,6 @@ const Discover = () => {
                     )
                   })
                 }
-
-
               </>
             }
           </div>

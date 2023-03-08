@@ -3,10 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 import Imagesurl from '../SourceFiles/Imageurl'
 import Baseurl from '../SourceFiles/url'
 import { saveAs } from "file-saver";
-import coverUrl from '../SourceFiles/coverUrl'
-import SignIn from '../Auth/SignIn';
-import SignUp from '../Auth/SignUp'
-import axios from 'axios';
 import allImagesUrl from '../SourceFiles/baseimageurl';
 import coverImage from '../SourceFiles/heading-bg.jpg'
 import { useSearchParams, useParams } from 'react-router-dom';
@@ -71,7 +67,6 @@ const UserProfile = (id) => {
   const [loader, setLoader] = useState(false)
 
   const [datas, setDatas] = useState([])
-  const [userID, setUserID] = useState()
 
   useEffect(() => {
     topFunction();

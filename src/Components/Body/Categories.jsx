@@ -86,7 +86,6 @@ const Categories = () => {
                                             </div>
                                             <h4>Tattoos</h4>
                                             <div className="icon-button">
-                                                {/* <Link state={{ values: 'Tattos' }} to='/ShopMain' ><i className="fa fa-angle-right" /></Link> */}
                                                 <Link to='/ShopMain?Tattos' ><i className="fa fa-angle-right" /></Link>
 
                                             </div>
@@ -99,7 +98,6 @@ const Categories = () => {
                                             </div>
                                             <h4>Digi Cards</h4>
                                             <div className="icon-button">
-                                                {/* <Link state={{ values: 'Card' }} to='/ShopMain'><i className="fa fa-angle-right" /></Link> */}
                                                 <Link to='/ShopMain?Card' ><i className="fa fa-angle-right" /></Link>
                                             </div>
                                         </div>
@@ -112,9 +110,6 @@ const Categories = () => {
                                                 <img src="./source/assets/images/icon-05.png" alt />
                                             </div>
                                             <h4>Jewelerry</h4>
-                                            {/* <div className="icon-button">
-                                                <Link state={{ values: 'Jewellery' }} to='/ShopMain'><i className="fa fa-angle-right" /></Link>
-                                            </div> */}
                                         </div>
                                     </div>
                                     <div className="col-lg-2 col-sm-6">
@@ -124,22 +119,8 @@ const Categories = () => {
                                                 <img src="./source/assets/images/icon-03.png" alt />
                                             </div>
                                             <h4>Key Chains</h4>
-                                            {/* <div className="icon-button">
-                                                <a href="#"><i className="fa fa-angle-right" /></a>
-                                            </div> */}
                                         </div>
                                     </div>
-                                    {/* <div className="col-lg-2 col-sm-6">
-                                        <div className="item">
-                                            <div className="icon">
-                                                <img src="./source/assets/images/icon-06.png" alt />
-                                            </div>
-                                            <h4>Triple NFT</h4>
-                                            <div className="icon-button">
-                                                <a href="#"><i className="fa fa-angle-right" /></a>
-                                            </div>
-                                        </div>
-                                    </div> */}
                                 </div>
                             </div>
                         </div>
@@ -160,7 +141,6 @@ const Categories = () => {
                                                     <div className='row loaderSizing'>
                                                         <div className='d-flex justify-content-center'>
                                                             <div className='position-absolute top-50 start-50 translate-middle'>
-                                                                {/* <div className="loader">Loading...</div> */}
                                                                 <div className="spinner-border" style={{ width: '5rem', height: '5rem', marginTop: '25em', color: '#7453fc' }} role="status">
                                                                     <span className="visually-hidden">Loading...</span>
                                                                 </div>
@@ -185,7 +165,6 @@ const Categories = () => {
                                                                                 <div className='d-flex justify-content-center'>
 
                                                                                     <div className="main-button">
-                                                                                        {/* <Link state={{ items: items }} to={`/ShopScreem/${items.id}`}  href='' >View</Link> */}
                                                                                         <Link to={`/ShopScreem/${items.id}`} href='' >View</Link>
                                                                                     </div>
                                                                                 </div>

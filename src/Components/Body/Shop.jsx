@@ -24,7 +24,6 @@ const Shop = () => {
   // const location = useLocation();
   // const { values } = location.state;
   // console.log(values)
-  // !code ? 'Card' :
 
   const [card, setCard] = useState([]);
   const [type, setType] = useState("");
@@ -37,14 +36,11 @@ const Shop = () => {
       .then((res) => {
         setLoader(false);
         setCard(res.data.items);
-        // console.log(res.data.items)
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
-  // console.log(values)
 
   const filtered = card.filter((item) => item.item_type === type);
 
@@ -82,7 +78,6 @@ const Shop = () => {
               <h6 className="">DigiCard Market</h6>
               <h2>Buy Your DigiCard Now.</h2>
               <span className="">
-                {" "}
                 <Link to="/">Home</Link> &gt;{" "}
                 <a style={{ cursor: "default" }}>Shop</a>
               </span>
@@ -108,7 +103,6 @@ const Shop = () => {
                   <div className="row loaderSizing">
                     <div className="d-flex justify-content-center">
                       <div className="position-absolute top-50 start-50 translate-middle">
-                        {/* <div className="loader">Loading...</div> */}
                         <div
                           className="spinner-border"
                           style={{
@@ -150,9 +144,6 @@ const Shop = () => {
                           Tattoos
                         </li>
                       </Link>
-
-                      {/* <li onClick={() => setType("Jewellery")} className={type === "Jewellery" ? "active" : "kuchNai"} data-filter=".vtr">Jewelerry
-                      </li> */}
                     </ul>
                   </div>
                 </div>
@@ -192,7 +183,6 @@ const Shop = () => {
                                   </div>
                                   <div className="d-flex justify-content-center ">
                                     <div className="main-button ms-2 itemBtn">
-                                      {/* <Link state={{ items: items }} to='/ShopScreem'>View</ Link> */}
                                       <Link
                                         state={{ items: items }}
                                         to={`/ShopScreem/${items.id}`}

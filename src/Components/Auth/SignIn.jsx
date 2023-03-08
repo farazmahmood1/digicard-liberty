@@ -3,7 +3,7 @@ import React from 'react'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import Baseurl from '../SourceFiles/url'
-import image from '..//SourceFiles/images/dark-bg.jpg'
+
 const SignIn = ({ setOpenModal }) => {
 
     const [email, setEmail] = useState('')

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-
 const Banner = () => {
   return (
     <div>
@@ -15,15 +14,7 @@ const Banner = () => {
                 <p>Liberty NFT Market is a really cool and professional design for your NFT websites. This HTML CSS template is based on Bootstrap v5 and it is designed for NFT related web portals. Liberty can be freely downloaded from TemplateMo's free css templates.</p>
                 <div className="buttons">
                   <div className="border-button">
-                    {/* <Link to='/ShopMain' state={{ values: 'Card' }} >Explore Shop</Link> */}
                     <Link to='/ShopMain?Card' >Explore Shop</Link>
-
-                    {/* <Link to={{
-                      pathname: "/ShopMain",
-                      search: "?value=Card",
-                      state: { values: 'Card' }
-                    }}>Explore Shop</Link> */}
-
                   </div>
                   <div className="main-button">
                     <Link to='/WorkingVideo' >How to buy</Link>
@@ -32,12 +23,6 @@ const Banner = () => {
               </div>
             </div>
             <div className="col-lg-5 imageBanner">
-              {/* <div className="owl-banner">
-            <div className="item">
-              <img src="./source/assets/images/banner-01.png" alt />
-            </div>
-          </div> */}
-
               <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
                   <div className="carousel-item active">
@@ -46,9 +31,6 @@ const Banner = () => {
                   <div className="carousel-item">
                     <img src="./source/assets/images/banner-02.png" className="d-block w-100" alt="..." />
                   </div>
-                  {/* <div className="carousel-item">
-      <img src="..." className="d-block w-100" alt="..." />
-    </div> */}
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                   <span className="carousel-control-prev-icon" aria-hidden="true" />

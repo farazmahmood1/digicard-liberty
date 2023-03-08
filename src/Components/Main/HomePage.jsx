@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import SignIn from '../Auth/SignIn';
 import SignUp from '../Auth/SignUp'
-
+import MainLogo from '../../Components/SourceFiles/images/MainLogo.png'
 const HomePage = () => {
 
     const [index, setIndex] = useState(1);
@@ -24,7 +24,7 @@ const HomePage = () => {
                                 <div className="container-fluid">
                                     <p >
                                         <Link to='/' className="logo">
-                                            <img src="./source/assets/images/logo.png" alt='icon_image' style={{ height: "54px" }} />
+                                            <img src={MainLogo} className='p-2' alt='icon_image' style={{ height: "54px" }} />
                                         </Link>
                                     </p>
                                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

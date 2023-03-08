@@ -2,7 +2,6 @@
 
 :root {
   --pretty-modal-modal-container-background-color: #23222d;
-  /* --pretty-modal-modal-container-background-color: red; */
   --pretty-modal-modal-container-border-radius: 10px;
 }
 
@@ -14,14 +13,12 @@ body {
 .navbar-nav li a :hover {
   color: white;
   transition: all 0.2s ease 0s;
-  /* transition: all 0.2s ease 0s; */
   background-color: #7453fc;
   border-radius: 18px;
   padding: 7px 15px 7px 15px;
 }
 
 .borderSignup {
-  /* border: 2px solid #7453fc; */
   border-radius: 20px;
   background-color: #7453fc;
 }
@@ -30,12 +27,6 @@ body {
   border-radius: 20px;
   color: #000;
 }
-/* .borderLogin:hover{
-    border:1px solid #7453fc;
-    border-radius: 20px;
-    background-color: #7453fc;
-    color: #fff;
-} */
 
 @media screen and (max-width: 880px) {
   .borderSignup {
@@ -466,10 +457,6 @@ input {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* padding: 100px 0px; */
-  /* position: relative; */
-
-  /* height: 100%; */
   padding-bottom: 25%;
 }
 
@@ -589,11 +576,7 @@ input {
   position: fixed;
   width: 5%;
   left: 50%;
-  /* border-radius: 40%;
-    border: 1px solid; */
   bottom: 40px;
-  /* height: 50px; */
-  /* font-size: 3rem; */
   color: #fff;
   z-index: 9999;
   cursor: pointer;
@@ -619,7 +602,6 @@ input {
 /* loading on page shifting */
 
 .spinner{
-  /* style={{ width: '5rem', height: '5rem', marginTop: '15em', marginBottom: '10em', color: '#7453fc' }} */
   width:5em;
   height: 5rem;
   margin-top: 40em;
@@ -650,11 +632,6 @@ input {
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  /* margin: 72px auto;
-    position: relative;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    transform: translateZ(0); */
   -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
   animation: load6 1.7s infinite ease, round 1.7s infinite ease;
 }
@@ -767,20 +744,12 @@ input {
 /* navlink active function */
 
 .enjoy {
-  /* text-decoration: underline;
-    text-decoration-thickness: 5px;
-    -webkit-text-decoration-color: #7453fc;
-    text-decoration-color: #7453fc; */
-  /* max-width: 60px;
-    height: 40px; */
   border-bottom: 2px solid #7453fc;
   text-transform: capitalize;
 }
 
 @media only screen and (max-width: 995px) {
   .enjoy {
-    /* max-width: 60px;
-        height: 40px; */
     border-bottom: 2px solid #7453fc;
     text-align: center;
   }
@@ -792,14 +761,6 @@ input {
 .updateNav:hover {
   background-color: gray;
 }
-/* 
-.footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-} */
 
 .profileHeading {
   margin-left: 30px;

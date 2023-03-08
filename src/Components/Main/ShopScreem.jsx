@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useParams } from 'react-router-dom'
-import { useLocation } from 'react-router-dom';
 import allImagesUrl from '../SourceFiles/baseimageurl';
 import SignIn from '../Auth/SignIn';
 import SignUp from '../Auth/SignUp';
@@ -218,7 +217,6 @@ const ShopScreem = () => {
                                             <div className='row loaderSizing'>
                                                 <div className='d-flex justify-content-center'>
                                                     <div className='position-absolute top-50 start-50 translate-middle'>
-                                                        {/* <div className="loader">Loading...</div> */}
                                                         <div className="spinner-border" style={{ width: '5rem', height: '5rem', color: '#7453fc' }} role="status">
                                                             <span className="visually-hidden">Loading...</span>
                                                         </div>
@@ -232,19 +230,6 @@ const ShopScreem = () => {
                                         <div className="row">
                                             <div className="col-lg-6">
                                                 <div className='col-lg-12 mb-4'>
-                                                    {/* <CursorZoom className=''
-                                            image={{
-                                                src: `${allImagesUrl.itemImage}${items.item_pic}`,
-                                                width: 550,
-                                                height: 550
-                                            }}
-                                            zoomImage={{
-                                                src: `${allImagesUrl.itemImage}${items.item_pic}`,
-                                                width: 3500,
-                                                height: 2300
-                                            }}
-                                            cursorOffset={{ x: 10, y: -10 }}
-                                        /> */}
 
                                                     <img src={`${allImagesUrl.itemImage}${data.item_pic}`} alt="" />
 
@@ -280,16 +265,7 @@ const ShopScreem = () => {
                                         </div>
                                     </>
                             }
-
-
-
                             <hr className='bg-secondary' />
-                            {/* <div className="buttons  mt-5 d-flex justify-content-center">
-                                <div className="main-button ">
-                                    <Link to='/ShopMain' className='p-3 mt-1 me-2'>Explore Our Products</Link>
-                                </div>
-                                <Link to='/ProfileMain' className='buttonx p-4 ms-2'>View Profiles</Link>
-                            </div> */}
                             <div className='d-flex justify-content-center mt-5'>
                                 <div className="buttons me-2">
                                     <div className="border-button">
@@ -301,7 +277,6 @@ const ShopScreem = () => {
                                         <Link to='/ProfileMain' >View Profiles</Link>
                                     </div>
                                 </div>
-
 
                             </div>
                         </div>
